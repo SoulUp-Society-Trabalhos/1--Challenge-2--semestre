@@ -1,0 +1,75 @@
+.hero {
+    min-height: 40vh;
+    background-color: #000;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    padding: 5rem 8%;
+}
+
+.hero__content {
+  text-align: center;
+    margin-bottom: 6rem;
+}
+
+.hero__title {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+
+.hero__subtitle {
+  color: #8d8d8d;
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 2.3rem;
+
+}
+
+.hero__iconleft {
+  position: absolute;
+
+  left: -350px;
+  bottom: 0;
+
+  width: 700px;
+}
+
+.hero__iconright {
+  position: absolute;
+
+  right: -350px;
+  bottom: 0;
+
+  width: 700px;
+}
+
+.hero__bg {
+  height: 92vh;
+  width: 100%;
+
+  background: linear-gradient(rgb(255, 0, 0) rgb(0, 0, 0));
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.hero__icong {
+  position: absolute;
+
+  left: -350px;
+  bottom: 0;
+
+  width: 700px;
+}
+
+.hero__icong2 {
+  position: absolute;
+
+  right: -350px;
+  bottom: 0;
+
+  width: 700px;
+}
