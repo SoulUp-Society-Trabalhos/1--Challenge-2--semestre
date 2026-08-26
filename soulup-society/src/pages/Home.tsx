@@ -1,5 +1,7 @@
 import "../styles/hero.css";
 import "../styles/global.css";
+import "./Home.css";
+import "../styles/newsletter.css"
 
 function Home() {
   return (

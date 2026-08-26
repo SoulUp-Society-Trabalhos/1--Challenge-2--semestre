@@ -42,13 +42,13 @@
 
 .footer__group-sub {
     color: #d6d6d6;
-    font-size: 1rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
 .footer__group-descricao {
     color: #d6d6d6;
-    font-size: 1.1rem;
+    font-size: 1.8rem;
     line-height: 1.8rem;
     max-width: 750px;
     margin-bottom: 2rem;
@@ -58,12 +58,7 @@
     width: 25%;
 }
 
-.footer__contatos h4 {
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-}
+
 
 .footer__ul {
     list-style: none;
@@ -90,7 +85,7 @@
 
 .footer_direitos {
     border-top: 1px solid #8d8d8d;
-    padding-top: 0.8rem;
+    padding-top: 1rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -99,7 +94,7 @@
 
 .footer_direitos p {
     color: #d6d6d6;
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.5rem;
     max-width: 350px;
 }
