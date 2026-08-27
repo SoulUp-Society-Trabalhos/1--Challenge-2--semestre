@@ -1,50 +1,48 @@
+import { Link } from "react-router";
 import "./Cabecalho.css"
-
 function Cabecalho() {
   return (
     <header className="header__container">
-      <a className="header__title">SoulUp Society</a>
-      <button
-        className="hamburger"
-        aria-label="Abrir menu"
-        aria-expanded="false"
-        aria-controls="header-nav"
-      >
-        <span className="hamburger__bar"></span>
-        <span className="hamburger__bar"></span>
-        <span className="hamburger__bar"></span>
-      </button>
+      <Link className="header__title" to="/">
+        SoulUp Society
+      </Link>
+
       <nav className="header__nav" id="header-nav">
         <ul className="header__ul">
           <li className="header__li">
-            <a href="../index.html">Início</a>
+            <Link to="/">Início</Link>
           </li>
+
           <li className="header__li dropdown _marcado">
             <button className="dropdown__btn">
               Soluções
-              <i className="fa-solid fa-chevron-down"></i>
             </button>
 
             <ul className="dropdown__menu">
               <li>
-                <a href="./pages/propostas.html">Integração</a>
+                <Link to="/proposta">Integração</Link>
               </li>
+
               <li>
-                <a href="./pages/proposta2.html">Gamifição</a>
+                <Link to="/proposta2">Gamificação</Link>
               </li>
             </ul>
           </li>
+
           <li className="header__li">
-            <a href="./pages/integrantes.html">Integrantes</a>
+            <Link to="/integrantes">Integrantes</Link>
           </li>
+
           <li className="header__li">
-            <a href="./pages/sobre.html">Sobre</a>
+            <Link to="/sobre">Sobre</Link>
           </li>
+
           <li className="header__li">
-            <a href="./pages/contatos.html">Contatos</a>
+            <Link to="/contatos">Contatos</Link>
           </li>
+
           <li className="header__li">
-            <a href="./pages/faq.html">FAQ</a>
+            <Link to="/faq">FAQ</Link>
           </li>
         </ul>
       </nav>
