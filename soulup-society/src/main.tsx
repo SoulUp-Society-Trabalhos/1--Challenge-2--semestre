@@ -12,6 +12,7 @@ import Proposta from './routes/Proposta/index.tsx';
 import Proposta2 from './routes/Proposta2/index.tsx';
 import Sobre from './routes/Sobre/index.tsx';
 import Error from './routes/Error/index.tsx';
+import "./styles/globals.css"
 
 
 const router = createBrowserRouter([
