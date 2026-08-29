@@ -1,20 +1,17 @@
 export default function Contatos() {
   return (
     <main className="conteudo">
-      <section className="hero">
-        <div className="hero__content">
-          <h1 className="hero__title">SoulUp Society - Fiap</h1>
+      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
+        <div className="text-center flex flex-col gap-3">
+          <h1 className="text-6xl font-montserrat font-bold mb-6">
+            Nossos contatos
+          </h1>
 
-          <p className="hero__subtitle">
-            Grupo composto de 5 pessoas
-            <a href="./pages/integrantes.html">
-              (clique aqui para mais informações)
-            </a>
-            em colaboração com a SoulUp, a primeira rede social sustentável do
-            mundo.
-          </p>
-
-          <a href="#" className="hero__button"></a>
+          <div className="text-2xl">
+            <p>
+              Aqui você conseguirá entrar em contato com a gente..
+            </p>
+          </div>
         </div>
       </section>
 

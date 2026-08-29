@@ -1,34 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 100%;
-  font-weight: normal;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    font-weight: normal;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Poppins;
+    font-size: 2rem;
+    overflow-x: hidden;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
-html {
-  font-size: 62.5%;
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-  font-family: Poppins;
-  font-size: 2rem;
-  overflow-x: hidden;
-}
-
-main {
-  width: 100%;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
 }
