@@ -15,8 +15,8 @@ export default function Home() {
 
       <section className="bg-stone-300 py-8 px-[5%]">
         <div className="py-8! px-[5%]! min-h-[30vh]">
-          <h2 className="text-3xl">Proposta</h2>
-          <div className="mt-5! ml-5!">
+          <h2 className="text-3xl text-center font-bold">Proposta</h2>
+          <div className="mt-10! ml-5!">
             <p className="text-2xl ">Proposta 1 - Integração</p>
             <p>
               A primeira proposta da SoulUp Society foca na integração entre o
@@ -43,8 +43,8 @@ export default function Home() {
         </div>
 
         <div className="py-8! px-[5%]! min-h-[30vh]">
-          <h2 className="text-3xl">Integrantes</h2>
-          <div className="mt-5! ml-5! h-90 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5">
+          <h2 className="text-3xl text-center font-bold">Integrantes</h2>
+          <div className="mt-10! ml-5! h-80 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5">
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
               <img
                 src="/img/foto-breno.jpg"
@@ -52,7 +52,7 @@ export default function Home() {
                 className=" mx-auto w-48 h-48 object-cover rounded-full m-3!"
               />
               <div className="mt-4!">
-                <h3 className="text-lg font-bold p-1!">Breno Elísio Leal Lobato</h3>
+                <h3 className="text-lg font-bold p-1!">Breno Elísio Lobato</h3>
                 <p className="mt-1 text-sm text-gray-500">Aluno</p>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function Home() {
               />
               <div className="mt-4!">
                 <h3 className="text-lg font-bold">
-                  Chrisitian Verzellesi Barbuto
+                  Chrisitian Verzellesi
                 </h3>
                 <p className="mt-1 text-sm text-gray-500 ">Aluno</p>
               </div>
@@ -106,8 +106,8 @@ export default function Home() {
         </div>
 
         <div className="py-8! px-[5%]! min-h-[30vh]">
-          <h2 className="text-3xl">Sobre</h2>
-          <div className="mt-5! ml-5!">
+          <h2 className="text-3xl text-center font-bold">Sobre</h2>
+          <div className="mt-10! ml-5!">
             <p className="text-2xl ">Conheça mais sobre nós!</p>
             <p className="text-base mb-1.5! mt-1.5!">
               Criada em Abril de 2026, a SoulUp Society é uma startup focada em
@@ -123,8 +123,8 @@ export default function Home() {
         </div>
 
         <div className="py-8! px-[5%]! min-h-[30vh]  ">
-          <h2 className="text-3xl">FAQ</h2>
-          <div className="mt-5! ml-5!">
+          <h2 className="text-3xl text-center font-bold">FAQ</h2>
+          <div className="mt-10! ml-5!">
             <div className="mb-3!">
               <p className="text-2xl mb-1.5!">O que é a SoulUp Society?</p>
               <p className="text-base">
@@ -162,8 +162,8 @@ export default function Home() {
         </div>
 
         <div className="py-8 px-[5%]! min-h-[30vh]">
-          <h2 className="text-3xl">Contatos</h2>
-          <div className="mt-5! ml-5!">
+          <h2 className="text-3xl text-center font-bold">Contatos</h2>
+          <div className="mt-10! ml-5!">
             <section className="newsletter">
               <h2>Receba novidades do nosso projeto!</h2>
               <dialog id="modal">
