@@ -1,43 +1,33 @@
 export default function Proposta2(){
     return (
-        <main className="conteudo">
-      <section className="hero">
-        <div className="hero__content">
-          <h1 className="hero__title">SoulUp Society - Fiap</h1>
+      <main className="conteudo">
+      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
+        <div className="text-center flex flex-col gap-3">
+          <h1 className="text-6xl font-montserrat font-bold mb-6">
+            Gamificação
+          </h1>
 
-          <p className="hero__subtitle">
-            Grupo composto de 5 pessoas
-            <a href="./pages/integrantes.html">
-              (clique aqui para mais informações)
-            </a>
-            em colaboração com a SoulUp, a primeira rede social sustentável do
-            mundo.
-          </p>
+          <div className="text-2xl">
+            <p>
+              Aqui você entenderá mais sobre nossa segunda proposta, a Gamificação!
+            </p>
 
-          <a href="#" className="hero__button"></a>
         </div>
-      </section>
+        </div>
+        </section>
 
-      <section className="introducao">
-        <div className="introducao__content">
-          <h2 className="introducao__title">Introdução</h2>
-
-          <p className="introducao__paragraph">
-            A SoulUp Society é uma startup de cunho sustentável que tem o
-            objetivo de ajudar no aprimoramento da rede social SoulUp,
-            garantindo a ela novas funções que permitirão um aumento no número
-            de usuários e também promoverão impactos ambientais positivos, como
-            a diminuição na liberação de gases do efeito estufa como o CO2
-            através do incentivo ao uso do transporte público.
-          </p>
-
-          <p className="introducao__paragraph">
-            Além de seu ponto de vista ambiental, a SoulUp Society também conta
-            com sua perspectiva social, uma vez que nossos serviços beneficiarão
-            as pessoas que já utilizam o transporte público, fazendo com que a
-            viagem se torne mais tranquila para o bolso do usuário da SoulUp
-            Society.
-          </p>
+      <section className="">
+        <div className="mt-10! ml-5!">
+            <p className="text-2xl ">Nossa proposta:</p>
+            <p className="text-base mb-1.5! mt-1.5!">
+              Como segunda proposta de nosso projeto, temos a gamificação. Ela tem como fundamento a adição de um sistema de missões à rede social da SoulUp, o qual recompensará o usuário que completar estas missões com pontos dentro do aplicativo e também fortalecerá o engajamento da plataforma.
+            </p>
+            <p className="text-base mb-1.5! mt-1.5!">
+              Com o novo sistema gamificado de missões, os usuários se sentirão mais animados para passar mais tempo dentro do aplicativo, visto que ao completar as missões, os usuários serão recompensados com pontos, facilitando a aquisição destes. Os desafios são baseados em meios de interagir dentro da plataforma, como fazer postagens ou entrar em comunidades, aumentando a interatividade do app e possibilitando aos usuários a formação de novos laços e amizades. 
+            </p>
+            <p className="text-base mb-1.5! mt-1.5!">
+              O sistema gamificado de missões é extremamente benéfico para a plataforma pois, graças ao incentivo a ações interativas como realizar postagens e entrar em comunidades, o engajamento dentro do aplicativo acaba sendo fomentado e, junto disso, os usuários acabam se afeiçoando mais ao aplicativo, propiciando a atração de um público maior.
+            </p>
         </div>
       </section>
       <section className="newsletter">

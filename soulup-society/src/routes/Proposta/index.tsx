@@ -1,7 +1,7 @@
 export default function Proposta(){
     return (
-        <main className="conteudo">
-      <section className="hero">
+      <main className="conteudo">
+      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
         <div className="text-center flex flex-col gap-3">
           <h1 className="text-6xl font-montserrat font-bold mb-6">
             Integração

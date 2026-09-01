@@ -22,11 +22,7 @@ export default function Home() {
             <div className="flex-1 rounded-xl shadow-md p-10! bg-white">
               <p className="text-2xl font-semibold">Proposta 1 - Integração</p>
               <p className="mt-2!">
-                A primeira proposta da SoulUp Society foca na integração entre o
-                sistema de pontos do aplicativo com o bilhete único do
-                transporte público, permitindo que pontos sejam convertidos em
-                passagens, saldo e/ou descontos para o transporte em metrôs,
-                ônibus e trens.
+                Como primeira proposta de nosso projeto, temos a Integração. Ela se baseia na conexão entre o sistema de pontos do aplicativo da SoulUp junto dos sistemas do transporte público, incluindo o bilhete único para metrô, trens e ônibus. A realização desta proposta é possível graças a parcerias com empresas de transporte, como a SPTrans e a Motiva.
               </p>
               <Link
                 to="/proposta"
@@ -39,10 +35,7 @@ export default function Home() {
             <div className="flex-1  rounded-xl shadow-md p-10! bg-white">
               <p className="text-2xl font-semibold">Proposta 2 - Gamificação</p>
               <p className="mt-2!">
-                Como segunda proposta, temos a gamificação. O aplicativo da
-                SoulUp poderá ser gamificado através da implementação de um
-                sistema de missões, o qual recompensará o usuário que completar
-                estas missões com pontos do aplicativo.
+                Como segunda proposta de nosso projeto, temos a gamificação. Ela tem como fundamento a adição de um sistema de missões à rede social da SoulUp, o qual recompensará o usuário que completar estas missões com pontos dentro do aplicativo e também fortalecerá o engajamento da plataforma.
               </p>
               <Link
                 to="/proposta2"
@@ -172,7 +165,7 @@ export default function Home() {
                 passagens no transporte público ou da conta de luz.
               </p>
             </div>
-            <Link to="/faq" className="">
+            <Link to="/faq" className="bg-black p-2! text-white ">
               Ver mais...
             </Link>
           </div>
