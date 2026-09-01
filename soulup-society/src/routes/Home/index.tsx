@@ -15,36 +15,50 @@ export default function Home() {
 
       <section className="bg-stone-300 py-8 px-[5%]">
         <div className="py-8! px-[5%]! min-h-[30vh]">
-          <h2 className="text-3xl text-center font-bold">Proposta</h2>
-          <div className="mt-10! ml-5!">
-            <p className="text-2xl ">Proposta 1 - Integração</p>
-            <p>
-              A primeira proposta da SoulUp Society foca na integração entre o
-              sistema de pontos do aplicativo com o bilhete único do transporte
-              público, permitindo que pontos sejam convertidos em passagens,
-              saldo e/ou descontos para o transporte em metrôs, ônibus e trens.
-            </p>
-            <Link to="/proposta" className="">
-              Ver mais...
-            </Link>
-          </div>
-          <div className="mt-5! ml-5!">
-            <p className="text-2xl ">Proposta 2 - Gamificação</p>
-            <p>
-              Como segunda proposta, temos a gamificação. O aplicativo da SoulUp
-              poderá ser gamificado através da implementação de um sistema de
-              missões, o qual recompensará o usuário que completar estas missões
-              com pontos do aplicativo.
-            </p>
-            <Link to="/proposta2" className="">
-              Ver mais...
-            </Link>
+          <h2 className="text-3xl text-center font-bold border-b-4">
+            Proposta
+          </h2>
+          <div className="mt-10! flex flex-col md:flex-row gap-6">
+            <div className="flex-1 rounded-xl shadow-md p-10! bg-white">
+              <p className="text-2xl font-semibold">Proposta 1 - Integração</p>
+              <p className="mt-2!">
+                A primeira proposta da SoulUp Society foca na integração entre o
+                sistema de pontos do aplicativo com o bilhete único do
+                transporte público, permitindo que pontos sejam convertidos em
+                passagens, saldo e/ou descontos para o transporte em metrôs,
+                ônibus e trens.
+              </p>
+              <Link
+                to="/proposta"
+                className="mt-4! inline-block  bg-black p-2! text-white "
+              >
+                Ver mais...
+              </Link>
+            </div>
+
+            <div className="flex-1  rounded-xl shadow-md p-10! bg-white">
+              <p className="text-2xl font-semibold">Proposta 2 - Gamificação</p>
+              <p className="mt-2!">
+                Como segunda proposta, temos a gamificação. O aplicativo da
+                SoulUp poderá ser gamificado através da implementação de um
+                sistema de missões, o qual recompensará o usuário que completar
+                estas missões com pontos do aplicativo.
+              </p>
+              <Link
+                to="/proposta2"
+                className="mt-4! inline-block bg-black p-2! text-white "
+              >
+                Ver mais...
+              </Link>
+            </div>
           </div>
         </div>
 
         <div className="py-8! px-[5%]! min-h-[30vh]">
-          <h2 className="text-3xl text-center font-bold">Integrantes</h2>
-          <div className="mt-10! ml-5! h-80 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5">
+          <h2 className="text-3xl text-center font-bold border-b-4">
+            Integrantes
+          </h2>
+          <div className="mt-10! h-80 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5">
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
               <img
                 src="/img/foto-breno.jpg"
@@ -58,20 +72,18 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
               <img
-                src="public\img\foto-christian.png"
+                src="img\foto-christian.png"
                 alt=""
                 className="w-48 h-48 object-cover rounded-full m-3!"
               />
               <div className="mt-4!">
-                <h3 className="text-lg font-bold">
-                  Chrisitian Verzellesi
-                </h3>
+                <h3 className="text-lg font-bold">Chrisitian Verzellesi</h3>
                 <p className="mt-1 text-sm text-gray-500 ">Aluno</p>
               </div>
             </div>
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
               <img
-                src="public\img\foto-gustavo.png"
+                src="img\foto-gustavo.png"
                 alt=""
                 className="w-48 h-48 object-cover rounded-full m-3!"
               />
@@ -82,7 +94,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
               <img
-                src="public\img\foto-eduardo.png"
+                src="img\foto-eduardo.png"
                 alt=""
                 className="w-48 h-48 object-cover rounded-full m-3!"
               />
@@ -93,7 +105,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
               <img
-                src="public\img\foto-eduardop.jpg"
+                src="img\foto-eduardop.jpg"
                 alt=""
                 className="w-48 h-48 object-cover rounded-full m-3!"
               />
@@ -106,27 +118,29 @@ export default function Home() {
         </div>
 
         <div className="py-8! px-[5%]! min-h-[30vh]">
-          <h2 className="text-3xl text-center font-bold">Sobre</h2>
-          <div className="mt-10! ml-5!">
-            <p className="text-2xl ">Conheça mais sobre nós!</p>
-            <p className="text-base mb-1.5! mt-1.5!">
+          <h2 className="text-3xl text-center font-bold border-b-4">Sobre</h2>
+          <div className="mt-10!  bg-white p-7! rounded-xl">
+            <p className="text-2xl font-bold">Conheça mais sobre nós!</p>
+            <p className="text-base mb-4! mt-4!">
               Criada em Abril de 2026, a SoulUp Society é uma startup focada em
               aprimorar a rede social SoulUp. Realizamos e construímos nossos
               projetos mirando a implementação de novas funcionalidades no
               aplicativo, também beneficiando o meio ambiente e facilitando a
               rotina dos usuários da plataforma.
             </p>
-            <Link to="/sobre" className="">
+            <Link to="/sobre" className="bg-black p-2! text-white ">
               Ver mais...
             </Link>
           </div>
         </div>
 
         <div className="py-8! px-[5%]! min-h-[30vh]  ">
-          <h2 className="text-3xl text-center font-bold">FAQ</h2>
-          <div className="mt-10! ml-5!">
-            <div className="mb-3!">
-              <p className="text-2xl mb-1.5!">O que é a SoulUp Society?</p>
+          <h2 className="text-3xl text-center font-bold border-b-4">FAQ</h2>
+          <div className="mt-10! ml-5! flex flex-wrap gap-6">
+            <div className="mb-3! bg-white p-7! rounded-xl">
+              <p className="text-2xl mb-1.5! font-bold">
+                O que é a SoulUp Society?
+              </p>
               <p className="text-base">
                 A SoulUp Society é uma startup criada em 2026, cujo principal
                 objetivo é implementar melhorias na rede social SoulUp,
@@ -135,8 +149,8 @@ export default function Home() {
                 benefícios ao utilizar o aplicativo.
               </p>
             </div>
-            <div className="mb-3!">
-              <p className="text-2xl mb-1.5!">
+            <div className="mb-3! bg-white p-7! rounded-xl">
+              <p className="text-2xl mb-1.5! font-bold">
                 Quais são os trabalhos atuais da SoulUp Society?
               </p>
               <p className="text-base">
@@ -147,8 +161,8 @@ export default function Home() {
                 microblogging, focada na postagem de textos curtos.
               </p>
             </div>
-            <div className="mb-3!">
-              <p className="text-2xl mb-1.5!">
+            <div className="mb-3! bg-white p-7! rounded-xl">
+              <p className="text-2xl mb-1.5! font-bold">
                 Como o sistema de pontos funciona?
               </p>
               <p className="text-base">
@@ -165,8 +179,8 @@ export default function Home() {
         </div>
 
         <div className="py-8 px-[5%]! min-h-[30vh]">
-          <h2 className="text-3xl text-center font-bold">Contatos</h2>
-          <div className="mt-10! ml-5!">
+          <h2 className="text-3xl text-center font-bold border-b-4">Contatos</h2>
+          <div className="mt-10! flex justify-center">
             <section className="newsletter">
               <h2 className="">Receba novidades do nosso projeto!</h2>
               <dialog id="modal">
