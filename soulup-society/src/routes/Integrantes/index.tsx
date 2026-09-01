@@ -15,28 +15,65 @@ export default function Integrantes() {
         </div>
       </section>
 
-      <section className="introducao">
-        <div className="introducao__content">
-          <h2 className="introducao__title">Introdução</h2>
-
-          <p className="introducao__paragraph">
-            A SoulUp Society é uma startup de cunho sustentável que tem o
-            objetivo de ajudar no aprimoramento da rede social SoulUp,
-            garantindo a ela novas funções que permitirão um aumento no número
-            de usuários e também promoverão impactos ambientais positivos, como
-            a diminuição na liberação de gases do efeito estufa como o CO2
-            através do incentivo ao uso do transporte público.
-          </p>
-
-          <p className="introducao__paragraph">
-            Além de seu ponto de vista ambiental, a SoulUp Society também conta
-            com sua perspectiva social, uma vez que nossos serviços beneficiarão
-            as pessoas que já utilizam o transporte público, fazendo com que a
-            viagem se torne mais tranquila para o bolso do usuário da SoulUp
-            Society.
-          </p>
-        </div>
-      </section>
+      <div className="mt-10! ml-5! h-80 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5">
+          <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <img
+                src="/img/foto-breno.jpg"
+                alt=""
+                className=" mx-auto w-48 h-48 object-cover rounded-full m-3!"
+              />
+              <div className="mt-4!">
+                <h3 className="text-lg font-bold p-1!">Breno Elísio Lobato</h3>
+                <p className="mt-1 text-sm text-gray-500">Aluno</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <img
+                src="public\img\foto-christian.png"
+                alt=""
+                className="w-48 h-48 object-cover rounded-full m-3!"
+              />
+              <div className="mt-4!">
+                <h3 className="text-lg font-bold">
+                  Chrisitian Verzellesi
+                </h3>
+                <p className="mt-1 text-sm text-gray-500 ">Aluno</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <img
+                src="public\img\foto-gustavo.png"
+                alt=""
+                className="w-48 h-48 object-cover rounded-full m-3!"
+              />
+              <div className="mt-4!">
+                <h3 className="text-lg font-bold">Gustavo Lizier Pontes</h3>
+                <p className="mt-1 text-sm text-gray-500">Aluno</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <img
+                src="public\img\foto-eduardo.png"
+                alt=""
+                className="w-48 h-48 object-cover rounded-full m-3!"
+              />
+              <div className="mt-4!">
+                <h3 className="text-lg font-bold ">Eduardo Nery Kurahara</h3>
+                <p className="mt-1 text-sm text-gray-500 ">Aluno</p>
+              </div>
+            </div>
+            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <img
+                src="public\img\foto-eduardop.jpg"
+                alt=""
+                className="w-48 h-48 object-cover rounded-full m-3!"
+              />
+              <div className="mt-4!">
+                <h3 className="text-lg font-bold">Eduardo Pizzoli Junior</h3>
+                <p className="mt-1 text-sm text-gray-500">Aluno</p>
+              </div>
+          </div>
+      </div>
       <section className="newsletter">
         <h2>Receba novidades do nosso projeto!</h2>
         <dialog id="modal">

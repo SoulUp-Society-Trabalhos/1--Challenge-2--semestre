@@ -9,7 +9,7 @@ export default function Contatos() {
 
           <div className="text-2xl">
             <p>
-              Aqui você conseguirá entrar em contato com a gente..
+              Aqui você conseguirá entrar em contato com a gente!
             </p>
           </div>
         </div>

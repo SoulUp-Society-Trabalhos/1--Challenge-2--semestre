@@ -113,7 +113,7 @@ export default function Home() {
               Criada em Abril de 2026, a SoulUp Society é uma startup focada em
               aprimorar a rede social SoulUp. Realizamos e construímos nossos
               projetos mirando a implementação de novas funcionalidades no
-              aplicativo, também beneficiando o meio-ambiente e facilitando a
+              aplicativo, também beneficiando o meio ambiente e facilitando a
               rotina dos usuários da plataforma.
             </p>
             <Link to="/sobre" className="">
@@ -158,6 +158,9 @@ export default function Home() {
                 passagens no transporte público ou da conta de luz.
               </p>
             </div>
+            <Link to="/faq" className="">
+              Ver mais...
+            </Link>
           </div>
         </div>
 
@@ -165,7 +168,7 @@ export default function Home() {
           <h2 className="text-3xl text-center font-bold">Contatos</h2>
           <div className="mt-10! ml-5!">
             <section className="newsletter">
-              <h2>Receba novidades do nosso projeto!</h2>
+              <h2 className="">Receba novidades do nosso projeto!</h2>
               <dialog id="modal">
                 <button aria-label="Fechar a Janela" id="btnFecharModal">
                   X
