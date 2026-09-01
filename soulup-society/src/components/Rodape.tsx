@@ -7,7 +7,7 @@ function Rodape() {
         <div className="footer__intro">
           <h3 className="footer__group-name">SoulUp Society</h3>
 
-          <p className="footer__group-sub">FIAP - 2025</p>
+          <p className="footer__group-sub">FIAP - 2026</p>
 
           <p className="footer__group-descricao">
             Startup criada visando ao aperfeiçoamento da rede social SoulUp,
