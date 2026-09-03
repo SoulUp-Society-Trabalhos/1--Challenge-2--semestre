@@ -2,16 +2,7 @@ import { Link } from "react-router";
 export default function Home() {
   return (
     <main>
-      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
-        <div className="text-center flex flex-col gap-3">
-          <h1 className="text-6xl font-bold mb-6">SoulUp Society</h1>
-
-          <p className="text-2xl">
-            Uma breve apresentação de nossa startup, girando em torno da empresa
-            SoulUp.
-          </p>
-        </div>
-      </section>
+      
 
       <section className="bg-stone-300 py-8 px-[5%]">
         <div className="py-8! px-[5%]! min-h-[30vh]">
@@ -121,7 +112,7 @@ export default function Home() {
 
         <div className="py-8! px-[5%]! min-h-[30vh]">
           <h2 className="text-3xl text-center font-bold border-b-4">Sobre</h2>
-          <div className="mt-10!  bg-white p-7! rounded-xl shadow-lg">
+          <div className="mt-10!  bg-white p-7! rounded-xl ">
             <p className="text-2xl font-bold">Conheça mais sobre nós!</p>
             <p className="text-base mb-4! mt-4!">
               Criada em Abril de 2026, a SoulUp Society é uma startup focada em
