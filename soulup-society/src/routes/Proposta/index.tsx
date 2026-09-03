@@ -1,43 +1,33 @@
 export default function Proposta(){
     return (
-        <main className="conteudo">
-      <section className="hero">
-        <div className="hero__content">
-          <h1 className="hero__title">SoulUp Society - Fiap</h1>
+      <main className="conteudo">
+      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
+        <div className="text-center flex flex-col gap-3">
+          <h1 className="text-6xl font-montserrat font-bold mb-6">
+            Integração
+          </h1>
 
-          <p className="hero__subtitle">
-            Grupo composto de 5 pessoas
-            <a href="./pages/integrantes.html">
-              (clique aqui para mais informações)
-            </a>
-            em colaboração com a SoulUp, a primeira rede social sustentável do
-            mundo.
-          </p>
+          <div className="text-2xl">
+            <p>
+              Aqui você entenderá mais sobre nossa primeira proposta, a Integração!
+            </p>
 
-          <a href="#" className="hero__button"></a>
         </div>
-      </section>
+        </div>
+        </section>
 
-      <section className="introducao">
-        <div className="introducao__content">
-          <h2 className="introducao__title">Introdução</h2>
-
-          <p className="introducao__paragraph">
-            A SoulUp Society é uma startup de cunho sustentável que tem o
-            objetivo de ajudar no aprimoramento da rede social SoulUp,
-            garantindo a ela novas funções que permitirão um aumento no número
-            de usuários e também promoverão impactos ambientais positivos, como
-            a diminuição na liberação de gases do efeito estufa como o CO2
-            através do incentivo ao uso do transporte público.
-          </p>
-
-          <p className="introducao__paragraph">
-            Além de seu ponto de vista ambiental, a SoulUp Society também conta
-            com sua perspectiva social, uma vez que nossos serviços beneficiarão
-            as pessoas que já utilizam o transporte público, fazendo com que a
-            viagem se torne mais tranquila para o bolso do usuário da SoulUp
-            Society.
-          </p>
+      <section className="">
+        <div className="mt-10! ml-5!">
+            <p className="text-2xl ">Nossa proposta:</p>
+            <p className="text-base mb-1.5! mt-1.5!">
+              Como primeira proposta de nosso projeto, temos a Integração. Ela se baseia na conexão entre o sistema de pontos do aplicativo da SoulUp junto dos sistemas do transporte público, incluindo o bilhete único para metrô, trens e ônibus. A realização desta proposta é possível graças a parcerias com empresas de transporte, como a SPTrans e a Motiva.
+            </p>
+            <p className="text-base mb-1.5! mt-1.5!">
+              Por meio dessa proposta, os usuários da SoulUp poderão utilizar os pontos que possuem dentro do aplicativo para financiar passagens para o transporte público. Eles poderão converter os pontos diretamente em saldo para o bilhete único ou gastar uma determinada quantidade para adquirir uma passagem diretamente, tendo um limite de 10 passagens por mês. Quando este limite for atingido, o usuário será capaz de transformar seus pontos em vales de desconto, que darão 20% de desconto na próxima passagem.
+            </p>
+            <p className="text-base mb-1.5! mt-1.5!">
+              A integração será bastante benéfica para os usuários, que poderão economizar uma quantia considerável por mês com o transporte. Além disso, a integração também tem como meta incentivar o uso do transporte público, desta forma diminuindo as emissões de gás carbônico na atmosfera. Desta forma, não apenas o meio ambiente irá se beneficiar com a diminuição da emissão de gases do efeito estufa, como também a reputação da SoulUp crescerá como empresa que se importa e se dedica aos cuidados com a natureza.
+            </p>
         </div>
       </section>
       <section className="newsletter">
