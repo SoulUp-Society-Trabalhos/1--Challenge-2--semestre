@@ -22,7 +22,12 @@ export default function Home() {
             <div className="flex-1 rounded-xl shadow-md p-10! bg-white">
               <p className="text-2xl font-semibold">Proposta 1 - Integração</p>
               <p className="mt-2!">
-                Como primeira proposta de nosso projeto, temos a Integração. Ela se baseia na conexão entre o sistema de pontos do aplicativo da SoulUp junto dos sistemas do transporte público, incluindo o bilhete único para metrô, trens e ônibus. A realização desta proposta é possível graças a parcerias com empresas de transporte, como a SPTrans e a Motiva.
+                Como primeira proposta de nosso projeto, temos a Integração. Ela
+                se baseia na conexão entre o sistema de pontos do aplicativo da
+                SoulUp junto dos sistemas do transporte público, incluindo o
+                bilhete único para metrô, trens e ônibus. A realização desta
+                proposta é possível graças a parcerias com empresas de
+                transporte, como a SPTrans e a Motiva.
               </p>
               <Link
                 to="/proposta"
@@ -35,7 +40,11 @@ export default function Home() {
             <div className="flex-1  rounded-xl shadow-md p-10! bg-white">
               <p className="text-2xl font-semibold">Proposta 2 - Gamificação</p>
               <p className="mt-2!">
-                Como segunda proposta de nosso projeto, temos a gamificação. Ela tem como fundamento a adição de um sistema de missões à rede social da SoulUp, o qual recompensará o usuário que completar estas missões com pontos dentro do aplicativo e também fortalecerá o engajamento da plataforma.
+                Como segunda proposta de nosso projeto, temos a gamificação. Ela
+                tem como fundamento a adição de um sistema de missões à rede
+                social da SoulUp, o qual recompensará o usuário que completar
+                estas missões com pontos dentro do aplicativo e também
+                fortalecerá o engajamento da plataforma.
               </p>
               <Link
                 to="/proposta2"
@@ -112,7 +121,7 @@ export default function Home() {
 
         <div className="py-8! px-[5%]! min-h-[30vh]">
           <h2 className="text-3xl text-center font-bold border-b-4">Sobre</h2>
-          <div className="mt-10!  bg-white p-7! rounded-xl">
+          <div className="mt-10!  bg-white p-7! rounded-xl shadow-lg">
             <p className="text-2xl font-bold">Conheça mais sobre nós!</p>
             <p className="text-base mb-4! mt-4!">
               Criada em Abril de 2026, a SoulUp Society é uma startup focada em
@@ -130,7 +139,7 @@ export default function Home() {
         <div className="py-8! px-[5%]! min-h-[30vh]  ">
           <h2 className="text-3xl text-center font-bold border-b-4">FAQ</h2>
           <div className="mt-10! ml-5! flex flex-wrap gap-6">
-            <div className="mb-3! bg-white p-7! rounded-xl">
+            <div className="mb-3! bg-white p-7! rounded-xl shadow-lg">
               <p className="text-2xl mb-1.5! font-bold">
                 O que é a SoulUp Society?
               </p>
@@ -142,7 +151,7 @@ export default function Home() {
                 benefícios ao utilizar o aplicativo.
               </p>
             </div>
-            <div className="mb-3! bg-white p-7! rounded-xl">
+            <div className="mb-3! bg-white p-7! rounded-xl shadow-lg">
               <p className="text-2xl mb-1.5! font-bold">
                 Quais são os trabalhos atuais da SoulUp Society?
               </p>
@@ -154,7 +163,7 @@ export default function Home() {
                 microblogging, focada na postagem de textos curtos.
               </p>
             </div>
-            <div className="mb-3! bg-white p-7! rounded-xl">
+            <div className="mb-3! bg-white p-7! rounded-xl shadow-lg">
               <p className="text-2xl mb-1.5! font-bold">
                 Como o sistema de pontos funciona?
               </p>
@@ -176,8 +185,10 @@ export default function Home() {
             Contatos
           </h2>
           <div className="mt-10! flex justify-center">
-            <section className="newsletter">
-              <h2 className="">Receba novidades do nosso projeto!</h2>
+            <section className="bg-white text-black p-8! rounded-xl shadow-lg w-full max-w-xl">
+              <h2 className="text-2xl font-bold text-center mb-3!">
+                Receba novidades do nosso projeto!
+              </h2>
               <dialog id="modal">
                 <button aria-label="Fechar a Janela" id="btnFecharModal">
                   X
@@ -191,15 +202,20 @@ export default function Home() {
                   <label htmlFor="idEmail" className="sr-only">
                     Email
                   </label>
-                  <div className="container__newsletter">
+                  <div className="flex gap-3">
                     <input
                       type="email"
                       id="idEmail"
                       name="email"
+                      className="flex-1 border border-gray-300 rounded-lg px-4! py-3! text-black outline-none focus:border-black"
                       placeholder="Digite seu Email."
                       required
                     />
-                    <button type="submit" id="btnEnviar">
+                    <button
+                      type="submit"
+                      id="btnEnviar"
+                      className="bg-black text-white px-6! py-3! rounded-lg hover:bg-gray-800"
+                    >
                       Enviar
                     </button>
                   </div>
