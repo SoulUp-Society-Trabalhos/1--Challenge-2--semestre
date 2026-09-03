@@ -176,7 +176,9 @@ export default function Home() {
         </div>
 
         <div className="py-8 px-[5%]! min-h-[30vh]">
-          <h2 className="text-3xl text-center font-bold border-b-4">Contatos</h2>
+          <h2 className="text-3xl text-center font-bold border-b-4">
+            Contatos
+          </h2>
           <div className="mt-10! flex justify-center">
             <section className="newsletter">
               <h2>Receba novidades do nosso projeto!</h2>
