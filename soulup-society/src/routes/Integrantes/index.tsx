@@ -12,8 +12,8 @@ export default function Integrantes() {
           </div>
         </div>
       </section>
-
-      <div className="mt-10! ml-5! h-80 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5">
+      <section className="bg-stone-300 p-10!">
+      <div className="mt-10!  h-80 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5 " >
         <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
           <img
             src="/img/foto-breno.jpg"
@@ -22,7 +22,7 @@ export default function Integrantes() {
           />
           <div className="mt-4!">
             <h3 className="text-lg font-bold p-1!">Breno Elísio Lobato</h3>
-            <p className="mt-1 text-sm text-gray-500">Aluno</p>
+            <p className="mt-1 text-sm text-gray-500">Aluno - RM569961</p>
             <a
               href="https://github.com/Brenoell"
               target="_blank"
@@ -47,7 +47,7 @@ export default function Integrantes() {
           />
           <div className="mt-4!">
             <h3 className="text-lg font-bold">Chrisitian Verzellesi</h3>
-            <p className="mt-1 text-sm text-gray-500 ">Aluno</p>
+            <p className="mt-1 text-sm text-gray-500 ">Aluno - RM568677</p>
             <a
               href="https://github.com/ChrisVerBarbuto"
               className="integrantes__redes"
@@ -72,7 +72,7 @@ export default function Integrantes() {
           />
           <div className="mt-4!">
             <h3 className="text-lg font-bold">Gustavo Lizier Pontes</h3>
-            <p className="mt-1 text-sm text-gray-500">Aluno</p>
+            <p className="mt-1 text-sm text-gray-500">Aluno - RM573234</p>
             <a
               href="https://github.com/gustavopontes1104"
               className="integrantes__redes"
@@ -97,7 +97,7 @@ export default function Integrantes() {
           />
           <div className="mt-4!">
             <h3 className="text-lg font-bold ">Eduardo Nery Kurahara</h3>
-            <p className="mt-1 text-sm text-gray-500 ">Aluno</p>
+            <p className="mt-1 text-sm text-gray-500 ">Aluno - RM570916</p>
             <a
               href="https://github.com/edu64123"
               className="integrantes__redes"
@@ -122,7 +122,7 @@ export default function Integrantes() {
           />
           <div className="mt-4!">
             <h3 className="text-lg font-bold">Eduardo Pizzoli Junior</h3>
-            <p className="mt-1 text-sm text-gray-500">Aluno</p>
+            <p className="mt-1 text-sm text-gray-500">Aluno - RM569529</p>
             <a
               href="https://github.com/dudupizzoli"
               className="integrantes__redes"
@@ -140,6 +140,7 @@ export default function Integrantes() {
           </div>
         </div>
       </div>
+      </section>
       <div className="py-8 px-[5%]! min-h-[30vh]">
         <div className="mt-10! flex justify-center">
           <section className="bg-white text-black p-8! rounded-xl shadow-lg w-full max-w-xl">

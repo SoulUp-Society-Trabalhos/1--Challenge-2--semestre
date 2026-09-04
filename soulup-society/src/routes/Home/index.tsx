@@ -2,7 +2,17 @@ import { Link } from "react-router";
 export default function Home() {
   return (
     <main>
-      
+      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
+        <div className="text-center flex flex-col gap-3">
+          <h1 className="text-6xl font-montserrat font-bold mb-6">
+            Início
+          </h1>
+
+          <div className="text-2xl">
+            <p>Apresentação geral dos membros da nossa equipe.</p>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-stone-300 py-8 px-[5%]">
         <div className="py-8! px-[5%]! min-h-[30vh]">
