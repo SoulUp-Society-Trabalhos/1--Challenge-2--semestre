@@ -116,7 +116,7 @@ export default function Integrantes() {
         </div>
         <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
           <img
-            src="public\img\foto-eduardop.jpg"
+            src="img\foto-eduardop.jpg"
             alt=""
             className="w-48 h-48 object-cover rounded-full m-3!"
           />

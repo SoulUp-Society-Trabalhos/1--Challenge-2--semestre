@@ -75,7 +75,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
               <img
-                src="img\foto-christian.png"
+                src="img/foto-christian.png"
                 alt=""
                 className="w-48 h-48 object-cover rounded-full m-3!"
               />
@@ -86,7 +86,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
               <img
-                src="img\foto-gustavo.png"
+                src="img/foto-gustavo.png"
                 alt=""
                 className="w-48 h-48 object-cover rounded-full m-3!"
               />
@@ -97,7 +97,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
               <img
-                src="img\foto-eduardo.png"
+                src="/img/foto-eduardo.png"
                 alt=""
                 className="w-48 h-48 object-cover rounded-full m-3!"
               />
