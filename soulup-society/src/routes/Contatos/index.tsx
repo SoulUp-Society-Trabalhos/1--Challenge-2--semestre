@@ -14,7 +14,9 @@ export default function Contatos() {
       </section>
 
       <section className="bg-stone-300 py-8 px-[5%]">
-        <h2 className="text-3xl text-center font-bold border-b-4 mb-5!">Nosso formulário!</h2>
+        <h2 className="text-3xl text-center font-bold border-b-4 mb-5!">
+          Nosso formulário!
+        </h2>
 
         <div className="">
           <dialog

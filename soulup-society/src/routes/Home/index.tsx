@@ -4,9 +4,7 @@ export default function Home() {
     <main>
       <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
         <div className="text-center flex flex-col gap-3">
-          <h1 className="text-6xl font-montserrat font-bold mb-6">
-            Início
-          </h1>
+          <h1 className="text-6xl font-montserrat font-bold mb-6">Início</h1>
 
           <div className="text-2xl">
             <p>Apresentação geral dos membros da nossa equipe.</p>

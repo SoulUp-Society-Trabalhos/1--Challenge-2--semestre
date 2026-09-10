@@ -8,27 +8,33 @@ interface FAQItem {
 const faqItems: FAQItem[] = [
   {
     question: "O que é a SoulUp Society?",
-    answer: "A SoulUp Society é uma startup criada em 2026, cujo principal objetivo é implementar melhorias na rede social SoulUp, aprimorando seus recursos e oferecendo uma experiência mais agradável ao usuário, que poderá usufruir de um leque variado de benefícios ao utilizar o aplicativo.",
+    answer:
+      "A SoulUp Society é uma startup criada em 2026, cujo principal objetivo é implementar melhorias na rede social SoulUp, aprimorando seus recursos e oferecendo uma experiência mais agradável ao usuário, que poderá usufruir de um leque variado de benefícios ao utilizar o aplicativo.",
   },
   {
     question: "Quais são os trabalhos atuais da SoulUp Society?",
-    answer: "Atualmente, a SoulUp Society trabalha na implementação de um sistema que troca pontos obtidos no aplicativo SoulUp por passagens e/ou descontos no transporte público, além do desenvolvimento de um sistema de missões e de uma aba de microblogging, focada na postagem de textos curtos.",
+    answer:
+      "Atualmente, a SoulUp Society trabalha na implementação de um sistema que troca pontos obtidos no aplicativo SoulUp por passagens e/ou descontos no transporte público, além do desenvolvimento de um sistema de missões e de uma aba de microblogging, focada na postagem de textos curtos.",
   },
   {
     question: "Como o sistema de pontos funciona?",
-    answer: "Os pontos podem ser acumulados no aplicativo SoulUp com o cumprimento de missões de engajamento e visualização de anúncios, podendo assim serem usados para o pagamento de passagens no transporte público ou da conta de luz.",
+    answer:
+      "Os pontos podem ser acumulados no aplicativo SoulUp com o cumprimento de missões de engajamento e visualização de anúncios, podendo assim serem usados para o pagamento de passagens no transporte público ou da conta de luz.",
   },
   {
     question: "O projeto possui integração com o sistema de transporte?",
-    answer: "Sim. Com a ajuda de parcerias com empresas como SPTrans e outras companhias relacionadas ao transporte público, a SoulUp Society foi capaz de integrar o sistema de pontos da SoulUp com o bilhete único.",
+    answer:
+      "Sim. Com a ajuda de parcerias com empresas como SPTrans e outras companhias relacionadas ao transporte público, a SoulUp Society foi capaz de integrar o sistema de pontos da SoulUp com o bilhete único.",
   },
   {
     question: "Quais são os objetivos da SoulUp Society?",
-    answer: "A SoulUp Society tem como principais objetivos o aprimoramento da rede social SoulUp. Por meio de nossas melhorias dentro do aplicativo, poderemos beneficiar a rotina do usuário, fazendo-o economizar com o transporte e melhorando sua experiência com o mesmo. Além disso, buscamos também contribuir com o meio ambiente incentivando o uso de transportes coletivos.",
+    answer:
+      "A SoulUp Society tem como principais objetivos o aprimoramento da rede social SoulUp. Por meio de nossas melhorias dentro do aplicativo, poderemos beneficiar a rotina do usuário, fazendo-o economizar com o transporte e melhorando sua experiência com o mesmo. Além disso, buscamos também contribuir com o meio ambiente incentivando o uso de transportes coletivos.",
   },
   {
     question: "O que é o sistema de missões?",
-    answer: "As missões são um recurso dentro da SoulUp que será responsável por fomentar o engajamento do aplicativo e facilitar a aquisição de pontos pelo usuário através do cumprimento de tarefas no aplicativo.",
+    answer:
+      "As missões são um recurso dentro da SoulUp que será responsável por fomentar o engajamento do aplicativo e facilitar a aquisição de pontos pelo usuário através do cumprimento de tarefas no aplicativo.",
   },
 ];
 
@@ -120,8 +126,15 @@ export default function Faq() {
       </section>
 
       {showModal && (
-        <dialog id="modal" className="fixed inset-0 z-50 flex items-center justify-center bg-black/50" onClick={closeModal}>
-          <div className="bg-white p-6 rounded-xl shadow-lg max-w-md w-full mx-4" onClick={(e) => e.stopPropagation()}>
+        <dialog
+          id="modal"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-white p-6 rounded-xl shadow-lg max-w-md w-full mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="flex justify-between items-start mb-4">
               <h3 className="text-xl font-bold">Confirmação</h3>
               <button
