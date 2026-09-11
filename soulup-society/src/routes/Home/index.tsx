@@ -2,11 +2,13 @@ import { Link } from "react-router";
 export default function Home() {
   return (
     <main>
-      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
-        <div className="text-center flex flex-col gap-3">
-          <h1 className="text-6xl font-montserrat font-bold mb-6">Início</h1>
+      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center px-4 sm:px-6">
+        <div className="text-center flex flex-col gap-3 max-w-4xl">
+          <h1 className="font-montserrat font-bold mb-6 text-5xl sm:text-6xl lg:text-7xl xl:text-8xl">
+            Início
+          </h1>
 
-          <div className="text-2xl">
+          <div className="text-lg sm:text-xl lg:text-2xl">
             <p>Apresentação geral dos membros da nossa equipe.</p>
           </div>
         </div>
@@ -59,60 +61,63 @@ export default function Home() {
           <h2 className="text-3xl text-center font-bold border-b-4">
             Integrantes
           </h2>
-          <div className="mt-10! h-80 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5">
-            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl p-2">
               <img
                 src="/img/foto-breno.jpg"
                 alt=""
-                className=" mx-auto w-48 h-48 object-cover rounded-full m-3!"
+                className=" mx-auto w-32 h-32 object-cover rounded-full m-3!"
               />
               <div className="mt-4!">
                 <h3 className="text-lg font-bold p-1!">Breno Elísio</h3>
                 <p className="mt-1 text-sm text-gray-500 text-center">Aluno</p>
               </div>
             </div>
-            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl p-2">
               <img
                 src="img/foto-christian.png"
                 alt=""
-                className="w-48 h-48 object-cover rounded-full m-3!"
+                className=" object-cover rounded-full m-3! w-32 h-32 aspect-square shrink-0"
               />
               <div className="mt-4!">
                 <h3 className="text-lg font-bold p-1!">Christian Barbuto</h3>
                 <p className="mt-1 text-sm text-gray-500 text-center">Aluno</p>
               </div>
             </div>
-            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl p-2">
               <img
                 src="img/foto-gustavo.png"
                 alt=""
-                className="w-48 h-48 object-cover rounded-full m-3!"
+                className=" object-cover  aspect-square shrink-0 rounded-full m-3! w-32 h-32 "
               />
               <div className="mt-4!">
                 <h3 className="text-lg font-bold p-1!">Gustavo Lizier</h3>
                 <p className="mt-1 text-sm text-gray-500 text-center">Aluno</p>
               </div>
             </div>
-            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl p-2">
               <img
                 src="/img/foto-eduardo.png"
                 alt=""
-                className="w-48 h-48 object-cover rounded-full m-3!"
+                className=" object-cover rounded-full m-3! w-32 h-32 aspect-square shrink-0"
               />
               <div className="mt-4!">
                 <h3 className="text-lg font-bold p-1!">Eduardo Nery</h3>
-                <p className="mt-1 text-sm text-gray-500 text-center">Aluno</p>
+                <p className="mt-1 text-sm text-gray-500 text-center ">Aluno</p>
               </div>
             </div>
-            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl p-2">
               <img
                 src="img\foto-eduardop.jpg"
                 alt=""
-                className="w-48 h-48 object-cover rounded-full m-3!"
+                className=" object-cover rounded-full m-3! w-32 h-32 aspect-square shrink-0"
               />
               <div className="mt-4!">
-                <h3 className="text-lg font-bold p-1!
-                ">Eduardo Pizzoli
+                <h3
+                  className="text-lg font-bold p-1!
+                "
+                >
+                  Eduardo Pizzoli
                 </h3>
                 <p className="mt-1 text-sm text-gray-500 text-center">Aluno</p>
               </div>

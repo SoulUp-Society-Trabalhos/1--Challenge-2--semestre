@@ -1,16 +1,22 @@
+import { useState } from "react";
 import { Link } from "react-router";
 
 export default function Cabecalho() {
+
+  const [menuAberto, setMenuAberto] = useState(false);
+
   return (
     <header
       className="
         bg-black text-white flex items-center relative z-9999
-        w-full py-8 px-[5%]
+        w-full py-6 px-[5%]
       "
     >
+
+      {/* TÍTULO */}
       <Link
         className="
-          text-[2.1rem] font-bold m-0
+          text-[1.5rem] font-bold m-0
           font-[Montserrat] text-white no-underline
         "
         to="/"
@@ -18,8 +24,11 @@ export default function Cabecalho() {
         SoulUp Society
       </Link>
 
+
+      {/* MENU DESKTOP */}
       <nav
         className="
+          hidden md:block
           absolute left-1/2 -translate-x-1/2
         "
         id="header-nav"
@@ -27,21 +36,18 @@ export default function Cabecalho() {
         <ul
           className="
             flex items-center justify-center
-            gap-[clamp(1.5rem,2vw,3rem)]
+            gap-[clamp(0.5rem,2vw,3rem)]
             list-none m-0 p-0
           "
         >
-          <li
-            className="
-              flex items-center relative
-              font-[Montserrat] font-medium
-            "
-          >
+
+          {/* INÍCIO */}
+          <li className="flex items-center relative font-[Montserrat] font-medium">
             <Link
               className="
                 text-white no-underline bg-transparent
                 border-0 cursor-pointer
-                py-4 px-6 rounded-full
+                py-3 px-4 rounded-full
                 transition-all duration-300
                 text-base
                 hover:bg-white hover:text-black
@@ -52,6 +58,8 @@ export default function Cabecalho() {
             </Link>
           </li>
 
+
+          {/* SOLUÇÕES */}
           <li
             className="
               flex items-center relative
@@ -63,7 +71,7 @@ export default function Cabecalho() {
               className="
                 text-white bg-transparent
                 border-0 cursor-pointer
-                py-4 px-6 rounded-full
+                py-3 px-4 rounded-full
                 transition-all duration-300
                 text-base font-inherit
                 hover:bg-white hover:text-black
@@ -72,6 +80,7 @@ export default function Cabecalho() {
               Soluções
             </button>
 
+            {/* DROPDOWN */}
             <ul
               className="
                 absolute top-[calc(100%+10px)] left-1/2
@@ -118,17 +127,14 @@ export default function Cabecalho() {
             </ul>
           </li>
 
-          <li
-            className="
-              flex items-center relative
-              font-[Montserrat] font-medium
-            "
-          >
+
+          {/* INTEGRANTES */}
+          <li className="flex items-center relative font-[Montserrat] font-medium">
             <Link
               className="
                 text-white no-underline bg-transparent
                 border-0 cursor-pointer
-                py-4 px-6 rounded-full
+                py-3 px-4 rounded-full
                 transition-all duration-300
                 text-base
                 hover:bg-white hover:text-black
@@ -139,17 +145,14 @@ export default function Cabecalho() {
             </Link>
           </li>
 
-          <li
-            className="
-              flex items-center relative
-              font-[Montserrat] font-medium
-            "
-          >
+
+          {/* SOBRE */}
+          <li className="flex items-center relative font-[Montserrat] font-medium">
             <Link
               className="
                 text-white no-underline bg-transparent
                 border-0 cursor-pointer
-                py-4 px-6 rounded-full
+                py-3 px-4 rounded-full
                 transition-all duration-300
                 text-base
                 hover:bg-white hover:text-black
@@ -160,17 +163,14 @@ export default function Cabecalho() {
             </Link>
           </li>
 
-          <li
-            className="
-              flex items-center relative
-              font-[Montserrat] font-medium
-            "
-          >
+
+          {/* CONTATOS */}
+          <li className="flex items-center relative font-[Montserrat] font-medium">
             <Link
               className="
                 text-white no-underline bg-transparent
                 border-0 cursor-pointer
-                py-4 px-6 rounded-full
+                py-3 px-4 rounded-full
                 transition-all duration-300
                 text-base
                 hover:bg-white hover:text-black
@@ -181,17 +181,14 @@ export default function Cabecalho() {
             </Link>
           </li>
 
-          <li
-            className="
-              flex items-center relative
-              font-[Montserrat] font-medium
-            "
-          >
+
+          {/* FAQ */}
+          <li className="flex items-center relative font-[Montserrat] font-medium">
             <Link
               className="
                 text-white no-underline bg-transparent
                 border-0 cursor-pointer
-                py-4 px-6 rounded-full
+                py-3 px-4 rounded-full
                 transition-all duration-300
                 text-base
                 hover:bg-white hover:text-black
@@ -201,11 +198,128 @@ export default function Cabecalho() {
               FAQ
             </Link>
           </li>
+
         </ul>
       </nav>
+
+
+      {/* BOTÃO HAMBÚRGUER */}
+      <button
+        onClick={() => setMenuAberto(!menuAberto)}
+        className="
+          ml-auto
+          md:hidden
+          text-white
+          text-3xl
+          bg-transparent
+          border-0
+          cursor-pointer
+        "
+        aria-label="Abrir menu"
+        aria-expanded={menuAberto}
+      >
+        {menuAberto ? "✕" : "☰"}
+      </button>
+
+
+      {/* MENU MOBILE */}
+      {menuAberto && (
+        <nav
+          className="
+            absolute
+            top-full
+            left-0
+            w-full
+            bg-black
+            border-t border-[#333]
+            md:hidden
+          "
+        >
+          <ul
+            className="
+              flex flex-col
+              items-center
+              gap-3
+              list-none
+              m-0
+              p-6
+            "
+          >
+
+            <li>
+              <Link
+                className="text-white no-underline"
+                to="/"
+                onClick={() => setMenuAberto(false)}
+              >
+                Início
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                className="text-white no-underline"
+                to="/proposta"
+                onClick={() => setMenuAberto(false)}
+              >
+                Integração
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                className="text-white no-underline"
+                to="/proposta2"
+                onClick={() => setMenuAberto(false)}
+              >
+                Gamificação
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                className="text-white no-underline"
+                to="/integrantes"
+                onClick={() => setMenuAberto(false)}
+              >
+                Integrantes
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                className="text-white no-underline"
+                to="/sobre"
+                onClick={() => setMenuAberto(false)}
+              >
+                Sobre
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                className="text-white no-underline"
+                to="/contatos"
+                onClick={() => setMenuAberto(false)}
+              >
+                Contatos
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                className="text-white no-underline"
+                to="/faq"
+                onClick={() => setMenuAberto(false)}
+              >
+                FAQ
+              </Link>
+            </li>
+
+          </ul>
+        </nav>
+      )}
+
     </header>
   );
 }
-
-
-

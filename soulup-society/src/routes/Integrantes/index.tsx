@@ -3,7 +3,7 @@ export default function Integrantes() {
     <main className="conteudo">
       <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
         <div className="text-center flex flex-col gap-3">
-          <h1 className="text-6xl font-montserrat font-bold mb-6">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-montserrat font-bold mb-6 ">
             Integrantes
           </h1>
 
@@ -13,14 +13,17 @@ export default function Integrantes() {
         </div>
       </section>
       <section className="bg-stone-300 p-10!">
-        <div className="mt-10!  h-80 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 xl:grid-cols-5 ">
+        <h2 className="text-3xl text-center font-bold border-b-4">
+            Integrantes
+          </h2>
+        <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
             <img
               src="/img/foto-breno.jpg"
               alt=""
-              className=" mx-auto w-48 h-48 object-cover rounded-full m-3!"
+              className=" mx-auto w-48 h-48 object-cover rounded-full m-3! aspect-square shrink-0"
             />
-            <div className="mt-4!">
+            <div className="mt-4! ">
               <h3 className="text-lg font-bold p-1!">Breno Elísio Lobato</h3>
               <p className="mt-1 text-sm text-gray-500">Aluno - RM569961</p>
               <a
@@ -43,7 +46,7 @@ export default function Integrantes() {
             <img
               src="public\img\foto-christian.png"
               alt=""
-              className="w-48 h-48 object-cover rounded-full m-3!"
+              className="w-48 h-48 object-cover rounded-full m-3! aspect-square shrink-0"
             />
             <div className="mt-4!">
               <h3 className="text-lg font-bold">Chrisitian Verzellesi</h3>
@@ -68,7 +71,7 @@ export default function Integrantes() {
             <img
               src="public\img\foto-gustavo.png"
               alt=""
-              className="w-48 h-48 object-cover rounded-full m-3!"
+              className="w-48 h-48 object-cover rounded-full m-3! aspect-square shrink-0"
             />
             <div className="mt-4!">
               <h3 className="text-lg font-bold">Gustavo Lizier Pontes</h3>
@@ -93,7 +96,7 @@ export default function Integrantes() {
             <img
               src="public\img\foto-eduardo.png"
               alt=""
-              className="w-48 h-48 object-cover rounded-full m-3!"
+              className="w-48 h-48 object-cover rounded-full m-3! aspect-square shrink-0"
             />
             <div className="mt-4!">
               <h3 className="text-lg font-bold ">Eduardo Nery Kurahara</h3>
@@ -118,7 +121,7 @@ export default function Integrantes() {
             <img
               src="img\foto-eduardop.jpg"
               alt=""
-              className="w-48 h-48 object-cover rounded-full m-3!"
+              className="w-48 h-48 object-cover rounded-full m-3! aspect-square shrink-0"
             />
             <div className="mt-4!">
               <h3 className="text-lg font-bold">Eduardo Pizzoli Junior</h3>
