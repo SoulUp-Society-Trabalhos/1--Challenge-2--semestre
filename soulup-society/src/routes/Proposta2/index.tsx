@@ -4,66 +4,45 @@ export default function Proposta() {
       <section className="min-h-[90vh] bg-white font-montserrat flex flex-col items-center justify-center">
         <div className="text-center flex flex-col gap-3">
           <h1 className="text-6xl font-montserrat font-bold mb-6">
-            Integração
+            Gamificação
           </h1>
 
           <div className="text-2xl">
             <p>
-              Aqui você entenderá mais sobre nossa primeira proposta, a
-              Integração!
+              Aqui você entenderá mais sobre nossa segunda proposta, a
+              Gamificação!
             </p>
           </div>
         </div>
       </section>
 
-      {/* SEÇÃO DA PROPOSTA - Mudei bg-stone-300 para o fundo bege bg-[#F5F5DC] */}
+     
       <section className="bg-stone-300 py-8! px-[5%]!">
         <h2 className="text-3xl text-center font-bold mb-6">Nossa proposta</h2>
 
         <div className="flex flex-col gap-4 max-w-5xl mx-auto">
-          {/* Caixa 1 */}
+          
           <div className="bg-white p-6! rounded-xl shadow-md">
             <p className="text-base text-left">
-              Como primeira proposta de nosso projeto, temos a Integração. Ela
-              se baseia na conexão entre o sistema de pontos do aplicativo da
-              SoulUp junto dos sistemas do transporte público, incluindo o
-              bilhete único para metrô, trens e ônibus. A realização desta
-              proposta é possível graças a parcerias com empresas de transporte,
-              como a SPTrans e a Motiva.
+              Como segunda proposta de nosso projeto, temos a gamificação. Ela tem como fundamento a adição de um sistema de missões à rede social da SoulUp, o qual recompensará o usuário que completar estas missões com pontos dentro do aplicativo e também fortalecerá o engajamento da plataforma.
             </p>
           </div>
 
-          {/* Caixa 2 */}
           <div className="bg-white p-6! rounded-xl shadow-md">
             <p className="text-base text-left">
-              Por meio dessa proposta, os usuários da SoulUp poderão utilizar os
-              pontos que possuem dentro do aplicativo para financiar passagens
-              para o transporte público. Eles poderão converter os pontos
-              diretamente em saldo para o bilhete único ou gastar uma
-              determinada quantidade para adquirir uma passagem diretamente,
-              tendo um limite de 10 passagens por mês. Quando este limite for
-              atingido, o usuário será capaz de transformar seus pontos em vales
-              de desconto, que darão 20% de desconto na próxima passagem.
+              Com o novo sistema gamificado de missões, os usuários se sentirão mais animados para passar mais tempo dentro do aplicativo, visto que ao completar as missões, os usuários serão recompensados com pontos, facilitando a aquisição destes. Os desafios são baseados em meios de interagir dentro da plataforma, como fazer postagens ou entrar em comunidades, aumentando a interatividade do app e possibilitando aos usuários a formação de novos laços e amizades. 
             </p>
           </div>
-
-          {/* Caixa 3 */}
+          
           <div className="bg-white p-6! rounded-xl shadow-md">
             <p className="text-base text-left">
-              A integração será bastante benéfica para os usuários, que poderão
-              economizar uma quantia considerável por mês com o transporte. Além
-              disso, a integração também tem como meta incentivar o uso do
-              transporte público, desta forma diminuindo as emissões de gás
-              carbônico na atmosfera. Desta forma, não apenas o meio ambiente
-              irá se beneficiar com a diminuição da emissão de gases do efeito
-              estufa, como também a reputação da SoulUp crescerá como empresa
-              que se importa e se dedica aos cuidados com a natureza.
+              O sistema gamificado de missões é extremamente benéfico para a plataforma pois, graças ao incentivo a ações interativas como realizar postagens e entrar em comunidades, o engajamento dentro do aplicativo acaba sendo fomentado e, junto disso, os usuários acabam se afeiçoando mais ao aplicativo, propiciando a atração de um público maior.
             </p>
           </div>
         </div>
       </section>
 
-      {/* SEÇÃO DA NEWSLETTER - Mantida na mesma cor bege bg-[#F5F5DC] */}
+      
       <div className="py-8 px-[5%]! min-h-[30vh] bg-stone-300">
         <h2 className="text-3xl text-center font-bold border-b-4 border-black pb-3! mb-5!">
           Nosso Newsletter!
