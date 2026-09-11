@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-function Cabecalho() {
+export default function Cabecalho() {
   return (
     <header
       className="
@@ -207,5 +207,5 @@ function Cabecalho() {
   );
 }
 
-export default Cabecalho;
+
 
