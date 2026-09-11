@@ -32,3 +32,30 @@
     color: inherit;
   }
 }
+
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+    height: auto;
+  }
+
+  main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  main {
+    padding: 0 1rem;
+  }
+}

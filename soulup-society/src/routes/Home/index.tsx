@@ -4,9 +4,7 @@ export default function Home() {
     <main>
       <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
         <div className="text-center flex flex-col gap-3">
-          <h1 className="text-6xl font-montserrat font-bold mb-6">
-            Início
-          </h1>
+          <h1 className="text-6xl font-montserrat font-bold mb-6">Início</h1>
 
           <div className="text-2xl">
             <p>Apresentação geral dos membros da nossa equipe.</p>
@@ -69,8 +67,8 @@ export default function Home() {
                 className=" mx-auto w-48 h-48 object-cover rounded-full m-3!"
               />
               <div className="mt-4!">
-                <h3 className="text-lg font-bold p-1!">Breno Elísio Lobato</h3>
-                <p className="mt-1 text-sm text-gray-500">Aluno</p>
+                <h3 className="text-lg font-bold p-1!">Breno Elísio</h3>
+                <p className="mt-1 text-sm text-gray-500 text-center">Aluno</p>
               </div>
             </div>
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
@@ -80,8 +78,8 @@ export default function Home() {
                 className="w-48 h-48 object-cover rounded-full m-3!"
               />
               <div className="mt-4!">
-                <h3 className="text-lg font-bold">Chrisitian Verzellesi</h3>
-                <p className="mt-1 text-sm text-gray-500 ">Aluno</p>
+                <h3 className="text-lg font-bold p-1!">Christian Barbuto</h3>
+                <p className="mt-1 text-sm text-gray-500 text-center">Aluno</p>
               </div>
             </div>
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
@@ -91,8 +89,8 @@ export default function Home() {
                 className="w-48 h-48 object-cover rounded-full m-3!"
               />
               <div className="mt-4!">
-                <h3 className="text-lg font-bold">Gustavo Lizier Pontes</h3>
-                <p className="mt-1 text-sm text-gray-500">Aluno</p>
+                <h3 className="text-lg font-bold p-1!">Gustavo Lizier</h3>
+                <p className="mt-1 text-sm text-gray-500 text-center">Aluno</p>
               </div>
             </div>
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
@@ -102,8 +100,8 @@ export default function Home() {
                 className="w-48 h-48 object-cover rounded-full m-3!"
               />
               <div className="mt-4!">
-                <h3 className="text-lg font-bold ">Eduardo Nery Kurahara</h3>
-                <p className="mt-1 text-sm text-gray-500 ">Aluno</p>
+                <h3 className="text-lg font-bold p-1!">Eduardo Nery</h3>
+                <p className="mt-1 text-sm text-gray-500 text-center">Aluno</p>
               </div>
             </div>
             <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
@@ -113,8 +111,10 @@ export default function Home() {
                 className="w-48 h-48 object-cover rounded-full m-3!"
               />
               <div className="mt-4!">
-                <h3 className="text-lg font-bold">Eduardo Pizzoli Junior</h3>
-                <p className="mt-1 text-sm text-gray-500">Aluno</p>
+                <h3 className="text-lg font-bold p-1!
+                ">Eduardo Pizzoli
+                </h3>
+                <p className="mt-1 text-sm text-gray-500 text-center">Aluno</p>
               </div>
             </div>
           </div>
