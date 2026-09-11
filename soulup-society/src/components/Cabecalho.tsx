@@ -13,7 +13,7 @@ export default function Cabecalho() {
       "
     >
 
-      {/* TÍTULO */}
+      
       <Link
         className="
           text-[1.5rem] font-bold m-0
@@ -25,7 +25,7 @@ export default function Cabecalho() {
       </Link>
 
 
-      {/* MENU DESKTOP */}
+      
       <nav
         className="
           hidden md:block
@@ -41,7 +41,7 @@ export default function Cabecalho() {
           "
         >
 
-          {/* INÍCIO */}
+          
           <li className="flex items-center relative font-[Montserrat] font-medium">
             <Link
               className="
@@ -59,7 +59,7 @@ export default function Cabecalho() {
           </li>
 
 
-          {/* SOLUÇÕES */}
+          
           <li
             className="
               flex items-center relative
@@ -80,7 +80,7 @@ export default function Cabecalho() {
               Soluções
             </button>
 
-            {/* DROPDOWN */}
+            
             <ul
               className="
                 absolute top-[calc(100%+10px)] left-1/2
@@ -128,7 +128,7 @@ export default function Cabecalho() {
           </li>
 
 
-          {/* INTEGRANTES */}
+          
           <li className="flex items-center relative font-[Montserrat] font-medium">
             <Link
               className="
@@ -146,7 +146,7 @@ export default function Cabecalho() {
           </li>
 
 
-          {/* SOBRE */}
+          
           <li className="flex items-center relative font-[Montserrat] font-medium">
             <Link
               className="
@@ -164,7 +164,7 @@ export default function Cabecalho() {
           </li>
 
 
-          {/* CONTATOS */}
+          
           <li className="flex items-center relative font-[Montserrat] font-medium">
             <Link
               className="
@@ -182,7 +182,7 @@ export default function Cabecalho() {
           </li>
 
 
-          {/* FAQ */}
+          
           <li className="flex items-center relative font-[Montserrat] font-medium">
             <Link
               className="
@@ -203,7 +203,7 @@ export default function Cabecalho() {
       </nav>
 
 
-      {/* BOTÃO HAMBÚRGUER */}
+      
       <button
         onClick={() => setMenuAberto(!menuAberto)}
         className="
@@ -222,7 +222,7 @@ export default function Cabecalho() {
       </button>
 
 
-      {/* MENU MOBILE */}
+      
       {menuAberto && (
         <nav
           className="
