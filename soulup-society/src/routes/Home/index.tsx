@@ -9,6 +9,7 @@ export default function Home() {
   const {
     register,
     handleSubmit,
+    formState: { errors },
   } = useForm<NewsletterForm>();
 
   return (
@@ -263,7 +264,13 @@ export default function Home() {
                     <input
                       type="email"
                       id="idEmail"
-                      {...register("email")}
+                      {...register("email", {
+                        required: "O e-mail é obrigatório.",
+                        pattern: {
+                          value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                          message: "Digite um e-mail válido.",
+                        },
+                      })}
                       className="flex-1 border border-gray-300 rounded-lg px-4! py-3! text-black outline-none focus:border-black"
                       placeholder="Digite seu Email."
                     />
@@ -276,6 +283,12 @@ export default function Home() {
                       Enviar
                     </button>
                   </div>
+
+                  {errors.email && (
+                    <p className="mt-2 text-sm text-red-600">
+                      {errors.email.message}
+                    </p>
+                  )}
                 </fieldset>
               </form>
             </section>
