@@ -1,4 +1,18 @@
+import { useForm } from "react-hook-form";
+
 export default function Contatos() {
+  type ContatosForm = {
+    nome: string;
+    email: string;
+    msg: string;
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContatosForm>();
+
   return (
     <main className="conteudo">
       <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
@@ -18,13 +32,12 @@ export default function Contatos() {
           Nosso formulário!
         </h2>
 
-        <div className="">
+        <div>
           <dialog
             id="modal__aviso"
             className="rounded-[10px] bg-black text-white text-center m-auto w-[28%] h-[15%] py-6 backdrop:bg-black/45"
           >
             <h3>Ótimo!</h3>
-
             <p>Mensagem enviada com sucesso!</p>
 
             <button
@@ -40,7 +53,6 @@ export default function Contatos() {
             className="rounded-[10px] bg-black text-white text-center m-auto w-[28%] h-[19%] py-6 backdrop:bg-black/45"
           >
             <h3>Houve um erro.</h3>
-
             <p>Preencha todos os campos para poder enviar a mensagem.</p>
 
             <button
@@ -51,7 +63,10 @@ export default function Contatos() {
             </button>
           </dialog>
 
-          <form className="w-full max-w-250 mx-auto p-8 flex flex-col gap-6 bg-[#ffffff] border border-[#2a2a2a] rounded-3xl">
+          <form
+            className="w-full max-w-250 mx-auto p-8 flex flex-col gap-6 bg-[#ffffff] border border-[#2a2a2a] rounded-3xl"
+            onSubmit={handleSubmit((data) => console.log(data))}
+          >
             <div className="flex flex-col gap-[0.6rem]">
               <label
                 htmlFor="nome"
@@ -63,11 +78,18 @@ export default function Contatos() {
               <input
                 type="text"
                 id="nome"
-                name="nome"
+                {...register("nome", {
+                  required: "O nome é obrigatório.",
+                })}
                 placeholder="Digite seu nome."
-                required
                 className="w-full p-4 border-0 rounded-[0.8rem] bg-[#d7d3d0] text-black text-[0.95rem] placeholder:text-[#888]"
               />
+
+              {errors.nome && (
+                <p className="text-sm text-red-600">
+                  {errors.nome.message}
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col gap-[0.6rem]">
@@ -81,11 +103,22 @@ export default function Contatos() {
               <input
                 type="email"
                 id="email"
-                name="email"
+                {...register("email", {
+                  required: "O e-mail é obrigatório.",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Digite um e-mail válido.",
+                  },
+                })}
                 placeholder="Digite seu E-mail."
-                required
                 className="w-full p-4 border-0 rounded-[0.8rem] bg-[#d7d3d0] text-white text-[0.95rem] placeholder:text-[#888]"
               />
+
+              {errors.email && (
+                <p className="text-sm text-red-600">
+                  {errors.email.message}
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col gap-[0.6rem]">
@@ -97,12 +130,19 @@ export default function Contatos() {
               </label>
 
               <textarea
-                name="msg"
                 id="msg"
+                {...register("msg", {
+                  required: "A mensagem é obrigatória.",
+                })}
                 placeholder="Digite sua mensagem."
-                required
                 className="w-full p-4 border-0 rounded-[0.8rem] bg-[#d7d3d0] text-white text-[0.95rem] placeholder:text-[#888] min-h-37.5 resize-y"
               />
+
+              {errors.msg && (
+                <p className="text-sm text-red-600">
+                  {errors.msg.message}
+                </p>
+              )}
             </div>
 
             <button
