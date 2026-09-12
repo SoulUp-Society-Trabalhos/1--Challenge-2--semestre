@@ -74,52 +74,55 @@ Gustavo Lizier Pontes - RM573234
 
 - gulizpon@gmail.com
 
+
 ## 🌲 Organização de pastas
 
- 1--Challenge-2--semestre
+
+```text
+Challenge-2-semestre/
 │
-├──  soulup-society
+├── soulup-society/
 │   │
-│   ├──  public
-│   │   └──  img
+│   ├── public/
+│   │   └── img/
 │   │       ├── foto-breno.jpg
 │   │       ├── foto-christian.png
 │   │       ├── foto-eduardo.png
 │   │       ├── foto-eduardop.jpg
 │   │       └── foto-gustavo.png
 │   │
-│   ├──  src
+│   ├── src/
 │   │   │
-│   │   ├──  components
+│   │   ├── components/
 │   │   │   ├── Cabecalho.tsx
 │   │   │   └── Rodape.tsx
 │   │   │
-│   │   ├──  routes
-│   │   │   ├──  Contatos
+│   │   ├── routes/
+│   │   │   ├── Contatos/
 │   │   │   │   └── index.tsx
 │   │   │   │
-│   │   │   ├──  Error
+│   │   │   ├── Error/
 │   │   │   │   └── index.tsx
 │   │   │   │
-│   │   │   ├──  Faq
+│   │   │   ├── Faq/
 │   │   │   │   └── index.tsx
 │   │   │   │
-│   │   │   ├──  Home
+│   │   │   ├── Home/
 │   │   │   │   └── index.tsx
 │   │   │   │
-│   │   │   ├──  Integrantes
+│   │   │   ├── Integrantes/
 │   │   │   │   └── index.tsx
 │   │   │   │
-│   │   │   ├──  Proposta
+│   │   │   ├── Proposta/
 │   │   │   │   └── index.tsx
 │   │   │   │
-│   │   │   ├──  Proposta2
+│   │   │   ├── Proposta2/
 │   │   │   │   └── index.tsx
 │   │   │   │
-│   │   │   └──  Sobre
+│   │   │   └── Sobre/
 │   │   │       └── index.tsx
 │   │   │
-│   │   ├──  styles
+│   │   ├── styles/
 │   │   │   └── globals.css
 │   │   │
 │   │   ├── App.tsx
@@ -139,3 +142,43 @@ Gustavo Lizier Pontes - RM573234
 ├── package-lock.json
 ├── package.json
 └── README.md
+```
+
+
+## 🚀 Como rodar localmente
+
+Para executar o projeto em sua máquina, siga os passos abaixo.
+
+### 1. Clone o repositório
+
+```bash
+git clone URL_DO_REPOSITORIO
+```
+
+### 2. Acesse a pasta do projeto
+
+```bash
+cd soulup-society
+```
+
+### 3. Instale as dependências
+
+```bash
+npm install
+```
+
+### 4. Execute o projeto
+
+```bash
+npm run dev
+```
+
+### 5. Acesse no navegador
+
+Após executar o comando, o Vite irá disponibilizar o projeto localmente. Acesse o endereço exibido no terminal, normalmente:
+
+```text
+http://localhost:5173
+```
+
+> **Observação:** é necessário ter o [Node.js](https://nodejs.org/) instalado em sua máquina para executar o projeto.
