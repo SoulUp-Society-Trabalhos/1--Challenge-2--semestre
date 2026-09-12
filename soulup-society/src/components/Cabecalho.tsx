@@ -83,7 +83,7 @@ export default function Cabecalho() {
             
             <ul
               className="
-                absolute top-[calc(100%+10px)] left-1/2
+                absolute top-full left-1/2
                 -translate-x-1/2
                 min-w-50
                 bg-black border border-[#333]
