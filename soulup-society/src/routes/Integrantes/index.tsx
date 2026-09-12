@@ -1,248 +1,132 @@
+const socialClass =
+  "w-10 h-10 rounded-full bg-black text-white flex items-center justify-center no-underline hover:bg-gray-800";
+
+const integrantes = [
+  {
+    nome: "Breno Elísio Lobato",
+    rm: "RM569961",
+    img: "/img/foto-breno.jpg",
+    github: "https://github.com/Brenoell",
+    linkedin: "https://www.linkedin.com/in/breno-elisio-2b123a405/",
+  },
+  {
+    nome: "Chrisitian Verzellesi",
+    rm: "RM568677",
+    img: "/img/foto-christian.png",
+    github: "https://github.com/ChrisVerBarbuto",
+    linkedin:
+      "https://www.linkedin.com/in/christian-verzellesi-barbuto-938463382/",
+  },
+  {
+    nome: "Gustavo Lizier Pontes",
+    rm: "RM573234",
+    img: "/img/foto-gustavo.png",
+    github: "https://github.com/gustavopontes1104",
+    linkedin: "https://www.linkedin.com/in/gustavo-pontes-07aa6a3b3",
+  },
+  {
+    nome: "Eduardo Nery Kurahara",
+    rm: "RM570916",
+    img: "/img/foto-eduardo.png",
+    github: "https://github.com/edu64123",
+    linkedin: "https://www.linkedin.com/in/eduardo-kurahara-786b003b9",
+  },
+  {
+    nome: "Eduardo Pizzoli Junior",
+    rm: "RM569529",
+    img: "/img/foto-eduardop.jpg",
+    github: "https://github.com/dudupizzoli",
+    linkedin:
+      "https://www.linkedin.com/in/eduardo-pizzoli-junior-a2964640b",
+  },
+];
+
 export default function Integrantes() {
   return (
     <main className="conteudo">
       <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
         <div className="text-center flex flex-col gap-3">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-montserrat font-bold mb-6 ">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6">
             Integrantes
           </h1>
-
-          <div className="text-2xl">
-            <p>Apresentação geral dos membros da nossa equipe.</p>
-          </div>
+          <p className="text-2xl">
+            Apresentação geral dos membros da nossa equipe.
+          </p>
         </div>
       </section>
+
       <section className="bg-stone-300 p-10!">
         <h2 className="text-3xl text-center font-bold border-b-4">
           Integrantes
         </h2>
+
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-            <img
-              src="/img/foto-breno.jpg"
-              alt=""
-              className=" mx-auto w-48 h-48 object-cover rounded-full m-3! aspect-square shrink-0"
-            />
-            <div className="mt-4! ">
-              <h3 className="text-lg font-bold p-1!">Breno Elísio Lobato</h3>
-              <p className="mt-1 text-sm text-gray-500">Aluno - RM569961</p>
-              <a
-                href="https://github.com/Brenoell"
-                target="_blank"
-                className="
-                w-10 h-10
-                rounded-full
-              bg-black
-              text-white
-                flex items-center justify-center
-                no-underline
-                transition-all duration-300
-              hover:bg-gray-800"
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/breno-elisio-2b123a405/"
-                className="
-                w-10 h-10
-                rounded-full
-              bg-black
-              text-white
-                flex items-center justify-center
-                no-underline
-                transition-all duration-300
-              hover:bg-gray-800"
-                target="_blank"
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
+          {integrantes.map((integrante) => (
+            <div
+              key={integrante.rm}
+              className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl"
+            >
+              <img
+                src={integrante.img}
+                alt={integrante.nome}
+                className="w-48 h-48 object-cover rounded-full m-3! aspect-square shrink-0"
+              />
+
+              <div className="mt-4!">
+                <h3 className="text-lg font-bold">{integrante.nome}</h3>
+
+                <p className="mt-1 text-sm text-gray-500">
+                  Aluno - {integrante.rm}
+                </p>
+
+                <div className="flex gap-3 mt-3 mb-4">
+                  <a
+                    href={integrante.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={socialClass}
+                  >
+                    <i className="fa-brands fa-github" />
+                  </a>
+
+                  <a
+                    href={integrante.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={socialClass}
+                  >
+                    <i className="fa-brands fa-linkedin" />
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-            <img
-              src="public\img\foto-christian.png"
-              alt=""
-              className="w-48 h-48 object-cover rounded-full m-3! aspect-square shrink-0"
-            />
-            <div className="mt-4!">
-              <h3 className="text-lg font-bold">Chrisitian Verzellesi</h3>
-              <p className="mt-1 text-sm text-gray-500 ">Aluno - RM568677</p>
-              <a
-                href="https://github.com/ChrisVerBarbuto"
-                className="
-                w-10 h-10
-                rounded-full
-              bg-black
-              text-white
-                flex items-center justify-center
-                no-underline
-                transition-all duration-300
-              hover:bg-gray-800"
-                target="_blank"
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/christian-verzellesi-barbuto-938463382/"
-                className="
-                w-10 h-10
-                rounded-full
-              bg-black
-              text-white
-                flex items-center justify-center
-                no-underline
-                transition-all duration-300
-              hover:bg-gray-800"
-                target="_blank"
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-            <img
-              src="public\img\foto-gustavo.png"
-              alt=""
-              className="w-48 h-48 object-cover rounded-full m-3! aspect-square shrink-0"
-            />
-            <div className="mt-4!">
-              <h3 className="text-lg font-bold">Gustavo Lizier Pontes</h3>
-              <p className="mt-1 text-sm text-gray-500">Aluno - RM573234</p>
-              <a
-                href="https://github.com/gustavopontes1104"
-                className="
-                w-10 h-10
-                rounded-full
-              bg-black
-              text-white
-                flex items-center justify-center
-                no-underline
-                transition-all duration-300
-              hover:bg-gray-800"
-                target="_blank"
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/gustavo-pontes-07aa6a3b3?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-                className="
-                w-10 h-10
-                rounded-full
-              bg-black
-              text-white
-                flex items-center justify-center
-                no-underline
-                transition-all duration-300
-              hover:bg-gray-800"
-                target="_blank"
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-            <img
-              src="public\img\foto-eduardo.png"
-              alt=""
-              className="w-48 h-48 object-cover rounded-full m-3! aspect-square shrink-0"
-            />
-            <div className="mt-4!">
-              <h3 className="text-lg font-bold ">Eduardo Nery Kurahara</h3>
-              <p className="mt-1 text-sm text-gray-500 ">Aluno - RM570916</p>
-              <a
-                href="https://github.com/edu64123"
-                className="
-                w-10 h-10
-                rounded-full
-              bg-black
-              text-white
-                flex items-center justify-center
-                no-underline
-                transition-all duration-300
-              hover:bg-gray-800"
-                target="_blank"
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/eduardo-kurahara-786b003b9?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-                className="
-                w-10 h-10
-                rounded-full
-              bg-black
-              text-white
-                flex items-center justify-center
-                no-underline
-                transition-all duration-300
-              hover:bg-gray-800"
-                target="_blank"
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col items-center overflow-hidden rounded-2xl bg-white shadow-md transition duration-300 hover:-translate-y-2 hover:shadow-xl">
-            <img
-              src="img\foto-eduardop.jpg"
-              alt=""
-              className="w-48 h-48 object-cover rounded-full m-3! aspect-square shrink-0"
-            />
-            <div className="mt-4!">
-              <h3 className="text-lg font-bold">Eduardo Pizzoli Junior</h3>
-              <p className="mt-1 text-sm text-gray-500">Aluno - RM569529</p>
-              <a
-                href="https://github.com/dudupizzoli"
-                className="
-                w-10 h-10
-                rounded-full
-              bg-black
-              text-white
-                flex items-center justify-center
-                no-underline
-                transition-all duration-300
-              hover:bg-gray-800"
-                target="_blank"
-              >
-                <i className="fa-brands fa-github"></i>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/eduardo-pizzoli-junior-a2964640b?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-                className="
-                w-10 h-10
-                rounded-full
-              bg-black
-              text-white
-                flex items-center justify-center
-                no-underline
-                transition-all duration-300
-              hover:bg-gray-800"
-                target="_blank"
-              >
-                <i className="fa-brands fa-linkedin"></i>
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
+
       <div className="py-8 px-[5%]! min-h-[30vh] bg-stone-300">
         <div className="mt-10! flex justify-center">
           <section className="bg-white text-black p-8! rounded-xl shadow-lg w-full max-w-xl">
             <h2 className="text-2xl font-bold text-center mb-3 p-3! rounded-lg">
               Receba novidades do nosso projeto!
             </h2>
+
             <dialog id="modal">
               <button aria-label="Fechar a Janela" id="btnFecharModal">
                 X
               </button>
+
               <div id="msg">
                 <p>TESTE DE MSG</p>
               </div>
             </dialog>
-            <form className="formulario__newsletter" action="" method="">
+
+            <form className="formulario__newsletter">
               <fieldset className="newsletter__fieldset">
                 <label htmlFor="idEmail" className="sr-only">
                   Email
                 </label>
+
                 <div className="flex gap-3">
                   <input
                     type="email"
@@ -252,6 +136,7 @@ export default function Integrantes() {
                     placeholder="Digite seu Email."
                     required
                   />
+
                   <button
                     type="submit"
                     id="btnEnviar"
