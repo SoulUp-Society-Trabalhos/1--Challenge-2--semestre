@@ -7,7 +7,8 @@ const integrantes = [
     rm: "RM569961",
     img: "/img/foto-breno.jpg",
     github: "https://github.com/Brenoell",
-    linkedin: "https://www.linkedin.com/in/breno-elisio-2b123a405/",
+    linkedin:
+      "https://www.linkedin.com/in/breno-elisio-2b123a405/",
   },
   {
     nome: "Chrisitian Verzellesi",
@@ -22,14 +23,16 @@ const integrantes = [
     rm: "RM573234",
     img: "/img/foto-gustavo.png",
     github: "https://github.com/gustavopontes1104",
-    linkedin: "https://www.linkedin.com/in/gustavo-pontes-07aa6a3b3",
+    linkedin:
+      "https://www.linkedin.com/in/gustavo-pontes-07aa6a3b3/",
   },
   {
     nome: "Eduardo Nery Kurahara",
     rm: "RM570916",
     img: "/img/foto-eduardo.png",
     github: "https://github.com/edu64123",
-    linkedin: "https://www.linkedin.com/in/eduardo-kurahara-786b003b9",
+    linkedin:
+      "https://www.linkedin.com/in/eduardo-kurahara-786b003b9/",
   },
   {
     nome: "Eduardo Pizzoli Junior",
@@ -37,7 +40,7 @@ const integrantes = [
     img: "/img/foto-eduardop.jpg",
     github: "https://github.com/dudupizzoli",
     linkedin:
-      "https://www.linkedin.com/in/eduardo-pizzoli-junior-a2964640b",
+      "https://www.linkedin.com/in/eduardo-pizzoli-junior-a2964640b/",
   },
 ];
 
@@ -49,6 +52,7 @@ export default function Integrantes() {
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6">
             Integrantes
           </h1>
+
           <p className="text-2xl">
             Apresentação geral dos membros da nossa equipe.
           </p>
@@ -112,7 +116,10 @@ export default function Integrantes() {
             </h2>
 
             <dialog id="modal">
-              <button aria-label="Fechar a Janela" id="btnFecharModal">
+              <button
+                aria-label="Fechar a Janela"
+                id="btnFecharModal"
+              >
                 X
               </button>
 
