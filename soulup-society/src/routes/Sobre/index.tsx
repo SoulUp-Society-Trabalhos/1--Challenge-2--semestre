@@ -1,20 +1,13 @@
+import Hero from "../../components/Hero";
+
 export default function Sobre() {
   return (
     <main className="conteudo">
-      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
-        <div className="text-center flex flex-col gap-3">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-montserrat font-bold mb-6">
-            Mais Sobre nós
-          </h1>
-
-          <div className="text-2xl">
-            <p>
-              Aqui você conhecerá um pouco mais sobre nós, nossa história e
-              ideias.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        titulo="Mais Sobre nós"
+        descricao="qui você conhecerá um pouco mais sobre nós, nossa história e
+              ideias."
+      />
 
       <section className="sobre bg-stone-300 px-8 py-8">
         <div className="mt-10!">
@@ -67,11 +60,7 @@ export default function Sobre() {
               </div>
             </dialog>
 
-            <form
-              className="formulario__newsletter"
-              action=""
-              method=""
-            >
+            <form className="formulario__newsletter" action="" method="">
               <fieldset className="newsletter__fieldset">
                 <label htmlFor="idEmail" className="sr-only">
                   Email

@@ -1,4 +1,5 @@
 import CardIntegrantes from "../../components/CardIntegrantes";
+import Hero from "../../components/Hero";
 
 const integrantes = [
   {
@@ -47,17 +48,10 @@ const integrantes = [
 export default function Integrantes() {
   return (
     <main className="conteudo">
-      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
-        <div className="text-center flex flex-col gap-3">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6">
-            Integrantes
-          </h1>
-
-          <p className="text-2xl">
-            Apresentação geral dos membros da nossa equipe.
-          </p>
-        </div>
-      </section>
+      <Hero
+        titulo="Integrantes"
+        descricao="Conheça os membros do nosso grupo."
+      />
 
       <section className="bg-stone-300 p-10!">
         <h2 className="text-3xl text-center font-bold border-b-4">

@@ -1,27 +1,18 @@
+import Hero from "../../components/Hero";
+
 export default function Proposta() {
   return (
     <main className="conteudo">
-      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
-        <div className="text-center flex flex-col gap-3">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-montserrat font-bold mb-6">
-            Integração
-          </h1>
+      <Hero
+        titulo="Integração"
+        descricao="qui você entenderá mais sobre nossa primeira proposta, a
+              Integração!"
+      />
 
-          <div className="text-2xl">
-            <p>
-              Aqui você entenderá mais sobre nossa primeira proposta, a
-              Integração!
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SEÇÃO DA PROPOSTA COM CAIXAS BRANCAS ARREDONDADAS */}
       <section className="bg-stone-300 py-8! px-[5%]!">
         <h2 className="text-3xl text-center font-bold mb-6">Nossa proposta</h2>
 
         <div className="flex flex-col gap-4 max-w-5xl mx-auto">
-          {/* Caixa 1 */}
           <div className="bg-white p-6! rounded-xl shadow-md">
             <p className="text-base">
               Como primeira proposta de nosso projeto, temos a Integração. Ela
@@ -47,7 +38,6 @@ export default function Proposta() {
             </p>
           </div>
 
-          {/* Caixa 3 */}
           <div className="bg-white p-6! rounded-xl shadow-md">
             <p className="text-base">
               A integração será bastante benéfica para os usuários, que poderão

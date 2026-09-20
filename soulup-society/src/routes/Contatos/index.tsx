@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import Hero from "../../components/Hero";
 
 export default function Contatos() {
   type ContatosForm = {
@@ -18,17 +19,10 @@ export default function Contatos() {
 
   return (
     <main className="conteudo">
-      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
-        <div className="text-center flex flex-col gap-3">
-          <h1 className="text-6xl font-montserrat font-bold mb-6">
-            Nossos contatos
-          </h1>
-
-          <div className="text-2xl">
-            <p>Aqui você conseguirá entrar em contato com a gente!</p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        titulo="Nossos contatos"
+        descricao="Aqui você conseguirá entrar em contato com a gente!"
+      />
 
       <section className="bg-stone-300 py-8 px-[5%]">
         <h2 className="text-3xl text-center font-bold border-b-4 mb-5!">
@@ -93,9 +87,7 @@ export default function Contatos() {
                 />
 
                 {errors.nome && (
-                  <p className="text-sm text-red-600">
-                    {errors.nome.message}
-                  </p>
+                  <p className="text-sm text-red-600">{errors.nome.message}</p>
                 )}
               </div>
 
@@ -122,9 +114,7 @@ export default function Contatos() {
                 />
 
                 {errors.email && (
-                  <p className="text-sm text-red-600">
-                    {errors.email.message}
-                  </p>
+                  <p className="text-sm text-red-600">{errors.email.message}</p>
                 )}
               </div>
 
@@ -146,9 +136,7 @@ export default function Contatos() {
                 />
 
                 {errors.msg && (
-                  <p className="text-sm text-red-600">
-                    {errors.msg.message}
-                  </p>
+                  <p className="text-sm text-red-600">{errors.msg.message}</p>
                 )}
               </div>
 

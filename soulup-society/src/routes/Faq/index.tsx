@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Hero from "../../components/Hero";
 
 interface FAQItem {
   question: string;
@@ -58,19 +59,11 @@ export default function Faq() {
 
   return (
     <main className="conteudo">
-      <section className="min-h-[90vh] bg-white font-montserrat flex flex-col items-center justify-center">
-        <div className="text-center flex flex-col gap-3">
-          <h1 className="text-6xl font-montserrat font-bold mb-6">FAQ</h1>
-
-          <div className="text-2xl">
-            <p>
-              Veja as dúvidas mais recorrentes que giram em torno do nosso
-              projeto.
-            </p>
-          </div>
-        </div>
-      </section>
-
+      <Hero
+              titulo="FAQ"
+              descricao="Veja as dúvidas mais recorrentes que giram em torno do nosso
+              projeto."
+            />
       <section className="bg-stone-300 py-8 px-[5%]">
         <div className="max-w-3xl mx-auto space-y-3">
           {faqItems.map((item, index) => (
