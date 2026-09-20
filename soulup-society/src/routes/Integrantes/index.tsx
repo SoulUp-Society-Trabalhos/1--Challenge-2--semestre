@@ -47,7 +47,6 @@ const integrantes = [
 export default function Integrantes() {
   return (
     <main className="conteudo">
-
       <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
         <div className="text-center flex flex-col gap-3">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6">
@@ -66,7 +65,6 @@ export default function Integrantes() {
         </h2>
 
         <div className="mt-10! grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-
           {integrantes.map((integrante) => (
             <CardIntegrantes
               key={integrante.rm}
@@ -78,15 +76,12 @@ export default function Integrantes() {
               linkedin={integrante.linkedin}
             />
           ))}
-
         </div>
       </section>
 
       <div className="py-8 px-[5%]! min-h-[30vh] bg-stone-300">
         <div className="mt-10! flex justify-center">
-
           <section className="bg-white text-black p-8! rounded-xl shadow-lg w-full max-w-xl">
-
             <h2 className="text-2xl font-bold text-center mb-3 p-3! rounded-lg">
               Receba novidades do nosso projeto!
             </h2>
@@ -103,7 +98,6 @@ export default function Integrantes() {
 
             <form className="formulario__newsletter">
               <fieldset className="newsletter__fieldset">
-
                 <label htmlFor="idEmail" className="sr-only">
                   Email
                 </label>
@@ -126,14 +120,11 @@ export default function Integrantes() {
                     Enviar
                   </button>
                 </div>
-
               </fieldset>
             </form>
-
           </section>
         </div>
       </div>
-
     </main>
   );
 }
