@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import Hero from "../../components/Hero";
 import Newsletter from "../../components/Newsletter";
 
@@ -41,28 +41,58 @@ const faqItems: FAQItem[] = [
 ];
 
 export default function Faq() {
-  
-  
+  const [perguntaAberta, setPerguntaAberta] = useState<number | null>(null);
+
+  function abrirPergunta(index: number) {
+    if (perguntaAberta === index) {
+      setPerguntaAberta(null);
+    } else {
+      setPerguntaAberta(index);
+    }
+  }
 
   return (
     <main className="conteudo">
       <Hero
-              titulo="FAQ"
-              descricao="Veja as dúvidas mais recorrentes que giram em torno do nosso
-              projeto."
-            />
+        titulo="FAQ"
+        descricao="Veja as dúvidas mais recorrentes que giram em torno do nosso projeto."
+      />
+
       <section className="bg-stone-300 py-8 px-[5%]">
         <div className="max-w-3xl mx-auto space-y-3">
+
           {faqItems.map((item, index) => (
-            <div key={index} className="bg-white p-5 rounded-xl shadow-lg">
-              <p className="text-2xl mb-1.5 font-bold">{item.question}</p>
-              <p className="text-base">{item.answer}</p>
+            <div
+              key={index}
+              className="bg-white p-5 rounded-xl shadow-lg"
+            >
+              <button
+                type="button"
+                onClick={() => abrirPergunta(index)}
+                className="w-full flex justify-between items-center text-left cursor-pointer"
+              >
+                <span className="text-2xl font-bold">
+                  {item.question}
+                </span>
+
+                <span className="text-2xl font-bold">
+                  {perguntaAberta === index ? "−" : "+"}
+                </span>
+              </button>
+
+              {perguntaAberta === index && (
+                <p className="text-base mt-4">
+                  {item.answer}
+                </p>
+              )}
+
             </div>
           ))}
+
         </div>
       </section>
 
-      <Newsletter/>
+      <Newsletter />
     </main>
   );
 }
