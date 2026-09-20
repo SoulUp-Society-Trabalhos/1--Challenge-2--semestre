@@ -1,21 +1,9 @@
 import { Link } from "react-router";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
 import Hero from "../../components/Hero";
+import Newsletter from "../../components/Newsletter";
 
 export default function Home() {
-  const [enviado, setEnviado] = useState(false);
-
-  type NewsletterForm = {
-    email: string;
-  };
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<NewsletterForm>();
-
+ 
   return (
     <main>
       <Hero
@@ -219,83 +207,12 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="py-8 px-[5%]! min-h-[30vh]">
-          <h2 className="text-3xl text-center font-bold border-b-4">
-            Contatos
-          </h2>
+        
 
           <div className="mt-10! flex justify-center">
-            <section className="bg-white text-black p-8! rounded-xl shadow-lg w-full max-w-xl">
-              <h2 className="text-2xl font-bold text-center mb-3!">
-                Receba novidades do nosso projeto!
-              </h2>
-
-              <dialog id="modal">
-                <button aria-label="Fechar a Janela" id="btnFecharModal">
-                  X
-                </button>
-
-                <div id="msg">
-                  <p>TESTE DE MSG</p>
-                </div>
-              </dialog>
-
-              {!enviado ? (
-                <form
-                  className="formulario__newsletter"
-                  onSubmit={handleSubmit((data) => {
-                    console.log(data);
-                    setEnviado(true);
-                  })}
-                >
-                  <fieldset className="newsletter__fieldset">
-                    <label htmlFor="idEmail" className="sr-only">
-                      Email
-                    </label>
-
-                    <div className="flex gap-3">
-                      <input
-                        type="email"
-                        id="idEmail"
-                        {...register("email", {
-                          required: "O e-mail é obrigatório.",
-                          pattern: {
-                            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                            message: "Digite um e-mail válido.",
-                          },
-                        })}
-                        className="flex-1 border border-gray-300 rounded-lg px-4! py-3! text-black outline-none focus:border-black"
-                        placeholder="Digite seu Email."
-                      />
-
-                      <button
-                        type="submit"
-                        id="btnEnviar"
-                        className="bg-black text-white px-6! py-3! rounded-lg hover:bg-gray-800"
-                      >
-                        Enviar
-                      </button>
-                    </div>
-
-                    {errors.email && (
-                      <p className="mt-2 text-sm text-red-600">
-                        {errors.email.message}
-                      </p>
-                    )}
-                  </fieldset>
-                </form>
-              ) : (
-                <div className="text-center py-6">
-                  <h3 className="text-2xl font-bold mb-3">
-                    Inscrição realizada com sucesso!
-                  </h3>
-
-                  <p>Obrigado! Você receberá nossas novidades por e-mail.</p>
-                </div>
-              )}
-            </section>
+            <Newsletter/>
           </div>
-        </div>
+      
       </section>
     </main>
   );
