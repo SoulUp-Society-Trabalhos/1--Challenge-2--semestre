@@ -14,6 +14,7 @@ import Error from "./routes/Error/index.tsx";
 import AuthPage from "./routes/App/AuthPage/index.tsx";
 import Cadastro from "./routes/App/Cadastro/index.tsx";
 import Login from "./routes/App/Login/index.tsx";
+import Feed from "./routes/App/Feed/index.tsx";
 import "./styles/globals.css";
 
 const router = createBrowserRouter([
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: "/app/cadastro",
         element: <Cadastro />,
+      },
+      {
+        path: "/app/feed",
+        element: <Feed />,
       },
     ],
   },
