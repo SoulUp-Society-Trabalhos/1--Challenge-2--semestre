@@ -26,6 +26,7 @@ export default function Feed() {
             Página inicial
           </a>
           <a href="#" className="p-3">Explorar</a>
+          <a href="#" className="p-3">Carteira</a>
           <a href="#" className="p-3">Notificações</a>
           <a href="#" className="p-3">Itens salvos</a>
           <a href="#" className="p-3">Configurações</a>
