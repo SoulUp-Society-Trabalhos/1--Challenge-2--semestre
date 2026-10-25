@@ -15,6 +15,8 @@ import AuthPage from "./routes/App/AuthPage/index.tsx";
 import Cadastro from "./routes/App/Cadastro/index.tsx";
 import Login from "./routes/App/Login/index.tsx";
 import Feed from "./routes/App/Feed/index.tsx";
+import Missoes from "./routes/App/Missoes/index.tsx";
+import Carteira from "./routes/App/Carteira/index.tsx";
 import "./styles/globals.css";
 
 const router = createBrowserRouter([
@@ -66,6 +68,14 @@ const router = createBrowserRouter([
       {
         path: "/app/feed",
         element: <Feed />,
+      },
+      {
+        path: "/app/carteira",
+        element: <Carteira />,
+      },
+      {
+        path: "/app/Missoes",
+        element: <Missoes />,
       },
     ],
   },

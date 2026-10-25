@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const posts = [
   {
     id: 1,
@@ -22,18 +24,15 @@ export default function Feed() {
         </h1>
 
         <nav className="flex flex-col gap-3">
-          <a href="#" className="rounded-lg bg-indigo-100 p-3 text-indigo-700">
-            Página inicial
-          </a>
-          <a href="#" className="p-3">Explorar</a>
-          <a href="#" className="p-3">Carteira</a>
-          <a href="#" className="p-3">Notificações</a>
+          <Link to="/app/feed" className="rounded-lg bg-indigo-100 p-3 text-indigo-700">Início</Link>
+          <Link to="/app/carteira" className="p-3">Carteira</Link>
+          <Link to="/app/missoes" className="p-3">Missões</Link>
           <a href="#" className="p-3">Itens salvos</a>
           <a href="#" className="p-3">Configurações</a>
         </nav>
       </aside>
 
-      <section className="w-full rounded-xl bg-white">
+      <section className="w-full rounded-xl bg-white shadow-sm">
         <h2 className="border-b p-5 text-xl font-bold">Página inicial</h2>
 
         <div className="border-b p-5">
