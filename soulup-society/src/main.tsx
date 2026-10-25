@@ -1,3 +1,4 @@
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
@@ -11,13 +12,17 @@ import Proposta from "./routes/Proposta/index.tsx";
 import Proposta2 from "./routes/Proposta2/index.tsx";
 import Sobre from "./routes/Sobre/index.tsx";
 import Error from "./routes/Error/index.tsx";
+
 import AuthPage from "./routes/App/AuthPage/index.tsx";
 import Cadastro from "./routes/App/Cadastro/index.tsx";
 import Login from "./routes/App/Login/index.tsx";
 import Feed from "./routes/App/Feed/index.tsx";
 import Missoes from "./routes/App/Missoes/index.tsx";
 import Carteira from "./routes/App/Carteira/index.tsx";
+
+
 import "./styles/globals.css";
+// import ProtectedRoute from "./routes/App/ProtectedRoute.tsx";
 
 const router = createBrowserRouter([
   {
@@ -54,29 +59,34 @@ const router = createBrowserRouter([
         element: <Sobre />,
       },
       {
-        path: "/app",
+        path: "app",
         element: <AuthPage />,
       },
       {
-        path: "/app/login",
+        path: "app/login",
         element: <Login />,
       },
       {
-        path: "/app/cadastro",
+        path: "app/cadastro",
         element: <Cadastro />,
       },
-      {
-        path: "/app/feed",
-        element: <Feed />,
-      },
-      {
-        path: "/app/carteira",
-        element: <Carteira />,
-      },
-      {
-        path: "/app/Missoes",
-        element: <Missoes />,
-      },
+      // {
+      //   element: <ProtectedRoute />,
+      //   children: [
+          {
+            path: "app/feed",
+            element: <Feed />,
+          },
+          {
+            path: "app/missoes",
+            element: <Missoes />,
+          },
+          {
+            path: "app/carteira",
+            element: <Carteira />,
+          },
+        // ],
+      // },
     ],
   },
 ]);

@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
@@ -18,15 +19,24 @@ export default function Missoes() {
       try {
         const resposta = await fetch("http://localhost:8080/desafios");
 
+        console.log("Status da requisição:", resposta.status);
+
         if (!resposta.ok) {
-          throw new Error("Não foi possível carregar as missões.");
+          throw new Error(`Erro HTTP: ${resposta.status}`);
         }
 
         const dados: Missao[] = await resposta.json();
+
+        console.log("Missões recebidas da API:", dados);
+
         setMissoes(dados);
       } catch (error) {
+        console.error("Erro ao buscar missões:", error);
+
         setErro(
-          "Não foi possível carregar as missões. Verifique se o backend está funcionando.",
+          error instanceof Error
+            ? error.message
+            : "Não foi possível carregar as missões."
         );
       } finally {
         setCarregando(false);
@@ -48,7 +58,10 @@ export default function Missoes() {
             Início
           </Link>
 
-          <Link to="/app/carteira" className="rounded-lg p-3 hover:bg-gray-200">
+          <Link
+            to="/app/carteira"
+            className="rounded-lg p-3 hover:bg-gray-200"
+          >
             Carteira
           </Link>
 
@@ -98,7 +111,7 @@ export default function Missoes() {
 
           {!carregando && erro && (
             <div className="rounded-lg bg-red-50 p-4 text-sm text-red-700">
-              {erro}
+              Não foi possível carregar as missões: {erro}
             </div>
           )}
 
@@ -133,7 +146,9 @@ export default function Missoes() {
                   <div className="flex shrink-0 items-center gap-2 self-start rounded-lg bg-amber-50 px-4 py-3 text-amber-700">
                     <span className="text-xl">★</span>
                     <div>
-                      <p className="text-lg font-bold">{missao.qtdPontos}</p>
+                      <p className="text-lg font-bold">
+                        {missao.qtdPontos}
+                      </p>
                       <p className="text-xs">pontos</p>
                     </div>
                   </div>
