@@ -1,4 +1,3 @@
-
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
@@ -20,9 +19,8 @@ import Feed from "./routes/App/Feed/index.tsx";
 import Missoes from "./routes/App/Missoes/index.tsx";
 import Carteira from "./routes/App/Carteira/index.tsx";
 
-
 import "./styles/globals.css";
-// import ProtectedRoute from "./routes/App/ProtectedRoute.tsx";
+import ProtectedRoute from "./routes/App/ProtectedRoute.tsx";
 
 const router = createBrowserRouter([
   {
@@ -70,9 +68,9 @@ const router = createBrowserRouter([
         path: "app/cadastro",
         element: <Cadastro />,
       },
-      // {
-      //   element: <ProtectedRoute />,
-      //   children: [
+      {
+        element: <ProtectedRoute />,
+        children: [
           {
             path: "app/feed",
             element: <Feed />,
@@ -85,8 +83,8 @@ const router = createBrowserRouter([
             path: "app/carteira",
             element: <Carteira />,
           },
-        // ],
-      // },
+        ],
+      },
     ],
   },
 ]);
