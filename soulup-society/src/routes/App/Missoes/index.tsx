@@ -58,10 +58,7 @@ export default function Missoes() {
             Início
           </Link>
 
-          <Link
-            to="/app/carteira"
-            className="rounded-lg p-3 hover:bg-gray-200"
-          >
+          <Link to="/app/carteira" className="rounded-lg p-3 hover:bg-gray-200">
             Carteira
           </Link>
 
@@ -73,14 +70,11 @@ export default function Missoes() {
           </Link>
 
           <Link to="/app/salvos" className="rounded-lg p-3 hover:bg-gray-200">
-            Itens salvos
+            Itens Salvos
           </Link>
 
-          <Link
-            to="/app/configuracoes"
-            className="rounded-lg p-3 hover:bg-gray-200"
-          >
-            Configurações
+          <Link to="/app/conta" className="p-3">
+            Conta
           </Link>
         </nav>
       </aside>
@@ -146,9 +140,7 @@ export default function Missoes() {
                   <div className="flex shrink-0 items-center gap-2 self-start rounded-lg bg-amber-50 px-4 py-3 text-amber-700">
                     <span className="text-xl">★</span>
                     <div>
-                      <p className="text-lg font-bold">
-                        {missao.qtdPontos}
-                      </p>
+                      <p className="text-lg font-bold">{missao.qtdPontos}</p>
                       <p className="text-xs">pontos</p>
                     </div>
                   </div>

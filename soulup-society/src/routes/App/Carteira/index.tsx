@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router";
 
@@ -48,31 +47,24 @@ export default function Carteira() {
         </h1>
 
         <nav className="flex flex-col gap-3">
-          <Link to="/app/feed" className="rounded-lg p-3 hover:bg-gray-200">
+          <Link to="/app/feed" className="  p-3">
             Início
           </Link>
-
           <Link
             to="/app/carteira"
-            className="rounded-lg bg-indigo-100 p-3 font-semibold text-indigo-700"
+            className="p-3  bg-indigo-100 text-indigo-700 rounded-lg"
           >
             Carteira
           </Link>
-
-          <Link
-            to="/app/missoes"
-            className="rounded-lg p-3 hover:bg-gray-200"
-          >
+          <Link to="/app/missoes" className="p-3">
             Missões
           </Link>
-
-          <a href="#" className="rounded-lg p-3 hover:bg-gray-200">
-            Itens salvos
-          </a>
-
-          <a href="#" className="rounded-lg p-3 hover:bg-gray-200">
-            Configurações
-          </a>
+          <Link to="/app/salvos" className="p-3 ">
+            Itens Salvos
+          </Link>
+          <Link to="/app/conta" className="p-3">
+            Conta
+          </Link>
         </nav>
       </aside>
 
@@ -108,9 +100,7 @@ export default function Carteira() {
         </div>
 
         <div className="p-5 sm:p-6">
-          <h3 className="text-lg font-bold">
-            Trocar pontos por benefícios
-          </h3>
+          <h3 className="text-lg font-bold">Trocar pontos por benefícios</h3>
 
           <p className="mb-5 mt-1 text-sm text-gray-500">
             Escolha onde você quer utilizar seus pontos.
@@ -147,9 +137,7 @@ export default function Carteira() {
 
                 <button
                   type="button"
-                  onClick={() =>
-                    trocarPontos(beneficio.custo, beneficio.nome)
-                  }
+                  onClick={() => trocarPontos(beneficio.custo, beneficio.nome)}
                   className="rounded-lg bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-700"
                 >
                   Trocar pontos
