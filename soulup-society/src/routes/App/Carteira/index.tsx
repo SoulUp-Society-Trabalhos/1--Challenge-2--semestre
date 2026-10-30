@@ -1,26 +1,29 @@
 import { useState } from "react";
 import { Link } from "react-router";
+import { FaBoltLightning } from "react-icons/fa6";
+import { IoWaterSharp } from "react-icons/io5";
+import { IoSubway } from "react-icons/io5";
 
 const beneficios = [
   {
     id: 1,
     nome: "Transporte",
     descricao: "Troque pontos por vale-passagens",
-    icone: "🚌",
+    icone: <IoSubway className="text-red-700"/>,
     custo: 1000,
   },
   {
     id: 2,
     nome: "Luz",
     descricao: "Desconto na conta de energia",
-    icone: "⚡",
+    icone: <FaBoltLightning className="text-amber-400"/>,
     custo: 1500,
   },
   {
     id: 3,
     nome: "Água",
     descricao: "Desconto na conta de água",
-    icone: "💧",
+    icone: <IoWaterSharp className="text-cyan-600"/>,
     custo: 1200,
   },
 ];
@@ -138,7 +141,7 @@ export default function Carteira() {
                 <button
                   type="button"
                   onClick={() => trocarPontos(beneficio.custo, beneficio.nome)}
-                  className="rounded-lg bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-700"
+                  className="rounded-xl bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-700"
                 >
                   Trocar pontos
                 </button>

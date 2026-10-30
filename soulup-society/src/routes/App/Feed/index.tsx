@@ -117,7 +117,7 @@ export default function Feed() {
       </aside>
 
       <section className="w-full rounded-xl bg-white shadow-sm">
-        <h2 className="border-b p-5 text-xl font-bold">Página inicial</h2>
+        <h2 className="border-b p-5 text-2xl font-bold text-center">Página inicial</h2>
 
         <div className="border-b p-5">
           <textarea
