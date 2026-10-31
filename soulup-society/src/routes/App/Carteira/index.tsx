@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { FaBoltLightning } from "react-icons/fa6";
 import { IoWaterSharp } from "react-icons/io5";
 import { IoSubway } from "react-icons/io5";
+import { LiaCoinsSolid } from "react-icons/lia";
 
 const beneficios = [
   {
@@ -79,7 +80,7 @@ export default function Carteira() {
           </p>
         </header>
 
-        <div className="bg-indigo-700 p-6 text-white sm:p-8">
+        <div className="bg-indigo-700 p-6 text-white sm:p-8 relative">
           <p className="text-sm text-indigo-100">Saldo disponível</p>
 
           <h3 className="mt-2 text-4xl font-bold">
@@ -87,6 +88,8 @@ export default function Carteira() {
           </h3>
 
           <p className="mt-1 text-sm text-indigo-100">pontos SoulUp</p>
+
+          <LiaCoinsSolid className="text-5xl text-amber-400 absolute top-6 right-6 sm:top-9 sm:right-8" />
 
           <div className="mt-6 rounded-lg bg-white/10 p-4">
             <p className="font-semibold">Continue completando missões!</p>
