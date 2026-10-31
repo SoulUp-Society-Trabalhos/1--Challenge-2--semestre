@@ -1,8 +1,7 @@
 import { Link } from "react-router";
-import { FaBookmark } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
+import { FaBookmark, FaHeart } from "react-icons/fa";
 import { FaRegCommentDots } from "react-icons/fa6";
-import { FaShare } from "react-icons/fa6";
+import { MdOutlineIosShare } from "react-icons/md";
 
 const posts = [
     {
@@ -75,7 +74,7 @@ export default function ItensSalvos() {
         </aside>
 
         <section className="w-full rounded-xl bg-white shadow-sm">
-          <h2 className="border-b p-5 text-xl font-bold">Itens Salvos</h2>
+          <h2 className="border-b p-5 text-2xl font-bold">Itens Salvos</h2>
           {posts.map((post) => (
             <article key={post.id} className="border-b p-5">
               <strong>{post.nome}</strong>
@@ -86,9 +85,9 @@ export default function ItensSalvos() {
               <div className="h-48 rounded-lg bg-gray-200" />
 
               <div className="mt-3 flex gap-8 text-gray-500">
-                <FaHeart className="text-xl text-indigo-600" />
-                <FaRegCommentDots className="text-xl text-indigo-600" />
-                <FaShare className="text-xl text-indigo-600" />
+                <FaHeart className="text-xl text-red-500" />
+                <FaRegCommentDots className="text-xl text-gray-900" />
+                <MdOutlineIosShare className="text-xl text-gray-900" />
                 <FaBookmark className="text-xl text-indigo-600" />
               </div>
             </article>

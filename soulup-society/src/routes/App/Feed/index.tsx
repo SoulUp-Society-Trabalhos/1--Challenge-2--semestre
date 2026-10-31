@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
 import { FaBookmark, FaHeart } from "react-icons/fa";
-import { FaRegCommentDots, FaShare } from "react-icons/fa6";
+import { FaRegCommentDots } from "react-icons/fa6";
+import { MdOutlineIosShare } from "react-icons/md";
 
 interface Postagem {
   id: number;
@@ -117,7 +118,7 @@ export default function Feed() {
       </aside>
 
       <section className="w-full rounded-xl bg-white shadow-sm">
-        <h2 className="border-b p-5 text-2xl font-bold text-center">Página inicial</h2>
+        <h2 className="border-b p-5 text-2xl font-bold">Página inicial</h2>
 
         <div className="border-b p-5">
           <textarea
@@ -163,11 +164,11 @@ export default function Feed() {
 
             <div className="mt-3 flex gap-8 text-gray-500">
               <span className="flex items-center gap-1">
-                <FaHeart className="text-xl text-indigo-600" />
+                <FaHeart className="text-xl text-red-500" />
                 {post.quantidadeCurtidas}
               </span>
-              <FaRegCommentDots className="text-xl text-indigo-600" />
-              <FaShare className="text-xl text-indigo-600" />
+              <FaRegCommentDots className="text-xl text-gray-900" />
+              <MdOutlineIosShare className="text-xl text-gray-900" />
               <FaBookmark className="text-xl text-indigo-600" />
             </div>
           </article>

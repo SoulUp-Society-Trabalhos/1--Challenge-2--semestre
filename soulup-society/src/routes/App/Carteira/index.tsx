@@ -73,7 +73,7 @@ export default function Carteira() {
 
       <section className="min-w-0 flex-1 overflow-hidden rounded-xl bg-white shadow-sm">
         <header className="border-b p-5">
-          <h2 className="text-xl font-bold">Minha carteira</h2>
+          <h2 className="text-2xl font-bold">Minha carteira</h2>
           <p className="mt-1 text-sm text-gray-500">
             Seus pontos viram benefícios.
           </p>
@@ -95,7 +95,7 @@ export default function Carteira() {
             </p>
             <Link
               to="/app/missoes"
-              className="mt-3 inline-block rounded-lg bg-white px-4 py-2 text-sm font-semibold text-indigo-700 hover:bg-indigo-50"
+              className="mt-3 inline-block rounded-xl bg-white px-4 py-2 text-sm font-semibold text-indigo-700 hover:bg-indigo-50"
             >
               Ver missões
             </Link>

@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { FaStar } from "react-icons/fa6";
 
 interface Missao {
   id: number;
@@ -81,7 +82,7 @@ export default function Missoes() {
 
       <section className="w-full overflow-hidden rounded-xl bg-white shadow-sm">
         <header className="border-b p-5">
-          <h2 className="text-xl font-bold text-gray-800">Missões</h2>
+          <h2 className="text-2xl font-bold text-gray-800">Missões</h2>
           <p className="mt-1 text-sm text-gray-500">
             Complete missões e acumule pontos na sua carteira.
           </p>
@@ -137,8 +138,8 @@ export default function Missoes() {
                     </p>
                   </div>
 
-                  <div className="flex shrink-0 items-center gap-2 self-start rounded-lg bg-amber-50 px-4 py-3 text-amber-700">
-                    <span className="text-xl">★</span>
+                  <div className="flex shrink-0 items-center gap-2 self-start rounded-lg bg-amber-50 px-4 py-3 text-amber-500">
+                    <span className="text-xl"><FaStar /></span>
                     <div>
                       <p className="text-lg font-bold">{missao.qtdPontos}</p>
                       <p className="text-xs">pontos</p>
