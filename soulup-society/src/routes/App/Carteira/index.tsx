@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
+
+const API = "http://localhost:8080";
 
 const beneficios = [
   {
@@ -26,17 +28,74 @@ const beneficios = [
 ];
 
 export default function Carteira() {
-  const [pontos, setPontos] = useState(5000);
+  // id da carteira e saldo vêm do backend
+  const [idCarteira, setIdCarteira] = useState<number | null>(null);
+  const [pontos, setPontos] = useState(0);
+  const [carregando, setCarregando] = useState(true);
+  const [logado, setLogado] = useState(true);
   const [mensagem, setMensagem] = useState("");
 
-  function trocarPontos(custo: number, nome: string) {
+  useEffect(() => {
+    async function carregar() {
+      try {
+        // 1) conta logada (sessão do backend)
+        const resSessao = await fetch(`${API}/auth/sessao`, {
+          credentials: "include",
+        });
+
+        if (!resSessao.ok) {
+          setLogado(false);
+          return;
+        }
+
+        const { idConta } = await resSessao.json();
+
+        // 2) carteira dessa conta
+        const resCarteira = await fetch(`${API}/carteiras/conta/${idConta}`);
+
+        if (!resCarteira.ok) {
+          setMensagem("Não foi possível carregar sua carteira.");
+          return;
+        }
+
+        const carteira = await resCarteira.json();
+        setIdCarteira(carteira.id);
+        setPontos(carteira.quantidadePontos);
+      } catch {
+        setMensagem("Não foi possível conectar ao servidor.");
+      } finally {
+        setCarregando(false);
+      }
+    }
+
+    carregar();
+  }, []);
+
+  async function trocarPontos(custo: number, nome: string) {
+    if (idCarteira === null) return;
+
     if (pontos < custo) {
       setMensagem("Você não tem pontos suficientes para essa troca.");
       return;
     }
 
-    setPontos(pontos - custo);
-    setMensagem(`Troca de ${nome} realizada no protótipo!`);
+    try {
+      // desconta os pontos no banco
+      const res = await fetch(
+        `${API}/carteiras/${idCarteira}/pontos/remover?quantidade=${custo}`,
+        { method: "PATCH" }
+      );
+
+      if (!res.ok) {
+        setMensagem("Não foi possível realizar a troca. Tente novamente.");
+        return;
+      }
+
+      setPontos(pontos - custo);
+      setMensagem(`Troca de ${nome} realizada com sucesso!`);
+    } catch {
+      setMensagem("Não foi possível conectar ao servidor.");
+    }
   }
 
   return (
@@ -80,7 +139,7 @@ export default function Carteira() {
           <p className="text-sm text-indigo-100">Saldo disponível</p>
 
           <h3 className="mt-2 text-4xl font-bold">
-            {pontos.toLocaleString("pt-BR")}
+            {carregando ? "..." : pontos.toLocaleString("pt-BR")}
           </h3>
 
           <p className="mt-1 text-sm text-indigo-100">pontos SoulUp</p>
@@ -105,6 +164,15 @@ export default function Carteira() {
           <p className="mb-5 mt-1 text-sm text-gray-500">
             Escolha onde você quer utilizar seus pontos.
           </p>
+
+          {!logado && (
+            <div
+              role="status"
+              className="mb-4 rounded-lg bg-yellow-50 p-3 text-sm text-yellow-800"
+            >
+              Faça login para ver seus pontos e trocar por benefícios.
+            </div>
+          )}
 
           {mensagem && (
             <div
@@ -137,8 +205,9 @@ export default function Carteira() {
 
                 <button
                   type="button"
+                  disabled={idCarteira === null}
                   onClick={() => trocarPontos(beneficio.custo, beneficio.nome)}
-                  className="rounded-lg bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-700"
+                  className="rounded-lg bg-indigo-600 px-5 py-2.5 font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   Trocar pontos
                 </button>
@@ -147,7 +216,7 @@ export default function Carteira() {
           </div>
 
           <p className="mt-5 text-xs text-gray-400">
-            Valores e trocas são demonstrativos neste protótipo.
+            Os benefícios são demonstrativos neste protótipo.
           </p>
         </div>
       </section>
