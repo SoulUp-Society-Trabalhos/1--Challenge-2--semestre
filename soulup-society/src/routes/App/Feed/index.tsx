@@ -3,6 +3,7 @@ import { Link } from "react-router";
 
 import { FaBookmark, FaHeart } from "react-icons/fa";
 import { FaRegCommentDots, FaShare } from "react-icons/fa6";
+import { FaUserAlt } from "react-icons/fa";
 
 interface Postagem {
   id: number;
@@ -27,7 +28,7 @@ export default function Feed() {
       if (!resposta.ok) throw new Error(`Erro HTTP: ${resposta.status}`);
 
       const dados: Postagem[] = await resposta.json();
-      // mais novas primeiro
+      -0;
       setPosts([...dados].sort((a, b) => b.id - a.id));
     } catch (e) {
       console.error("Erro ao carregar postagens:", e);
@@ -84,7 +85,6 @@ export default function Feed() {
         throw new Error(`Erro HTTP: ${resposta.status}`);
       }
 
-      
       setTexto("");
       await carregarPosts();
     } catch (e) {
@@ -109,10 +109,18 @@ export default function Feed() {
           >
             Início
           </Link>
-          <Link to="/app/carteira" className="p-3">Carteira</Link>
-          <Link to="/app/missoes" className="p-3">Missões</Link>
-          <Link to="/app/salvos" className="p-3">Itens Salvos</Link>
-          <Link to="/app/conta" className="p-3">Conta</Link>
+          <Link to="/app/carteira" className="p-3">
+            Carteira
+          </Link>
+          <Link to="/app/missoes" className="p-3">
+            Missões
+          </Link>
+          <Link to="/app/salvos" className="p-3">
+            Itens Salvos
+          </Link>
+          <Link to="/app/conta" className="p-3">
+            Conta
+          </Link>
         </nav>
       </aside>
 
@@ -154,10 +162,11 @@ export default function Feed() {
 
         {posts.map((post) => (
           <article key={post.id} className="border-b p-5">
-            <strong>{post.conta?.nomeConta}</strong>
-            <span className="ml-2 text-sm text-gray-500">
-              {post.dataPostagem}
-            </span>
+            <div className="flex items-center gap-2">
+              <FaUserAlt className="text-xl text-indigo-600" />
+              <p className="font-semibold">{post.conta?.nomeConta}</p>
+              <span className="text-sm text-gray-500">{post.dataPostagem}</span>
+            </div>
 
             <p className="my-3 whitespace-pre-wrap">{post.descricaoTexto}</p>
 

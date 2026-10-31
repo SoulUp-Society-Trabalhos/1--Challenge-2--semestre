@@ -10,21 +10,7 @@ const beneficios = [
     descricao: "Troque pontos por vale-passagens",
     icone: "🚌",
     custo: 1000,
-  },
-  {
-    id: 2,
-    nome: "Luz",
-    descricao: "Desconto na conta de energia",
-    icone: "⚡",
-    custo: 1500,
-  },
-  {
-    id: 3,
-    nome: "Água",
-    descricao: "Desconto na conta de água",
-    icone: "💧",
-    custo: 1200,
-  },
+  }
 ];
 
 export default function Carteira() {
