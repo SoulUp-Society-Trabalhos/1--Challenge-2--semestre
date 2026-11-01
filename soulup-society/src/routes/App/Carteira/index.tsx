@@ -129,7 +129,7 @@ export default function Carteira() {
             {carregando ? "..." : pontos.toLocaleString("pt-BR")}
           </h3>
 
-          <p className="mt-1 text-sm text-indigo-100">pontos SoulUp</p>
+          <p className="mt-1 text-sm text-indigo-100">Pontos SoulUp</p>
 
           <div className="mt-6 rounded-lg bg-white/10 p-4">
             <p className="font-semibold">Continue completando missões!</p>

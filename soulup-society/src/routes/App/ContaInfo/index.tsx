@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { FaBus } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 
 const API = "http://localhost:8080";
 
@@ -91,7 +93,7 @@ export default function ContaInfo() {
             className="m-5 rounded-lg bg-yellow-50 p-3 text-sm text-yellow-800 sm:m-6"
           >
             Você não está logado.{" "}
-            <Link to="/login" className="font-semibold underline">
+            <Link to="app/" className="font-semibold underline">
               Fazer login
             </Link>
           </div>
@@ -122,9 +124,9 @@ export default function ContaInfo() {
 
         <div className="p-5 sm:p-6">
           <div className="flex flex-col gap-4 sm:flex-row">
-            <article className="flex flex-1 items-center gap-4 rounded-xl border border-gray-200 p-4">
+            <section className="flex flex-1 items-center gap-4 rounded-xl border border-gray-200 p-4">
               <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-3xl">
-                ⭐
+                <FaStar className="text-indigo-700" />
               </div>
               <div>
                 <p className="text-sm text-gray-500">Pontos</p>
@@ -134,11 +136,11 @@ export default function ContaInfo() {
                     : (dados?.pontos ?? 0).toLocaleString("pt-BR")}
                 </p>
               </div>
-            </article>
+            </section>
 
-            <article className="flex flex-1 items-center gap-4 rounded-xl border border-gray-200 p-4">
+            <section className="flex flex-1 items-center gap-4 rounded-xl border border-gray-200 p-4">
               <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-3xl">
-                🚌
+                <FaBus className="text-indigo-700"/>
               </div>
               <div>
                 <p className="text-sm text-gray-500">Passagens</p>
@@ -148,7 +150,7 @@ export default function ContaInfo() {
                     : (dados?.passagens ?? 0).toLocaleString("pt-BR")}
                 </p>
               </div>
-            </article>
+            </section>
           </div>
         </div>
       </section>

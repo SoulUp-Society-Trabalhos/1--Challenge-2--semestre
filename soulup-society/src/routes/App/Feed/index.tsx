@@ -126,11 +126,11 @@ export default function Feed() {
       </aside>
 
       <section className="w-full rounded-xl bg-white shadow-sm">
-        <h2 className="border-b p-5 text-xl font-bold">Página inicial</h2>
+        <h2 className="border-b border-gray-200 p-5 text-xl font-bold">Página inicial</h2>
 
-        <div className="border-b p-5">
+        <div className="border-b border-gray-200 p-5">
           <textarea
-            placeholder="E aí? Alguma novidade?"
+            placeholder="E aí? Fale um pouco de hoje! "
             className="w-full resize-none outline-none"
             rows={3}
             value={texto}
@@ -162,7 +162,7 @@ export default function Feed() {
         )}
 
         {posts.map((post) => (
-          <article key={post.id} className="border-b p-5">
+          <article key={post.id} className="border-b border-gray-200 p-5">
             <div className="flex items-center gap-2">
               <FaUserAlt className="text-xl text-indigo-600" />
               <p className="font-semibold">{post.conta?.nomeConta}</p>

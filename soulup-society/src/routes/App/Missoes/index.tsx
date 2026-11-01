@@ -11,6 +11,7 @@ interface Missao {
 }
 
 export default function Missoes() {
+  
   const [missoes, setMissoes] = useState<Missao[]>([]);
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState("");
@@ -81,14 +82,14 @@ export default function Missoes() {
       </aside>
 
       <section className="w-full overflow-hidden rounded-xl bg-white shadow-sm">
-        <header className="border-b p-5">
+        <header className="border-b border-gray-200 p-5">
           <h2 className="text-xl font-bold text-gray-800">Missões</h2>
           <p className="mt-1 text-sm text-gray-500">
             Complete missões e acumule pontos na sua carteira.
           </p>
         </header>
 
-        <div className="border-b bg-indigo-50 p-5">
+        <div className="border-b border-gray-200 bg-indigo-50 p-5">
           <h3 className="text-lg font-bold text-indigo-900">
             Faça a diferença!
           </h3>
