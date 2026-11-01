@@ -19,7 +19,7 @@ export default function Missoes() {
   useEffect(() => {
     async function buscarMissoes() {
       try {
-        const resposta = await fetch("http://localhost:8080/desafios");
+        const resposta = await fetch("/api/desafios");
 
         console.log("Status da requisição:", resposta.status);
 

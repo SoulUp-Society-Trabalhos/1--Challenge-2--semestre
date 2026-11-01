@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 
+const API = "/api";
+
 export default function Login() {
   document.title = "SoulUp - Login";
   const [email, setEmail] = useState("");
@@ -17,7 +19,7 @@ export default function Login() {
     setCarregando(true);
 
     try {
-      const resposta = await fetch("http://localhost:8080/auth/login", {
+      const resposta = await fetch(`${API}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,10 +31,14 @@ export default function Login() {
         }),
       });
 
-      const dados = await resposta.json();
+      
+      const dados = await resposta.json().catch(() => ({}));
 
       if (!resposta.ok) {
-        setErro(dados.erro || "Não foi possível realizar o login.");
+        setErro(
+          dados.erro ||
+            "Não foi possível realizar o login. Se a API estiver iniciando, aguarde um minuto e tente de novo.",
+        );
         return;
       }
 
@@ -47,18 +53,13 @@ export default function Login() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-stone-100 px-5">
       <section className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
-        <h1 className="mb-2 text-center text-3xl font-bold">
-          Entrar
-        </h1>
+        <h1 className="mb-2 text-center text-3xl font-bold">Entrar</h1>
 
         <p className="mb-8 text-center text-gray-600">
           Acesse sua conta na SoulUp Society
         </p>
 
-        <form
-          className="flex flex-col gap-4"
-          onSubmit={fazerLogin}
-        >
+        <form className="flex flex-col gap-4" onSubmit={fazerLogin}>
           <div className="flex flex-col gap-2">
             <label htmlFor="email">E-mail</label>
             <input

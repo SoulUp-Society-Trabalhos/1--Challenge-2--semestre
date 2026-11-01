@@ -13,7 +13,7 @@ interface Postagem {
   conta: { id: number; nomeConta: string };
 }
 
-const API = "http://localhost:8080";
+const API = "/api";
 
 export default function Feed() {
   document.title = "SoulUp - Feed";
@@ -183,7 +183,7 @@ export default function Feed() {
                 <FaHeart className="text-xl text-indigo-600" />
                 {post.quantidadeCurtidas}
               </span>
-              <FaRegCommentDots className="text-xl text-indigo-600" />
+              <Link to={`/app/postagem/${post.id}`}><FaRegCommentDots className="text-xl text-indigo-600" /></Link>
               <FaShare className="text-xl text-indigo-600" />
               <FaBookmark className="text-xl text-indigo-600" />
             </div>

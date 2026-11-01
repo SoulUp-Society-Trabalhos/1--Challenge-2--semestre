@@ -18,19 +18,19 @@ const posts = [
         texto: "Mais uma publicação de exemplo.",
     },
     {
-        id: 2,
+        id: 3,
         nome: "Outro Usuário",
         usuario: "@outro",
         texto: "Mais uma publicação de exemplo.",
     },
     {
-        id: 2,
+        id: 4,
         nome: "Outro Usuário",
         usuario: "@outro",
         texto: "Mais uma publicação de exemplo.",
     },
     {
-        id: 2,
+        id: 5,
         nome: "Outro Usuário",
         usuario: "@outro",
         texto: "Mais uma publicação de exemplo.",
@@ -67,7 +67,7 @@ export default function ItensSalvos() {
             >
               Itens Salvos
             </Link>
-            {/* <a href="#" className="p-3">Itens salvos</a> */}
+            
             <Link to="/app/conta" className="p-3">
               Conta
             </Link>

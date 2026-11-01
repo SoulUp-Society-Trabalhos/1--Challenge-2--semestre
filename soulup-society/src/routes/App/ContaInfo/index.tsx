@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { FaBus } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 
-const API = "http://localhost:8080";
+const API = "/api";
 
 type Dados = {
   idConta: number;
@@ -15,6 +15,8 @@ type Dados = {
 
 export default function ContaInfo() {
   document.title = "SoulUp - Conta";
+  const navigate = useNavigate();
+
   const [dados, setDados] = useState<Dados | null>(null);
   const [carregando, setCarregando] = useState(true);
   const [logado, setLogado] = useState(true);
@@ -23,7 +25,7 @@ export default function ContaInfo() {
   useEffect(() => {
     async function carregar() {
       try {
-       //Devolve os dados da pagina
+        // Devolve os dados da página
         const res = await fetch(`${API}/auth/me`, {
           credentials: "include",
         });
@@ -48,6 +50,17 @@ export default function ContaInfo() {
 
     carregar();
   }, []);
+
+  async function sair() {
+    try {
+      await fetch(`${API}/auth/logout`, {
+        method: "POST",
+        credentials: "include",
+      });
+    } finally {
+      navigate("/app/login");
+    }
+  }
 
   return (
     <main className="mx-auto flex min-h-screen max-w-6xl gap-8 bg-gray-100 p-6">
@@ -80,11 +93,21 @@ export default function ContaInfo() {
       </aside>
 
       <section className="min-w-0 flex-1 overflow-hidden rounded-xl bg-white shadow-sm">
-        <header className="border-b p-5">
-          <h2 className="text-xl font-bold">Minha Conta</h2>
-          <p className="mt-1 text-sm text-gray-500">
-            Veja aqui! As informações da sua conta!
-          </p>
+        <header className="flex items-center justify-between border-b p-5">
+          <div>
+            <h2 className="text-xl font-bold">Minha Conta</h2>
+            <p className="mt-1 text-sm text-gray-500">
+              Veja aqui! As informações da sua conta!
+            </p>
+          </div>
+
+          <button
+            type="button"
+            onClick={sair}
+            className="rounded-lg border border-red-300 px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-50"
+          >
+            Sair
+          </button>
         </header>
 
         {!logado && (
@@ -93,7 +116,7 @@ export default function ContaInfo() {
             className="m-5 rounded-lg bg-yellow-50 p-3 text-sm text-yellow-800 sm:m-6"
           >
             Você não está logado.{" "}
-            <Link to="app/" className="font-semibold underline">
+            <Link to="/app/login" className="font-semibold underline">
               Fazer login
             </Link>
           </div>
@@ -140,7 +163,7 @@ export default function ContaInfo() {
 
             <section className="flex flex-1 items-center gap-4 rounded-xl border border-gray-200 p-4">
               <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-3xl">
-                <FaBus className="text-indigo-700"/>
+                <FaBus className="text-indigo-700" />
               </div>
               <div>
                 <p className="text-sm text-gray-500">Passagens</p>

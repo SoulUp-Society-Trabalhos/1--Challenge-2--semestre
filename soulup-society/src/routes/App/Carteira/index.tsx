@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
-const API = "http://localhost:8080";
+const API = "/api";
 
 const beneficios = [
   {
@@ -10,14 +10,15 @@ const beneficios = [
     descricao: "Troque pontos por vale-passagens",
     icone: "🚌",
     custo: 1000,
-  }
+  },
 ];
 
 export default function Carteira() {
   document.title = "SoulUp - Carteira";
-  // id da carteira e saldo vêm do backend
+
   const [idCarteira, setIdCarteira] = useState<number | null>(null);
   const [pontos, setPontos] = useState(0);
+  const [passagens, setPassagens] = useState(0);
   const [carregando, setCarregando] = useState(true);
   const [logado, setLogado] = useState(true);
   const [mensagem, setMensagem] = useState("");
@@ -48,6 +49,7 @@ export default function Carteira() {
         const carteira = await resCarteira.json();
         setIdCarteira(carteira.id);
         setPontos(carteira.quantidadePontos);
+        setPassagens(carteira.quantidadePassagens);
       } catch {
         setMensagem("Não foi possível conectar ao servidor.");
       } finally {
@@ -67,18 +69,20 @@ export default function Carteira() {
     }
 
     try {
-      // desconta os pontos no banco
-      const res = await fetch(
-        `${API}/carteiras/${idCarteira}/pontos/remover?quantidade=${custo}`,
-        { method: "PATCH" }
-      );
+      // desconta os pontos e registra a passagem no banco
+      const res = await fetch(`${API}/carteiras/${idCarteira}/trocar-passagem`, {
+        method: "PATCH",
+      });
 
       if (!res.ok) {
-        setMensagem("Não foi possível realizar a troca. Tente novamente.");
+        setMensagem("Não foi possível realizar a troca. Verifique seu saldo.");
         return;
       }
 
-      setPontos(pontos - custo);
+      // saldo e passagens vêm do banco
+      const carteira = await res.json();
+      setPontos(carteira.quantidadePontos);
+      setPassagens(carteira.quantidadePassagens);
       setMensagem(`Troca de ${nome} realizada com sucesso!`);
     } catch {
       setMensagem("Não foi possível conectar ao servidor.");
@@ -130,6 +134,10 @@ export default function Carteira() {
           </h3>
 
           <p className="mt-1 text-sm text-indigo-100">Pontos SoulUp</p>
+
+          <p className="mt-4 text-sm text-indigo-100">
+            Vale-passagens: <strong>{carregando ? "..." : passagens}</strong>
+          </p>
 
           <div className="mt-6 rounded-lg bg-white/10 p-4">
             <p className="font-semibold">Continue completando missões!</p>

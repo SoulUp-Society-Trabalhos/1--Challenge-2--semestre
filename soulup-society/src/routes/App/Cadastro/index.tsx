@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 
-const API_URL = "http://localhost:8080";
+const API_URL = "/api";
 
 export default function Cadastro() {
   const [modalSucesso, setModalSucesso] = useState(false);
@@ -11,12 +11,12 @@ export default function Cadastro() {
 
   const navigate = useNavigate();
 
-  // Dados do usuário
+  
   const [nome, setNome] = useState("");
   const [nascimento, setNascimento] = useState("");
   const [cpf, setCpf] = useState("");
 
-  // Dados da conta
+  
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -45,7 +45,7 @@ export default function Cadastro() {
         throw new Error("Não foi possível consultar o CPF.");
       }
 
-      // 2. Se não encontrou, cadastra um novo usuário
+      
       if (!usuarioCriado?.id) {
         const respostaUsuario = await fetch(`${API_URL}/usuarios`, {
           method: "POST",
