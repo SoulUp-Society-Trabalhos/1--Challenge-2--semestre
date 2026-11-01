@@ -20,6 +20,7 @@ import Missoes from "./routes/App/Missoes/index.tsx";
 import Carteira from "./routes/App/Carteira/index.tsx";
 import ItensSalvos from "./routes/App/ItensSalvos/index.tsx";
 import ContaInfo from "./routes/App/ContaInfo/index.tsx";
+import PostagemDetalhe from "./routes/App/PostagemDetalhe/index.tsx";
 
 import "./styles/globals.css";
 import ProtectedRoute from "./routes/App/ProtectedRoute.tsx";
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
           {
             path: "app/conta",
             element: <ContaInfo />,
+          },
+          {
+            path: "app/postagem/:id",
+            element: <PostagemDetalhe />,
           },
         ],
       },

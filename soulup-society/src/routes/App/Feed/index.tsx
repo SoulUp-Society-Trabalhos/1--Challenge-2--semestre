@@ -126,7 +126,9 @@ export default function Feed() {
       </aside>
 
       <section className="w-full rounded-xl bg-white shadow-sm">
-        <h2 className="border-b border-gray-200 p-5 text-xl font-bold">Página inicial</h2>
+        <h2 className="border-b border-gray-200 p-5 text-xl font-bold">
+          Página inicial
+        </h2>
 
         <div className="border-b border-gray-200 p-5">
           <textarea
@@ -169,7 +171,12 @@ export default function Feed() {
               <span className="text-sm text-gray-500">{post.dataPostagem}</span>
             </div>
 
-            <p className="my-3 whitespace-pre-wrap">{post.descricaoTexto}</p>
+            <Link
+              to={`/app/postagem/${post.id}`}
+              className="my-3 block whitespace-pre-wrap hover:underline"
+            >
+              {post.descricaoTexto}
+            </Link>
 
             <div className="mt-3 flex gap-8 text-gray-500">
               <span className="flex items-center gap-1">
