@@ -11,8 +11,16 @@ export interface Postagem {
   conta: Conta;
 }
 
-// Union type: os estados possíveis da tela
+export interface Comentario {
+  id: number;
+  textoComentario: string;
+  dataComentario: string;
+  quantidadeCurtidas: number;
+  conta: Conta;
+}
+
+//  os estados possíveis da tela
 export type EstadoTela = "carregando" | "erro" | "vazio" | "ok";
 
-// Intersection type: a postagem da API + um campo calculado no front
+
 export type PostagemExibida = Postagem & { dataFormatada: string };
