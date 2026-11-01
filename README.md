@@ -2,11 +2,7 @@
 
 ## 📌 Descrição do Projeto
 
-O Soul Up Society é uma solução desenvolvida para o desafio proposto pela empresa SoulUp, com o objetivo de incentivar ações sustentáveis e transformar a participação dos usuários em benefícios relacionados ao transporte público.
-
-Neste segundo semestre, o projeto recebeu uma nova implementação utilizando uma aplicação web moderna, organizada em componentes e páginas, proporcionando uma navegação mais estruturada e uma melhor experiência para o usuário.
-
-A aplicação apresenta informações sobre a proposta do projeto, seus integrantes, funcionalidades, dúvidas frequentes e formas de contato.
+O projeto busca representar as soluções escolhidas entre os membros do grupo, aos quais trazem sobre a criação de missões para o usuário realizar em troca de pontos
 
 ## 🤖 Tecnologias Utilizadas
 
