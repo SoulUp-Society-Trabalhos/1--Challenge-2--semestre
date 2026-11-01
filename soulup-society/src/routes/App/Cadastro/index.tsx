@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router";
 const API_URL = "http://localhost:8080";
 
 export default function Cadastro() {
+  document.title = "SoulUp - Cadastro";
   const [etapa, setEtapa] = useState(1);
   const [carregando, setCarregando] = useState(false);
   const [erro, setErro] = useState("");

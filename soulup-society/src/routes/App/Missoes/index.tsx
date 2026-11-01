@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
+import { FaStar } from "react-icons/fa";
 
 interface Missao {
   id: number;
@@ -118,7 +119,7 @@ export default function Missoes() {
           {!carregando &&
             !erro &&
             missoes.map((missao) => (
-              <article
+              <section
                 key={missao.id}
                 className="rounded-xl border border-gray-200 p-5 transition hover:border-indigo-300 hover:shadow-sm"
               >
@@ -138,10 +139,10 @@ export default function Missoes() {
                   </div>
 
                   <div className="flex shrink-0 items-center gap-2 self-start rounded-lg bg-amber-50 px-4 py-3 text-amber-700">
-                    <span className="text-xl">★</span>
+                    <FaStar />
                     <div>
                       <p className="text-lg font-bold">{missao.qtdPontos}</p>
-                      <p className="text-xs">pontos</p>
+                      <p className="text-xs font-bold">pontos</p>
                     </div>
                   </div>
                 </div>
@@ -156,7 +157,7 @@ export default function Missoes() {
                     Concluir missão
                   </button>
                 </div>
-              </article>
+              </section>
             ))}
         </div>
       </section>

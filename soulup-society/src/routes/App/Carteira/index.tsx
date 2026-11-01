@@ -14,6 +14,7 @@ const beneficios = [
 ];
 
 export default function Carteira() {
+  document.title = "SoulUp - Carteira";
   // id da carteira e saldo vêm do backend
   const [idCarteira, setIdCarteira] = useState<number | null>(null);
   const [pontos, setPontos] = useState(0);

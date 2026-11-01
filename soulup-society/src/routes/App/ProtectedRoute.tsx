@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router";
 
+
 export default function ProtectedRoute() {
   const [autenticado, setAutenticado] = useState<boolean | null>(null);
 

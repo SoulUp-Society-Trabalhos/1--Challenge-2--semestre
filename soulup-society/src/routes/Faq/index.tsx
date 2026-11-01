@@ -41,6 +41,7 @@ const faqItems: FAQItem[] = [
 ];
 
 export default function Faq() {
+  document.title = "SoulUp - Faq";
   const [perguntaAberta, setPerguntaAberta] = useState<number | null>(null);
 
   function abrirPergunta(index: number) {

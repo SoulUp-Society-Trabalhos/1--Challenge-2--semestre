@@ -2,6 +2,7 @@ import Hero from "../../components/Hero";
 import Newsletter from "../../components/Newsletter";
 
 export default function Sobre() {
+  document.title = "SoulUp - Sobre  ";
   return (
     <main className="conteudo">
       <Hero

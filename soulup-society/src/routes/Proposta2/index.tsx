@@ -2,6 +2,7 @@ import Hero from "../../components/Hero";
 import Newsletter from "../../components/Newsletter";
 
 export default function Proposta() {
+  document.title = "SoulUp - Proposta";
   return (
     <main className="conteudo">
       <Hero

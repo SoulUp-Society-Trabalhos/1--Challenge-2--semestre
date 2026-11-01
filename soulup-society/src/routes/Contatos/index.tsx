@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import Hero from "../../components/Hero";
 
 export default function Contatos() {
+  document.title = "SoulUp - Contatos";
   type ContatosForm = {
     nome: string;
     email: string;

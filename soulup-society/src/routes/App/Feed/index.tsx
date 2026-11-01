@@ -16,6 +16,7 @@ interface Postagem {
 const API = "http://localhost:8080";
 
 export default function Feed() {
+  document.title = "SoulUp - Feed";
   const [posts, setPosts] = useState<Postagem[]>([]);
   const [texto, setTexto] = useState("");
   const [idConta, setIdConta] = useState<number | null>(null);

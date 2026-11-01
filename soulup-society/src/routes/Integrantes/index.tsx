@@ -47,6 +47,7 @@ const integrantes = [
 ];
 
 export default function Integrantes() {
+  document.title = "SoulUp - Integrantes";
   return (
     <main className="conteudo">
       <Hero

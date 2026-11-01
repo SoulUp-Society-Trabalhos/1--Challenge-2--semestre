@@ -12,6 +12,7 @@ type Dados = {
 };
 
 export default function ContaInfo() {
+  document.title = "SoulUp - Conta";
   const [dados, setDados] = useState<Dados | null>(null);
   const [carregando, setCarregando] = useState(true);
   const [logado, setLogado] = useState(true);
