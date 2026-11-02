@@ -1,27 +1,20 @@
+import Hero from "../../components/Hero";
+import Newsletter from "../../components/Newsletter";
+
 export default function Proposta() {
+  document.title = "SoulUp - Proposta";
   return (
     <main className="conteudo">
-      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
-        <div className="text-center flex flex-col gap-3">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-montserrat font-bold mb-6">
-            Integração
-          </h1>
+      <Hero
+        titulo="Integração"
+        descricao="qui você entenderá mais sobre nossa primeira proposta, a
+              Integração!"
+      />
 
-          <div className="text-2xl">
-            <p>
-              Aqui você entenderá mais sobre nossa primeira proposta, a
-              Integração!
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SEÇÃO DA PROPOSTA COM CAIXAS BRANCAS ARREDONDADAS */}
       <section className="bg-stone-300 py-8! px-[5%]!">
         <h2 className="text-3xl text-center font-bold mb-6">Nossa proposta</h2>
 
         <div className="flex flex-col gap-4 max-w-5xl mx-auto">
-          {/* Caixa 1 */}
           <div className="bg-white p-6! rounded-xl shadow-md">
             <p className="text-base">
               Como primeira proposta de nosso projeto, temos a Integração. Ela
@@ -47,7 +40,6 @@ export default function Proposta() {
             </p>
           </div>
 
-          {/* Caixa 3 */}
           <div className="bg-white p-6! rounded-xl shadow-md">
             <p className="text-base">
               A integração será bastante benéfica para os usuários, que poderão
@@ -63,51 +55,7 @@ export default function Proposta() {
         </div>
       </section>
 
-      {/* SEÇÃO DA NEWSLETTER */}
-      <div className="py-8 px-[5%]! min-h-[30vh] bg-stone-300">
-        <h2 className="text-3xl text-center font-bold border-b-4 border-black pb-3! mb-5!">
-          Nosso Newsletter!
-        </h2>
-        <div className="mt-10! flex justify-center">
-          <section className="bg-white text-black p-8! rounded-xl shadow-lg w-full max-w-xl">
-            <h2 className="text-2xl font-bold text-center mb-3!">
-              Receba novidades do nosso projeto!
-            </h2>
-            <dialog id="modal">
-              <button aria-label="Fechar a Janela" id="btnFecharModal">
-                X
-              </button>
-              <div id="msg">
-                <p>TESTE DE MSG</p>
-              </div>
-            </dialog>
-            <form className="formulario__newsletter" action="" method="">
-              <fieldset className="newsletter__fieldset">
-                <label htmlFor="idEmail" className="sr-only">
-                  Email
-                </label>
-                <div className="flex gap-3">
-                  <input
-                    type="email"
-                    id="idEmail"
-                    name="email"
-                    className="flex-1 border border-gray-300 rounded-lg px-4! py-3! text-black outline-none focus:border-black"
-                    placeholder="Digite seu Email."
-                    required
-                  />
-                  <button
-                    type="submit"
-                    id="btnEnviar"
-                    className="bg-black text-white px-6! py-3! rounded-lg hover:bg-gray-800"
-                  >
-                    Enviar
-                  </button>
-                </div>
-              </fieldset>
-            </form>
-          </section>
-        </div>
-      </div>
+      <Newsletter/>
     </main>
   );
 }

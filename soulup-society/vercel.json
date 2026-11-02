@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://challenge-java-2-challenge.onrender.com/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

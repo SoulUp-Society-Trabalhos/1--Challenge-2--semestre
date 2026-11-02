@@ -199,6 +199,22 @@ export default function Cabecalho() {
             </Link>
           </li>
 
+          <li className="flex items-center relative font-[Montserrat] font-medium">
+            <Link
+              className="
+                text-white no-underline bg-transparent
+                border-0 cursor-pointer
+                py-3 px-4 rounded-full
+                transition-all duration-300
+                text-base
+                hover:bg-white hover:text-black
+              "
+              to="/app"
+            >
+              Protótipo
+            </Link>
+          </li>
+
         </ul>
       </nav>
 
@@ -313,6 +329,16 @@ export default function Cabecalho() {
                 onClick={() => setMenuAberto(false)}
               >
                 FAQ
+              </Link>
+            </li>
+
+            <li>
+              <Link
+              className="text-white no-underline"
+              to="/faq"
+              onClick={() => setMenuAberto(false)}
+              >
+                Prototipo
               </Link>
             </li>
 

@@ -1,20 +1,15 @@
+import Hero from "../../components/Hero";
+import Newsletter from "../../components/Newsletter";
+
 export default function Sobre() {
+  document.title = "SoulUp - Sobre  ";
   return (
     <main className="conteudo">
-      <section className="min-h-[90vh] bg-stone-100 font-montserrat flex flex-col items-center justify-center">
-        <div className="text-center flex flex-col gap-3">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-montserrat font-bold mb-6">
-            Mais Sobre nós
-          </h1>
-
-          <div className="text-2xl">
-            <p>
-              Aqui você conhecerá um pouco mais sobre nós, nossa história e
-              ideias.
-            </p>
-          </div>
-        </div>
-      </section>
+      <Hero
+        titulo="Mais Sobre nós"
+        descricao="qui você conhecerá um pouco mais sobre nós, nossa história e
+              ideias."
+      />
 
       <section className="sobre bg-stone-300 px-8 py-8">
         <div className="mt-10!">
@@ -50,56 +45,7 @@ export default function Sobre() {
         </div>
       </section>
 
-      <div className="py-8 px-[5%]! min-h-[30vh] bg-stone-300">
-        <div className="mt-10! flex justify-center">
-          <section className="bg-white text-black p-8! rounded-xl shadow-lg w-full max-w-xl">
-            <h2 className="text-2xl font-bold text-center mb-3!">
-              Receba novidades do nosso projeto!
-            </h2>
-
-            <dialog id="modal">
-              <button aria-label="Fechar a Janela" id="btnFecharModal">
-                X
-              </button>
-
-              <div id="msg">
-                <p>TESTE DE MSG</p>
-              </div>
-            </dialog>
-
-            <form
-              className="formulario__newsletter"
-              action=""
-              method=""
-            >
-              <fieldset className="newsletter__fieldset">
-                <label htmlFor="idEmail" className="sr-only">
-                  Email
-                </label>
-
-                <div className="flex gap-3">
-                  <input
-                    type="email"
-                    id="idEmail"
-                    name="email"
-                    className="flex-1 border border-gray-300 rounded-lg px-4! py-3! text-black outline-none focus:border-black"
-                    placeholder="Digite seu Email."
-                    required
-                  />
-
-                  <button
-                    type="submit"
-                    id="btnEnviar"
-                    className="bg-black text-white px-6! py-3! rounded-lg hover:bg-gray-800"
-                  >
-                    Enviar
-                  </button>
-                </div>
-              </fieldset>
-            </form>
-          </section>
-        </div>
-      </div>
+      <Newsletter/>
     </main>
   );
 }
