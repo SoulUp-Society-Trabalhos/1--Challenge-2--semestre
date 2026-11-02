@@ -1,5 +1,6 @@
-const API_URL = import.meta.env.VITE_API_URL || "/api";
 
+const API_URL = "/api";
+ 
 export async function api(endpoint: string, options: RequestInit = {}) {
   const resposta = await fetch(`${API_URL}${endpoint}`, {
     credentials: "include",
@@ -9,10 +10,11 @@ export async function api(endpoint: string, options: RequestInit = {}) {
       ...options.headers,
     },
   });
-
+ 
   if (!resposta.ok) {
     throw new Error(`Erro na requisição (${resposta.status})`);
   }
-
+ 
   return resposta;
 }
+ 
