@@ -1,7 +1,12 @@
+
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 
-const API_URL = "/api";
+import {
+  buscarUsuarioPorCpf,
+  criarUsuario,
+  criarConta,
+} from "../../../service/cadastro";
 
 export default function Cadastro() {
   const [modalSucesso, setModalSucesso] = useState(false);
@@ -11,12 +16,10 @@ export default function Cadastro() {
 
   const navigate = useNavigate();
 
-  
   const [nome, setNome] = useState("");
   const [nascimento, setNascimento] = useState("");
   const [cpf, setCpf] = useState("");
 
-  
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -24,6 +27,7 @@ export default function Cadastro() {
     document.title = "SoulUp - Cadastro";
   }, []);
 
+  // Primeira etapa: cadastrar os dados do usuário
   async function cadastrarUsuario(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setErro("");
@@ -32,73 +36,44 @@ export default function Cadastro() {
     try {
       const cpfLimpo = cpf.replace(/\D/g, "");
 
-      // 1. Procura se o usuário já existe pelo CPF
-      const respostaBusca = await fetch(
-        `${API_URL}/usuarios/procurarPorCpf/${cpfLimpo}`,
+      // Verifica se o CPF já está cadastrado
+      const usuarioExistente = await buscarUsuarioPorCpf(cpfLimpo);
+
+      if (usuarioExistente?.id) {
+        throw new Error("Este CPF já está cadastrado!");
+      }
+
+      // Se o CPF não existir, cadastra um novo usuário
+      await criarUsuario(nome, nascimento, cpfLimpo);
+
+      // Busca o usuário criado para obter seu ID
+      const usuarioCriado = await buscarUsuarioPorCpf(cpfLimpo);
+
+      if (!usuarioCriado?.id) {
+        throw new Error(
+          "Usuário cadastrado, mas não foi possível obter seu ID."
+        );
+      }
+
+      // Guarda o ID para a segunda etapa
+      sessionStorage.setItem(
+        "usuarioCadastroId",
+        String(usuarioCriado.id)
       );
 
-      let usuarioCriado: { id: number } | null = null;
-
-      if (respostaBusca.ok) {
-        usuarioCriado = await respostaBusca.json();
-      } else if (respostaBusca.status !== 404) {
-        throw new Error("Não foi possível consultar o CPF.");
-      }
-
-      
-      if (!usuarioCriado?.id) {
-        const respostaUsuario = await fetch(`${API_URL}/usuarios`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            nome: nome.trim(),
-            dataNascimento: nascimento,
-            numeroCpf: Number(cpfLimpo),
-          }),
-        });
-
-        if (!respostaUsuario.ok) {
-          throw new Error(
-            "Não foi possível cadastrar o usuário. Verifique os dados informados.",
-          );
-        }
-
-        // 3. Busca o usuário recém-cadastrado para obter o ID
-        const novaBusca = await fetch(
-          `${API_URL}/usuarios/procurarPorCpf/${cpfLimpo}`,
-        );
-
-        if (!novaBusca.ok) {
-          throw new Error(
-            "Usuário cadastrado, mas não foi possível obter seu ID.",
-          );
-        }
-
-        usuarioCriado = await novaBusca.json();
-      }
-
-      if (!usuarioCriado?.id) {
-        throw new Error("Não foi possível identificar o usuário.");
-      }
-
-      // 4. Guarda o ID para a próxima etapa
-      sessionStorage.setItem("usuarioCadastroId", String(usuarioCriado.id));
-
-      // 5. Avança para criar a conta
       setEtapa(2);
     } catch (error) {
       setErro(
         error instanceof Error
           ? error.message
-          : "Ocorreu um erro ao cadastrar.",
+          : "Ocorreu um erro ao cadastrar."
       );
     } finally {
       setCarregando(false);
     }
   }
 
+  // Segunda etapa: criar a conta
   async function cadastrarConta(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setErro("");
@@ -109,46 +84,20 @@ export default function Cadastro() {
 
       if (!usuarioId) {
         throw new Error(
-          "Não encontramos o usuário. Volte e preencha os dados novamente.",
+          "Não encontramos o usuário. Volte e preencha os dados novamente."
         );
       }
 
-      // Cadastra a conta vinculada ao usuário
-      const respostaConta = await fetch(`${API_URL}/contas`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          nomeConta: nome.trim(),
-          email: email.trim(),
-          senha,
-          dataCriacao: new Date().toISOString().slice(0, 10),
-          bio: "",
-          tipoConta: "USUARIO",
-          usuario: {
-            id: Number(usuarioId),
-          },
-        }),
-      });
-
-      console.log("Resposta /contas:", respostaConta.status);
-
-      if (!respostaConta.ok) {
-        throw new Error(
-          "Não foi possível criar a conta. Verifique os dados e o backend.",
-        );
-      }
+      // Cria a conta vinculada ao usuário
+      await criarConta(nome, email, senha, Number(usuarioId));
 
       sessionStorage.removeItem("usuarioCadastroId");
-      console.log("Conta criada, abrindo modal");
       setModalSucesso(true);
     } catch (error) {
-      console.error("Erro ao criar conta:", error);
       setErro(
         error instanceof Error
           ? error.message
-          : "Ocorreu um erro ao criar a conta.",
+          : "Ocorreu um erro ao criar a conta."
       );
     } finally {
       setCarregando(false);
@@ -156,13 +105,15 @@ export default function Cadastro() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-stone-100 px-5">
-      <section className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
+    <main className="flex min-h-screen items-center justify-center bg-stone-100 px-4 py-8 sm:px-5">
+      <section className="w-full max-w-md rounded-2xl bg-white p-5 shadow-lg sm:p-8">
         <h1 className="mb-2 text-center text-3xl font-bold">
           {etapa === 1 ? "Dados do usuário" : "Criar conta"}
         </h1>
 
-        <p className="mb-8 text-center text-gray-600">Etapa {etapa} de 2</p>
+        <p className="mb-8 text-center text-gray-600">
+          Etapa {etapa} de 2
+        </p>
 
         {erro && (
           <p
@@ -174,9 +125,13 @@ export default function Cadastro() {
         )}
 
         {etapa === 1 ? (
-          <form className="flex flex-col gap-4" onSubmit={cadastrarUsuario}>
+          <form
+            className="flex flex-col gap-4"
+            onSubmit={cadastrarUsuario}
+          >
             <div className="flex flex-col gap-2">
               <label htmlFor="nome">Nome completo</label>
+
               <input
                 type="text"
                 id="nome"
@@ -191,6 +146,7 @@ export default function Cadastro() {
 
             <div className="flex flex-col gap-2">
               <label htmlFor="nascimento">Data de nascimento</label>
+
               <input
                 type="date"
                 id="nascimento"
@@ -204,6 +160,7 @@ export default function Cadastro() {
 
             <div className="flex flex-col gap-2">
               <label htmlFor="cpf">CPF</label>
+
               <input
                 type="text"
                 id="cpf"
@@ -226,9 +183,13 @@ export default function Cadastro() {
             </button>
           </form>
         ) : (
-          <form className="flex flex-col gap-4" onSubmit={cadastrarConta}>
+          <form
+            className="flex flex-col gap-4"
+            onSubmit={cadastrarConta}
+          >
             <div className="flex flex-col gap-2">
               <label htmlFor="email">E-mail</label>
+
               <input
                 type="email"
                 id="email"
@@ -242,6 +203,7 @@ export default function Cadastro() {
 
             <div className="flex flex-col gap-2">
               <label htmlFor="senha">Senha</label>
+
               <input
                 type="password"
                 id="senha"

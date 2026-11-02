@@ -1,8 +1,7 @@
+
 import { Link } from "react-router";
-import { FaBookmark } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { FaRegCommentDots } from "react-icons/fa6";
-import { FaShare } from "react-icons/fa6";
+import { FaBookmark, FaHeart } from "react-icons/fa";
+import { FaRegCommentDots, FaShare } from "react-icons/fa6";
 
 const posts = [
     {
@@ -36,7 +35,7 @@ const posts = [
         texto: "Mais uma publicação de exemplo.",
     },
     {
-        id: 2,
+        id: 6,
         nome: "Outro Usuário",
         usuario: "@outro",
         texto: "Mais uma publicação de exemplo.",
@@ -45,55 +44,66 @@ const posts = [
 
 export default function ItensSalvos() {
     return (
-      <main className="mx-auto flex min-h-screen max-w-6xl gap-8 bg-gray-100 p-6">
-        <aside className="w-56 shrink-0">
-          <h1 className="mb-8 text-2xl font-bold text-indigo-600">
-            SoulUp Society
-          </h1>
+        <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-5 bg-gray-100 p-3 sm:p-5 md:flex-row md:gap-8 md:p-6">
 
-          <nav className="flex flex-col gap-3">
-            <Link to="/app/feed" className="p-3">
-              Início
-            </Link>
-            <Link to="/app/carteira" className="p-3">
-              Carteira
-            </Link>
-            <Link to="/app/missoes" className="p-3">
-              Missões
-            </Link>
-            <Link
-              to="/app/salvos"
-              className="p-3 bg-indigo-100 text-indigo-700 rounded-lg"
-            >
-              Itens Salvos
-            </Link>
-            
-            <Link to="/app/conta" className="p-3">
-              Conta
-            </Link>
-          </nav>
-        </aside>
+            <aside className="w-full shrink-0 md:w-56">
+                <h1 className="mb-4 text-xl font-bold text-indigo-600 sm:text-2xl md:mb-8">
+                    SoulUp Society
+                </h1>
 
-        <section className="w-full rounded-xl bg-white shadow-sm">
-          <h2 className="border-b p-5 text-xl font-bold">Itens Salvos</h2>
-          {posts.map((post) => (
-            <article key={post.id} className="border-b p-5">
-              <strong>{post.nome}</strong>
-              <span className="ml-2 text-sm text-gray-500">{post.usuario}</span>
+                <nav className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:flex md:flex-col md:gap-3">
+                    <Link to="/app/feed" className="rounded-lg p-3 text-sm sm:text-base">
+                        Início
+                    </Link>
 
-              <p className="my-3">{post.texto}</p>
+                    <Link to="/app/carteira" className="rounded-lg p-3 text-sm sm:text-base">
+                        Carteira
+                    </Link>
 
-              <div className="h-48 rounded-lg bg-gray-200" />
+                    <Link to="/app/missoes" className="rounded-lg p-3 text-sm sm:text-base">
+                        Missões
+                    </Link>
 
-              <div className="mt-3 flex gap-8 text-gray-500">
-                <FaHeart className="text-xl text-indigo-600" />
-                <FaRegCommentDots className="text-xl text-indigo-600" />
-                <FaShare className="text-xl text-indigo-600" />
-                <FaBookmark className="text-xl text-indigo-600" />
-              </div>
-            </article>
-          ))}
-        </section>
-      </main>
+                    <Link
+                        to="/app/salvos"
+                        className="rounded-lg bg-indigo-100 p-3 text-sm text-indigo-700 sm:text-base"
+                    >
+                        Itens Salvos
+                    </Link>
+
+                    <Link to="/app/conta" className="rounded-lg p-3 text-sm sm:text-base">
+                        Conta
+                    </Link>
+                </nav>
+            </aside>
+
+            <section className="w-full min-w-0 rounded-xl bg-white shadow-sm">
+                <h2 className="border-b border-gray-200 p-4 text-lg font-bold sm:p-5 sm:text-xl">
+                    Itens Salvos
+                </h2>
+
+                {posts.map((post) => (
+                    <article key={post.id} className="border-b border-gray-200 p-4 sm:p-5">
+                        <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                            <strong className="wrap-break-word">{post.nome}</strong>
+                            <span className="text-sm text-gray-500">{post.usuario}</span>
+                        </div>
+
+                        <p className="my-3 wrap-break-word text-sm sm:text-base">
+                            {post.texto}
+                        </p>
+
+                        <div className="h-36 w-full rounded-lg bg-gray-200 sm:h-48" />
+
+                        <div className="mt-3 flex flex-wrap items-center gap-5 text-gray-500 sm:gap-8">
+                            <FaHeart className="text-lg text-indigo-600 sm:text-xl" />
+                            <FaRegCommentDots className="text-lg text-indigo-600 sm:text-xl" />
+                            <FaShare className="text-lg text-indigo-600 sm:text-xl" />
+                            <FaBookmark className="text-lg text-indigo-600 sm:text-xl" />
+                        </div>
+                    </article>
+                ))}
+            </section>
+        </main>
     );
 }

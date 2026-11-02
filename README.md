@@ -2,19 +2,19 @@
 
 ## 📌 Descrição do Projeto
 
-O projeto busca representar as soluções escolhidas entre os membros do grupo, aos quais trazem sobre a criação de missões para o usuário realizar em troca de pontos.
+O SoulUp Society é uma plataforma que busca incentivar práticas sustentáveis por meio de missões realizadas pelos usuários em troca de pontos.
 
-A plataforma permite que o usuário crie uma conta, faça login, acompanhe o feed da comunidade, publique e comente em postagens, visualize missões e troque seus pontos por benefícios (como vale-passagens) na carteira.
+A plataforma permite que o usuário crie uma conta, faça login, acompanhe o feed da comunidade, publique e comente em postagens, visualize missões e troque seus pontos por benefícios, como vale-passagens.
 
 ## 🖼️ Imagens do Projeto
 
-<!-- Coloque as imagens na pasta soulup-society/public/img/ (ou docs/) e ajuste os caminhos abaixo -->
+*Coloque as imagens na pasta `soulup-society/public/img/` e ajuste os caminhos abaixo.*
 
-![Tela inicial](COLOQUE_AQUI_O_CAMINHO_DA_IMAGEM_DA_HOME)
+![Tela inicial](./soulup-society/public/img/inicio.png)
 
-![Feed](COLOQUE_AQUI_O_CAMINHO_DA_IMAGEM_DO_FEED)
+![Feed](./soulup-society/public/img/feed.png)
 
-![Carteira](COLOQUE_AQUI_O_CAMINHO_DA_IMAGEM_DA_CARTEIRA)
+![Carteira](./soulup-society/public/img/carteira.png)
 
 ## 🤖 Tecnologias Utilizadas
 
@@ -48,44 +48,44 @@ A plataforma permite que o usuário crie uma conta, faça login, acompanhe o fee
 
 | Recurso | Link |
 |---|---|
-| 💻 Repositório do Front-end (GitHub) | https://github.com/SoulUp-Society-Trabalhos/1--Challenge-2--semestre.git |
-| ☕ Repositório da API Java (GitHub) | https://github.com/Brenoell/Challenge-Java-2-Challenge.git |
-| 🌐 Site publicado (Vercel) | https://projeto-front-self.vercel.app/ |
-| ⚙️ API publicada (Render) | https://challenge-java-2-challenge.onrender.com |
+| 💻 Repositório do Front-end (GitHub) | [Repositório](https://github.com/SoulUp-Society-Trabalhos/1--Challenge-2--semestre) |
+| ☕ Repositório da API Java (GitHub) | [Repositório](https://github.com/Brenoell/Challenge-Java-2-Challenge) |
+| 🌐 Site publicado (Vercel) | [Acessar site](https://projeto-front-self.vercel.app/) |
+| ⚙️ API publicada (Render) | [Acessar API](https://challenge-java-2-challenge.onrender.com) |
 | 🎥 Vídeo de apresentação (YouTube) | COLOQUE_AQUI_O_LINK_DO_VIDEO |
 
-> **Observação:** A API demora um tempo relativamente longo para responder, então porfavor tenha paciência.
+> **Observação:** A API pode levar algum tempo para responder devido ao tempo de inicialização do servidor. Aguarde alguns instantes caso a primeira requisição demore.
 
 ## 👨‍🎓 Autores e créditos
 
 Breno Elisio Leal Lobato - RM569961
 
-- GitHub: https://github.com/Brenoell
-- LinkedIn: https://www.linkedin.com/in/breno-elisio-2b123a405/
+- GitHub: [Brenoell](https://github.com/Brenoell)
+- LinkedIn: [Perfil](https://www.linkedin.com/in/breno-elisio-2b123a405/)
 
 Chrisitian Verzellesi Barbuto - RM568677
 
-- GitHub: https://github.com/ChrisVerBarbuto
-- LinkedIn: https://www.linkedin.com/in/christian-verzellesi-barbuto-938463382/
+- GitHub: [ChrisVerBarbuto](https://github.com/ChrisVerBarbuto)
+- LinkedIn: [Perfil](https://www.linkedin.com/in/christian-verzellesi-barbuto-938463382/)
 
 Eduardo Pizzoli Junior - RM569529
 
-- GitHub: https://github.com/dudupizzoli
-- LinkedIn: https://www.linkedin.com/in/eduardo-pizzoli-junior-a2964640b
+- GitHub: [dudupizzoli](https://github.com/dudupizzoli)
+- LinkedIn: [Perfil](https://www.linkedin.com/in/eduardo-pizzoli-junior-a2964640b)
 
 Eduardo Nery Kurahara - RM570916
 
-- GitHub: https://github.com/edu64123
-- LinkedIn: https://www.linkedin.com/in/eduardo-kurahara-786b003b9
+- GitHub: [edu64123](https://github.com/edu64123)
+- LinkedIn: [Perfil](https://www.linkedin.com/in/eduardo-kurahara-786b003b9)
 
 Gustavo Lizier Pontes - RM573234
 
-- GitHub: https://github.com/gustavopontes1104
-- LinkedIn: https://www.linkedin.com/in/gustavo-pontes-07aa6a3b3
+- GitHub: [gustavopontes1104](https://github.com/gustavopontes1104)
+- LinkedIn: [Perfil](https://www.linkedin.com/in/gustavo-pontes-07aa6a3b3)
 
 ## 👾 Link do Repositório Público
 
-https://github.com/SoulUp-Society-Trabalhos/1--Challenge-2--semestre.git
+[Repositório SoulUp Society](https://github.com/SoulUp-Society-Trabalhos/1--Challenge-2--semestre)
 
 ## 📞 Contatos
 
@@ -112,79 +112,77 @@ Gustavo Lizier Pontes - RM573234
 ## 🌲 Organização de pastas
 
 ```text
-Challenge-2-semestre/
-│
-├── soulup-society/
-│   │
-│   ├── public/
-│   │   └── img/
-│   │       ├── foto-breno.jpg
-│   │       ├── foto-christian.png
-│   │       ├── foto-eduardo.png
-│   │       ├── foto-eduardop.jpg
-│   │       └── foto-gustavo.png
-│   │
-│   ├── src/
-│   │   │
-│   │   ├── components/
-│   │   │   ├── Cabecalho.tsx
-│   │   │   ├── CardIntegrantes.tsx
-│   │   │   ├── Hero.tsx
-│   │   │   ├── Newsletter.tsx
-│   │   │   └── Rodape.tsx
-│   │   │
-│   │   ├── routes/
-│   │   │   ├── App/
-│   │   │   │   ├── AuthPage/
-│   │   │   │   ├── Cadastro/
-│   │   │   │   ├── Carteira/
-│   │   │   │   ├── ContaInfo/
-│   │   │   │   ├── Feed/
-│   │   │   │   ├── ItensSalvos/
-│   │   │   │   ├── Login/
-│   │   │   │   ├── Missoes/
-│   │   │   │   ├── PostagemDetalhe/
-│   │   │   │   └── ProtectedRoute.tsx
-│   │   │   │
-│   │   │   ├── Contatos/
-│   │   │   ├── Error/
-│   │   │   ├── Faq/
-│   │   │   ├── Home/
-│   │   │   ├── Integrantes/
-│   │   │   ├── Proposta/
-│   │   │   ├── Proposta2/
-│   │   │   └── Sobre/
-│   │   │
-│   │   ├── service/
-│   │   │   ├── api.ts
-│   │   │   ├── comentarios.ts
-│   │   │   ├── postagens.ts
-│   │   │   └── sessao.ts
-│   │   │
-│   │   ├── styles/
-│   │   │   └── globals.css
-│   │   │
-│   │   ├── types/
-│   │   │   └── postagem.ts
-│   │   │
-│   │   ├── App.tsx
-│   │   └── main.tsx
-│   │
-│   ├── .gitignore
-│   ├── eslint.config.js
-│   ├── index.html
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── tsconfig.app.json
-│   ├── tsconfig.json
-│   ├── tsconfig.node.json
-│   ├── vercel.json
-│   └── vite.config.ts
+
+soulup-society/
 │
 ├── .gitignore
 ├── package-lock.json
 ├── package.json
-└── README.md
+├── README.md
+│
+├── public/
+│   └── img/
+│       ├── foto-breno.jpg
+│       ├── foto-christian.png
+│       ├── foto-eduardo.png
+│       ├── foto-eduardop.jpg
+│       └── foto-gustavo.png
+│
+└── src/
+    │
+    ├── components/
+    │   ├── Cabecalho.tsx
+    │   ├── CardIntegrantes.tsx
+    │   ├── Hero.tsx
+    │   ├── Newsletter.tsx
+    │   └── Rodape.tsx
+    │
+    ├── routes/
+    │   ├── App/
+    │   │   ├── AuthPage/
+    │   │   ├── Cadastro/
+    │   │   ├── Carteira/
+    │   │   ├── ContaInfo/
+    │   │   ├── Feed/
+    │   │   ├── ItensSalvos/
+    │   │   ├── Login/
+    │   │   ├── Missoes/
+    │   │   ├── PostagemDetalhe/
+    │   │   └── ProtectedRoute.tsx
+    │   │
+    │   ├── Contatos/
+    │   ├── Error/
+    │   ├── Faq/
+    │   ├── Home/
+    │   ├── Integrantes/
+    │   ├── Proposta/
+    │   ├── Proposta2/
+    │   └── Sobre/
+    │
+    ├── service/
+    │   ├── api.ts
+    │   ├── autenticacao.ts
+    │   ├── cadastro.ts
+    │   ├── carteiras.ts
+    │   ├── comentarios.ts
+    │   ├── conta.ts
+    │   ├── desafios.ts
+    │   ├── postagens.ts
+    │   └── sessao.ts
+    │
+    ├── styles/
+    │   └── globals.css
+    │
+    ├── types/
+    │   ├── cadastro.ts
+    │   ├── carteira.ts
+    │   ├── conta.ts
+    │   ├── missao.ts
+    │   └── postagem.ts
+    │
+    ├── App.tsx
+    └── main.tsx
+
 ```
 
 ## 🗺️ Rotas do front-end
@@ -200,25 +198,27 @@ Challenge-2-semestre/
 | `/app/login` | Login |
 | `/app/cadastro` | Cadastro em duas etapas |
 | `/app/feed` | Feed de postagens |
-| `/app/postagem/:id` | Detalhe de uma postagem, com comentários |
+| `/app/postagem/:id` | Detalhes de uma postagem e comentários |
 | `/app/carteira` | Carteira de pontos e troca por benefícios |
 | `/app/missoes` | Lista de missões |
+| `/app/salvos` | Itens salvos |
 | `/app/conta` | Dados da conta |
 
 ## 🚀 Como rodar localmente
 
-Para executar o projeto em sua máquina, é preciso subir a **API (Java)** e o **front-end (React)**.
+Para executar o projeto em sua máquina, é necessário iniciar a **API (Java)** e o **front-end (React)**.
 
 ### 1. Clone os repositórios
 
 ```bash
 git clone https://github.com/SoulUp-Society-Trabalhos/1--Challenge-2--semestre.git
+
 git clone https://github.com/Brenoell/Challenge-Java-2-Challenge.git
 ```
 
 ### 2. Suba a API Java
 
-Defina as variáveis de ambiente de acesso ao banco antes de rodar a aplicação:
+Configure as variáveis de ambiente para acessar o banco de dados:
 
 | Variável | Descrição |
 |---|---|
@@ -226,13 +226,37 @@ Defina as variáveis de ambiente de acesso ao banco antes de rodar a aplicação
 | `DB_USER` | Usuário do banco |
 | `DB_PASSWORD` | Senha do banco |
 
-Depois execute a classe `SoulupsocietyApplication` (ou `./mvnw spring-boot:run`). A API sobe em `http://localhost:8080`.
+Depois, execute a classe `SoulupsocietyApplication` ou utilize o comando:
+
+```bash
+./mvnw spring-boot:run
+```
+
+No Windows, também é possível utilizar:
+
+```bash
+mvnw.cmd spring-boot:run
+```
+
+A API será iniciada em `http://localhost:8080`.
 
 ### 3. Instale e rode o front-end
 
+Entre na pasta do front-end:
+
 ```bash
 cd soulup-society
+```
+
+Instale as dependências:
+
+```bash
 npm install
+```
+
+Inicie o servidor de desenvolvimento:
+
+```bash
 npm run dev
 ```
 
@@ -242,6 +266,6 @@ npm run dev
 http://localhost:5173
 ```
 
-O Vite repassa as chamadas de `/api` para `http://localhost:8080` (configurado em vite.config.ts). Na Vercel, esse papel é feito pelo `vercel.json`.
+O Vite redireciona as chamadas feitas para `/api` ao endereço `http://localhost:8080`, conforme a configuração do `vite.config.ts`. Na Vercel, esse redirecionamento é configurado pelo arquivo `vercel.json`.
 
-> **Observação:** é necessário ter o [Node.js](https://nodejs.org/) e o JDK instalados em sua máquina para executar o projeto.
+> **Observação:** É necessário ter o [Node.js](https://nodejs.org/) e o JDK instalados na máquina para executar o projeto.
