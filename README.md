@@ -52,7 +52,7 @@ A plataforma permite que o usuário crie uma conta, faça login, acompanhe o fee
 | ☕ Repositório da API Java (GitHub) | [Repositório](https://github.com/Brenoell/Challenge-Java-2-Challenge) |
 | 🌐 Site publicado (Vercel) | [Acessar site](https://projeto-front-self.vercel.app/) |
 | ⚙️ API publicada (Render) | [Acessar API](https://challenge-java-2-challenge.onrender.com) |
-| 🎥 Vídeo de apresentação (YouTube) | COLOQUE_AQUI_O_LINK_DO_VIDEO |
+| 🎥 Vídeo de apresentação (YouTube) | [Acessar Video](https://youtu.be/1ZaBNqj-5dU) |
 
 > **Observação:** A API pode levar algum tempo para responder devido ao tempo de inicialização do servidor. Aguarde alguns instantes caso a primeira requisição demore.
 
@@ -103,7 +103,7 @@ Eduardo Pizzoli Junior - RM569529
 
 Eduardo Nery Kurahara - RM570916
 
-- COLOQUE_AQUI_O_EMAIL
+- eduardonerykurahara@gmail.com
 
 Gustavo Lizier Pontes - RM573234
 
