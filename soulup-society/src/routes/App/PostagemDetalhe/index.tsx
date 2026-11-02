@@ -28,6 +28,7 @@ export default function PostagemDetalhe() {
   const [idConta, setIdConta] = useState<number | null>(null);
   const [enviando, setEnviando] = useState(false);
   const [erroComentario, setErroComentario] = useState("");
+  const [erroLista, setErroLista] = useState("");
 
   useEffect(() => {
     if (!idValido) return;
@@ -37,7 +38,11 @@ export default function PostagemDetalhe() {
       try {
         const [dados, lista, conta] = await Promise.all([
           buscarPostagem(idNumero),
-          listarComentarios(idNumero).catch(() => []),
+          listarComentarios(idNumero).catch((e) => {
+            console.error("Erro ao listar comentários:", e);
+            setErroLista(String(e.message ?? e));
+            return [];
+          }),
           buscarIdConta(),
         ]);
 
@@ -163,7 +168,13 @@ export default function PostagemDetalhe() {
                 </div>
               </form>
 
-              {comentarios.length === 0 && (
+              {erroLista && (
+                <p role="alert" className="mb-4 rounded-lg bg-red-50 p-3 text-sm text-red-700">
+                  Não foi possível carregar os comentários: {erroLista}
+                </p>
+              )}
+
+              {comentarios.length === 0 && !erroLista && (
                 <p className="py-4 text-center text-gray-500">
                   Nenhum comentário ainda. Seja o primeiro!
                 </p>

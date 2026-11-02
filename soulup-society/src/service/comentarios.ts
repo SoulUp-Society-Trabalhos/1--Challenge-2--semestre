@@ -2,13 +2,26 @@ import { api } from "./api";
 import type { Comentario } from "../types/postagem";
 
 export async function listarComentarios(idPostagem: number): Promise<Comentario[]> {
-  const resposta = await api(`/comentarios/postagem/${idPostagem}`);
+  const resposta = await fetch(`/api/comentarios/postagem/${idPostagem}`, {
+    credentials: "include",
+  });
+
+  
+  if (resposta.status === 404) {
+    console.warn(`GET /comentarios/postagem/${idPostagem} retornou 404 (tratado como lista vazia)`);
+    return [];
+  }
 
   if (!resposta.ok) {
     throw new Error(`Erro ao listar comentários (${resposta.status})`);
   }
 
-  return resposta.json();
+  const dados = await resposta.json();
+
+  
+  if (Array.isArray(dados)) return dados;
+  if (dados && Array.isArray(dados.content)) return dados.content;
+  return [];
 }
 
 export async function criarComentario(
