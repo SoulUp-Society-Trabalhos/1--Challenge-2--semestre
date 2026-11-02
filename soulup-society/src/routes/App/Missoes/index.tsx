@@ -1,14 +1,8 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import { FaStar } from "react-icons/fa";
-
-interface Missao {
-  id: number;
-  nome: string;
-  descricaoDesafio: string;
-  qtdPontos: number;
-}
+import { listarMissoes } from "../../../service/desafios";
+import type { Missao } from "../../../types/missao";
 
 export default function Missoes() {
   
@@ -19,17 +13,7 @@ export default function Missoes() {
   useEffect(() => {
     async function buscarMissoes() {
       try {
-        const resposta = await fetch("/api/desafios");
-
-        console.log("Status da requisição:", resposta.status);
-
-        if (!resposta.ok) {
-          throw new Error(`Erro HTTP: ${resposta.status}`);
-        }
-
-        const dados: Missao[] = await resposta.json();
-
-        console.log("Missões recebidas da API:", dados);
+        const dados = await listarMissoes();
 
         setMissoes(dados);
       } catch (error) {

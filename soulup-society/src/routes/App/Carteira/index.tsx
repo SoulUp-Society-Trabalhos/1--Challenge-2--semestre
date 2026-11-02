@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-
-const API = "/api";
+import { buscarIdConta } from "../../../service/sessao";
+import { buscarCarteiraPorConta, trocarPassagem } from "../../../service/carteiras";
 
 const beneficios = [
   {
@@ -27,26 +27,15 @@ export default function Carteira() {
     async function carregar() {
       try {
         // 1) conta logada (sessão do backend)
-        const resSessao = await fetch(`${API}/auth/sessao`, {
-          credentials: "include",
-        });
+        const idConta = await buscarIdConta();
 
-        if (!resSessao.ok) {
+        if (idConta === null) {
           setLogado(false);
           return;
         }
 
-        const { idConta } = await resSessao.json();
-
         // 2) carteira dessa conta
-        const resCarteira = await fetch(`${API}/carteiras/conta/${idConta}`);
-
-        if (!resCarteira.ok) {
-          setMensagem("Não foi possível carregar sua carteira.");
-          return;
-        }
-
-        const carteira = await resCarteira.json();
+        const carteira = await buscarCarteiraPorConta(idConta);
         setIdCarteira(carteira.id);
         setPontos(carteira.quantidadePontos);
         setPassagens(carteira.quantidadePassagens);
@@ -70,22 +59,12 @@ export default function Carteira() {
 
     try {
       // desconta os pontos e registra a passagem no banco
-      const res = await fetch(`${API}/carteiras/${idCarteira}/trocar-passagem`, {
-        method: "PATCH",
-      });
-
-      if (!res.ok) {
-        setMensagem("Não foi possível realizar a troca. Verifique seu saldo.");
-        return;
-      }
-
-      // saldo e passagens vêm do banco
-      const carteira = await res.json();
+      const carteira = await trocarPassagem(idCarteira);
       setPontos(carteira.quantidadePontos);
       setPassagens(carteira.quantidadePassagens);
       setMensagem(`Troca de ${nome} realizada com sucesso!`);
     } catch {
-      setMensagem("Não foi possível conectar ao servidor.");
+      setMensagem("Não foi possível realizar a troca. Verifique seu saldo.");
     }
   }
 
