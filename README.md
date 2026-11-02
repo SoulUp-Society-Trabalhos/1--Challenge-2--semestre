@@ -8,7 +8,6 @@ A plataforma permite que o usuário crie uma conta, faça login, acompanhe o fee
 
 ## 🖼️ Imagens do Projeto
 
-*Coloque as imagens na pasta `soulup-society/public/img/` e ajuste os caminhos abaixo.*
 
 ![Tela inicial](./soulup-society/public/img/inicio.png)
 
