@@ -7,7 +7,7 @@ export default function Proposta() {
     <main className="conteudo">
       <Hero
         titulo="Integração"
-        descricao="qui você entenderá mais sobre nossa primeira proposta, a
+        descricao="Aqui você entenderá mais sobre nossa primeira proposta, a
               Integração!"
       />
 
