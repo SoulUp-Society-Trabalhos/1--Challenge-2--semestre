@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router";
 
-
 export default function ProtectedRoute() {
   const [autenticado, setAutenticado] = useState<boolean | null>(null);
-
+  const API_URL = import.meta.env.VITE_API_URL;
   useEffect(() => {
     async function verificarSessao() {
       try {
-        const resposta = await fetch("http://localhost:8080/auth/sessao", {
+        const resposta = await fetch(`${API_URL}/auth/sessao`, {
           method: "GET",
           credentials: "include",
         });
