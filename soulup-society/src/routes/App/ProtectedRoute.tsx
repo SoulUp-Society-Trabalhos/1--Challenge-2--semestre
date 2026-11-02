@@ -1,29 +1,14 @@
 import { useEffect, useState } from "react";
 import { Navigate, Outlet } from "react-router";
+import { api } from "../../service/api";
 
 export default function ProtectedRoute() {
   const [autenticado, setAutenticado] = useState<boolean | null>(null);
-  const API_URL = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
-    async function verificarSessao() {
-      try {
-        const resposta = await fetch(`${API_URL}/auth/sessao`, {
-          method: "GET",
-          credentials: "include",
-        });
-
-        if (resposta.ok) {
-          setAutenticado(true);
-        } else {
-          setAutenticado(false);
-        }
-      } catch (erro) {
-        console.error("Erro ao verificar sessão:", erro);
-        setAutenticado(false);
-      }
-    }
-
-    verificarSessao();
+    api("/auth/sessao")
+      .then(() => setAutenticado(true))
+      .catch(() => setAutenticado(false));
   }, []);
 
   if (autenticado === null) {
