@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
-
-const API = "/api";
+import { fazerLogin as autenticar } from "../../../service/autenticacao";
 
 export default function Login() {
   document.title = "SoulUp - Login";
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState("");
@@ -12,39 +12,21 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  async function fazerLogin(e: React.FormEvent<HTMLFormElement>) {
+  async function fazerLoginFormulario(e: React.FormEvent) {
     e.preventDefault();
 
     setErro("");
     setCarregando(true);
 
     try {
-      const resposta = await fetch(`${API}/auth/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify({
-          email: email,
-          senha: senha,
-        }),
-      });
-
-      
-      const dados = await resposta.json().catch(() => ({}));
-
-      if (!resposta.ok) {
-        setErro(
-          dados.erro ||
-            "Não foi possível realizar o login. Se a API estiver iniciando, aguarde um minuto e tente de novo.",
-        );
-        return;
-      }
-
+      await autenticar(email, senha);
       navigate("/app/feed");
-    } catch {
-      setErro("Não foi possível conectar ao servidor.");
+    } catch (e) {
+      setErro(
+        e instanceof Error
+          ? e.message
+          : "Não foi possível realizar o login."
+      );
     } finally {
       setCarregando(false);
     }
@@ -53,15 +35,21 @@ export default function Login() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-stone-100 px-5">
       <section className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
-        <h1 className="mb-2 text-center text-3xl font-bold">Entrar</h1>
+        <h1 className="mb-2 text-center text-3xl font-bold">
+          Entrar
+        </h1>
 
         <p className="mb-8 text-center text-gray-600">
           Acesse sua conta na SoulUp Society
         </p>
 
-        <form className="flex flex-col gap-4" onSubmit={fazerLogin}>
+        <form
+          className="flex flex-col gap-4"
+          onSubmit={fazerLoginFormulario}
+        >
           <div className="flex flex-col gap-2">
             <label htmlFor="email">E-mail</label>
+
             <input
               type="email"
               id="email"
@@ -76,6 +64,7 @@ export default function Login() {
 
           <div className="flex flex-col gap-2">
             <label htmlFor="senha">Senha</label>
+
             <input
               type="password"
               id="senha"

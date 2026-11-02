@@ -1,302 +1,191 @@
+
 import { useState } from "react";
 import { Link } from "react-router";
 
 export default function Cabecalho() {
-
   const [menuAberto, setMenuAberto] = useState(false);
+  const [solucoesAbertas, setSolucoesAbertas] = useState(false);
+
+  function fecharMenu() {
+    setMenuAberto(false);
+    setSolucoesAbertas(false);
+  }
 
   return (
-    <header
-      className="
-        bg-black text-white flex items-center relative z-9999
-        w-full py-6 px-[5%]
-      "
-    >
+    <header className="relative z-50 flex w-full items-center justify-between bg-black px-5 py-4 text-white sm:px-[5%] sm:py-5">
 
-      
+      {/* Logo */}
       <Link
-        className="
-          text-[1.5rem] font-bold m-0
-          font-[Montserrat] text-white no-underline
-        "
+        className="font-[Montserrat] text-xl font-bold text-white no-underline sm:text-2xl"
         to="/"
+        onClick={fecharMenu}
       >
         SoulUp Society
       </Link>
 
-
-      
-      <nav
-        className="
-          hidden md:block
-          absolute left-1/2 -translate-x-1/2
-        "
-        id="header-nav"
-      >
-        <ul
-          className="
-            flex items-center justify-center
-            gap-[clamp(0.5rem,2vw,3rem)]
-            list-none m-0 p-0
-          "
-        >
-
-          
-          <li className="flex items-center relative font-[Montserrat] font-medium">
+      {/* Menu desktop */}
+      <nav className="hidden lg:block">
+        <ul className="flex items-center gap-1 xl:gap-3">
+          <li>
             <Link
-              className="
-                text-white no-underline bg-transparent
-                border-0 cursor-pointer
-                py-3 px-4 rounded-full
-                transition-all duration-300
-                text-base
-                hover:bg-white hover:text-black
-              "
+              className="rounded-full px-3 py-3 font-[Montserrat] text-sm font-medium text-white transition hover:bg-white hover:text-black xl:px-4 xl:text-base"
               to="/"
             >
               Início
             </Link>
           </li>
 
-
-          
-          <li
-            className="
-              flex items-center relative
-              font-[Montserrat] font-medium
-              group
-            "
-          >
+          {/* Submenu Soluções */}
+          <li className="relative">
             <button
-              className="
-                text-white bg-transparent
-                border-0 cursor-pointer
-                py-3 px-4 rounded-full
-                transition-all duration-300
-                text-base font-inherit
-                hover:bg-white hover:text-black
-              "
+              type="button"
+              onClick={() => setSolucoesAbertas(!solucoesAbertas)}
+              aria-expanded={solucoesAbertas}
+              className="rounded-full px-3 py-3 font-[Montserrat] text-sm font-medium text-white transition hover:bg-white hover:text-black xl:px-4 xl:text-base"
             >
-              Soluções
+              Soluções {solucoesAbertas ? "▴" : "▾"}
             </button>
 
-            
-            <ul
-              className="
-                absolute top-full left-1/2
-                -translate-x-1/2
-                min-w-50
-                bg-black border border-[#333]
-                rounded-xl p-2
-                list-none
-                hidden group-hover:block
-                z-9999
-              "
-            >
-              <li className="w-full">
-                <Link
-                  className="
-                    block w-full
-                    py-3 px-4
-                    rounded-lg
-                    text-white no-underline
-                    text-[0.95rem]
-                    hover:bg-white hover:text-black
-                  "
-                  to="/proposta"
-                >
-                  Integração
-                </Link>
-              </li>
+            {solucoesAbertas && (
+              <ul className="absolute left-1/2 top-full z-50 mt-2 min-w-48 -translate-x-1/2 rounded-xl border border-[#333] bg-black p-2 shadow-lg">
+                <li>
+                  <Link
+                    className="block rounded-lg px-4 py-3 text-sm text-white hover:bg-white hover:text-black"
+                    to="/proposta"
+                    onClick={() => setSolucoesAbertas(false)}
+                  >
+                    Integração
+                  </Link>
+                </li>
 
-              <li className="w-full">
-                <Link
-                  className="
-                    block w-full
-                    py-3 px-4
-                    rounded-lg
-                    text-white no-underline
-                    text-[0.95rem]
-                    hover:bg-white hover:text-black
-                  "
-                  to="/proposta2"
-                >
-                  Gamificação
-                </Link>
-              </li>
-            </ul>
+                <li>
+                  <Link
+                    className="block rounded-lg px-4 py-3 text-sm text-white hover:bg-white hover:text-black"
+                    to="/proposta2"
+                    onClick={() => setSolucoesAbertas(false)}
+                  >
+                    Gamificação
+                  </Link>
+                </li>
+              </ul>
+            )}
           </li>
 
-
-          
-          <li className="flex items-center relative font-[Montserrat] font-medium">
+          <li>
             <Link
-              className="
-                text-white no-underline bg-transparent
-                border-0 cursor-pointer
-                py-3 px-4 rounded-full
-                transition-all duration-300
-                text-base
-                hover:bg-white hover:text-black
-              "
+              className="rounded-full px-3 py-3 font-[Montserrat] text-sm font-medium text-white transition hover:bg-white hover:text-black xl:px-4 xl:text-base"
               to="/integrantes"
             >
               Integrantes
             </Link>
           </li>
 
-
-          
-          <li className="flex items-center relative font-[Montserrat] font-medium">
+          <li>
             <Link
-              className="
-                text-white no-underline bg-transparent
-                border-0 cursor-pointer
-                py-3 px-4 rounded-full
-                transition-all duration-300
-                text-base
-                hover:bg-white hover:text-black
-              "
+              className="rounded-full px-3 py-3 font-[Montserrat] text-sm font-medium text-white transition hover:bg-white hover:text-black xl:px-4 xl:text-base"
               to="/sobre"
             >
               Sobre
             </Link>
           </li>
 
-
-          
-          <li className="flex items-center relative font-[Montserrat] font-medium">
+          <li>
             <Link
-              className="
-                text-white no-underline bg-transparent
-                border-0 cursor-pointer
-                py-3 px-4 rounded-full
-                transition-all duration-300
-                text-base
-                hover:bg-white hover:text-black
-              "
+              className="rounded-full px-3 py-3 font-[Montserrat] text-sm font-medium text-white transition hover:bg-white hover:text-black xl:px-4 xl:text-base"
               to="/contatos"
             >
               Contatos
             </Link>
           </li>
 
-
-          
-          <li className="flex items-center relative font-[Montserrat] font-medium">
+          <li>
             <Link
-              className="
-                text-white no-underline bg-transparent
-                border-0 cursor-pointer
-                py-3 px-4 rounded-full
-                transition-all duration-300
-                text-base
-                hover:bg-white hover:text-black
-              "
+              className="rounded-full px-3 py-3 font-[Montserrat] text-sm font-medium text-white transition hover:bg-white hover:text-black xl:px-4 xl:text-base"
               to="/faq"
             >
               FAQ
             </Link>
           </li>
 
-          <li className="flex items-center relative font-[Montserrat] font-medium">
+          <li>
             <Link
-              className="
-                text-white no-underline bg-transparent
-                border-0 cursor-pointer
-                py-3 px-4 rounded-full
-                transition-all duration-300
-                text-base
-                hover:bg-white hover:text-black
-              "
+              className="rounded-full px-3 py-3 font-[Montserrat] text-sm font-medium text-white transition hover:bg-white hover:text-black xl:px-4 xl:text-base"
               to="/app"
             >
               Protótipo
             </Link>
           </li>
-
         </ul>
       </nav>
 
-
-      
+      {/* Botão do menu mobile e tablet */}
       <button
+        type="button"
         onClick={() => setMenuAberto(!menuAberto)}
-        className="
-          ml-auto
-          md:hidden
-          text-white
-          text-3xl
-          bg-transparent
-          border-0
-          cursor-pointer
-        "
-        aria-label="Abrir menu"
+        className="ml-auto text-3xl text-white lg:hidden"
+        aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
         aria-expanded={menuAberto}
       >
         {menuAberto ? "✕" : "☰"}
       </button>
 
-
-      
+      {/* Menu mobile e tablet */}
       {menuAberto && (
-        <nav
-          className="
-            absolute
-            top-full
-            left-0
-            w-full
-            bg-black
-            border-t border-[#333]
-            md:hidden
-          "
-        >
-          <ul
-            className="
-              flex flex-col
-              items-center
-              gap-3
-              list-none
-              m-0
-              p-6
-            "
-          >
+        <nav className="absolute left-0 top-full z-50 w-full border-t border-[#333] bg-black shadow-lg lg:hidden">
+          <ul className="flex flex-col gap-2 px-5 py-5">
 
             <li>
               <Link
-                className="text-white no-underline"
+                className="block rounded-lg px-4 py-3 text-white hover:bg-white hover:text-black"
                 to="/"
-                onClick={() => setMenuAberto(false)}
+                onClick={fecharMenu}
               >
                 Início
               </Link>
             </li>
 
+            
             <li>
-              <Link
-                className="text-white no-underline"
-                to="/proposta"
-                onClick={() => setMenuAberto(false)}
+              <button
+                type="button"
+                onClick={() => setSolucoesAbertas(!solucoesAbertas)}
+                aria-expanded={solucoesAbertas}
+                className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-left text-white hover:bg-white hover:text-black"
               >
-                Integração
-              </Link>
+                Soluções
+                <span>{solucoesAbertas ? "−" : "+"}</span>
+              </button>
+
+              {solucoesAbertas && (
+                <ul className="ml-4 mt-1 flex flex-col gap-1 border-l border-[#444] pl-3">
+                  <li>
+                    <Link
+                      className="block rounded-lg px-4 py-3 text-sm text-gray-300 hover:bg-white hover:text-black"
+                      to="/proposta"
+                      onClick={fecharMenu}
+                    >
+                      Integração
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      className="block rounded-lg px-4 py-3 text-sm text-gray-300 hover:bg-white hover:text-black"
+                      to="/proposta2"
+                      onClick={fecharMenu}
+                    >
+                      Gamificação
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
 
             <li>
               <Link
-                className="text-white no-underline"
-                to="/proposta2"
-                onClick={() => setMenuAberto(false)}
-              >
-                Gamificação
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                className="text-white no-underline"
+                className="block rounded-lg px-4 py-3 text-white hover:bg-white hover:text-black"
                 to="/integrantes"
-                onClick={() => setMenuAberto(false)}
+                onClick={fecharMenu}
               >
                 Integrantes
               </Link>
@@ -304,9 +193,9 @@ export default function Cabecalho() {
 
             <li>
               <Link
-                className="text-white no-underline"
+                className="block rounded-lg px-4 py-3 text-white hover:bg-white hover:text-black"
                 to="/sobre"
-                onClick={() => setMenuAberto(false)}
+                onClick={fecharMenu}
               >
                 Sobre
               </Link>
@@ -314,9 +203,9 @@ export default function Cabecalho() {
 
             <li>
               <Link
-                className="text-white no-underline"
+                className="block rounded-lg px-4 py-3 text-white hover:bg-white hover:text-black"
                 to="/contatos"
-                onClick={() => setMenuAberto(false)}
+                onClick={fecharMenu}
               >
                 Contatos
               </Link>
@@ -324,9 +213,9 @@ export default function Cabecalho() {
 
             <li>
               <Link
-                className="text-white no-underline"
+                className="block rounded-lg px-4 py-3 text-white hover:bg-white hover:text-black"
                 to="/faq"
-                onClick={() => setMenuAberto(false)}
+                onClick={fecharMenu}
               >
                 FAQ
               </Link>
@@ -334,18 +223,17 @@ export default function Cabecalho() {
 
             <li>
               <Link
-              className="text-white no-underline"
-              to="/faq"
-              onClick={() => setMenuAberto(false)}
+                className="block rounded-lg px-4 py-3 text-white hover:bg-white hover:text-black"
+                to="/app"
+                onClick={fecharMenu}
               >
-                Prototipo
+                Protótipo
               </Link>
             </li>
 
           </ul>
         </nav>
       )}
-
     </header>
   );
 }
