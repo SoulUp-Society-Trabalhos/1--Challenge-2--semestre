@@ -1,27 +1,50 @@
 import { api } from "./api";
 import type { Comentario } from "../types/postagem";
 
+function extrairLista(dados: unknown): Comentario[] {
+  if (Array.isArray(dados)) return dados as Comentario[];
+  const conteudo = (dados as { content?: unknown })?.content;
+  if (Array.isArray(conteudo)) return conteudo as Comentario[];
+  return [];
+}
+
 export async function listarComentarios(idPostagem: number): Promise<Comentario[]> {
+  // 1) Tenta o endpoint específico da postagem
   const resposta = await fetch(`/api/comentarios/postagem/${idPostagem}`, {
     credentials: "include",
   });
 
-  
-  if (resposta.status === 404) {
-    console.warn(`GET /comentarios/postagem/${idPostagem} retornou 404 (tratado como lista vazia)`);
-    return [];
+  if (resposta.ok) {
+    return extrairLista(await resposta.json());
   }
 
-  if (!resposta.ok) {
+  if (resposta.status !== 404) {
     throw new Error(`Erro ao listar comentários (${resposta.status})`);
   }
 
-  const dados = await resposta.json();
+  // 2) Se deu 404, busca todos os comentários e filtra pela postagem
+  console.warn(
+    `GET /comentarios/postagem/${idPostagem} deu 404; tentando GET /comentarios e filtrando no front`,
+  );
 
-  
-  if (Array.isArray(dados)) return dados;
-  if (dados && Array.isArray(dados.content)) return dados.content;
-  return [];
+  const todos = await fetch("/api/comentarios", { credentials: "include" });
+
+  if (todos.status === 404) return [];
+  if (!todos.ok) {
+    throw new Error(`Erro ao listar comentários (${todos.status})`);
+  }
+
+  const lista = extrairLista(await todos.json());
+  console.log("Comentários recebidos de /comentarios:", lista);
+
+  return lista.filter((c) => {
+    const item = c as Comentario & {
+      postagem?: { id?: number };
+      idPostagem?: number;
+    };
+    const idDoComentario = item.postagem?.id ?? item.idPostagem;
+    return idDoComentario === idPostagem;
+  });
 }
 
 export async function criarComentario(
